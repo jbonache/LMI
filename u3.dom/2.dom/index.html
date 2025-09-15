@@ -1,0 +1,914 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.intro/">
+      
+      
+        <link rel="next" href="../3.events/">
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>2. El DOM - Manipulació de documents web: Javascript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-dom-document-object-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-header__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Manipulació de documents web: Javascript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. El DOM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-nav__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Manipulació de documents web: Javascript
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducció. JavaScript en entorns client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2. El DOM
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. El DOM
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-dom-document-object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      El DOM (Document Object Model)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El DOM (Document Object Model)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-el-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Què és el DOM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-als-elements-del-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accés als elements del DOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacio-i-modificacio-del-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació i modificació del DOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalitats-avancades-del-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalitats avançades del DOM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Gestió d'esdeveniments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Gestió de formularis HTML amb JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-dom-document-object-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      El DOM (Document Object Model)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El DOM (Document Object Model)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-el-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Què és el DOM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-als-elements-del-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accés als elements del DOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacio-i-modificacio-del-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació i modificació del DOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalitats-avancades-del-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalitats avançades del DOM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+
+  <h1>2. El DOM</h1>
+
+<h2 id="el-dom-document-object-model">El DOM (Document Object Model)</h2>
+<h3 id="que-es-el-dom">Què és el DOM?</h3>
+<p>El DOM és una representació estructural del contingut dels documents HTML, XHTML i XML, que proporciona una interfície de programació (API) per accedir directament als seus elements, consultar-los i modificar-los. Aquest estàndard, definit originalment per l'W3C (World Wide Web Consortium, https://www.w3.org), és ara mantingut per la <strong>WHATWG</strong> (<em> Web Hypertext Application Technology Working Group</em>, https://dom.spec.whatwg.org/) com un estàndard viu (conegut com <strong>DOM Live Standard</strong>), que evoluciona contínuament per adaptar-se a les necessitats modernes.</p>
+<p>El DOM és multiplataforma i independent del llenguatge de programació utilitzat, tot i que JavaScript és el més habitual.</p>
+<blockquote>
+<p>Les primeres especificacions del DOM (DOM1, DOM2 i DOM3) van ser desenvolupades pel W3C entre 1998 i 2004. En 2005 es va crear el WHATWG, amb la col·laboració de diverses empreses i comunitats com Mozilla, Apple i Opera, i es va anar produint una transcició fins que en 2015 es consolida com cun estàndard viu, formalitzat en 2019 amb la signatura del <em>Memorandum of Understanding (MoU)</em> entre el W3C i el WHATWG.</p>
+</blockquote>
+<h4 id="larbre-dom">L'arbre DOM</h4>
+<p>Els documents HTML tenen una estructura jeràrquica que es pot representar com un arbre. Quan el navegador carrega un document, crea automàticament aquest arbre DOM, que ofereix una manera sistemàtica d'accedir a qualsevol element o atribut.</p>
+<p>Tot i que el DOM defineix múltiples tipus de nodes, els més comuns són:</p>
+<ul>
+<li><strong>document</strong>: el node arrel que representa tot el document.</li>
+<li><strong>element</strong>: els elements HTML, formats per l'etiqueta, els atributs i el contingut.</li>
+<li><strong>attr</strong>: representa atributs de les etiquetes/elements HTML.</li>
+<li><strong>text</strong>: conté el text dins d’una etiqueta.</li>
+<li><strong>comment</strong>: representa els comentaris de la pàgina.</li>
+</ul>
+<p><strong><em>Exemple</em></strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/dom.png" data-desc-position="bottom"><img alt="Exemple de DOM" src="../img/dom.png"></a></p>
+<p>L'estructura del DOM en qualsevol pàgina web pot vore's a través de l'inspector d'elements.</p>
+<p>El procés de generació de l'arbre DOM és automàtic, i segueix sempre les mateixes regles:</p>
+<ul>
+<li>Les etiquetes HTML es transformen en dos nodes: <ul>
+<li>un amb la pròpia etiqueta (element), i  </li>
+<li>un, fill d'aquest, que conté el contingut textual (text)</li>
+</ul>
+</li>
+<li>Si una etiqueta es troba dins d'altra, aquesta genera un element fill dins de l'anterior, amb les mateixes regles que aquest.</li>
+</ul>
+<h3 id="acces-als-elements-del-dom">Accés als elements del DOM</h3>
+<p>L'API del DOM proporciona diverses maneres d'accedir als elements. Tot i que encara són útils, alguns mètodes clàssics han estat parcialment substituïts per alternatives modernes més eficients i flexibles.</p>
+<p><strong>Mètodes clàssics</strong></p>
+<ul>
+<li><code>getElementsByTagName(etiqueta)</code>: retorna una col·lecció d'elements amb una etiqueta específica.</li>
+<li><code>getElementsByName(nom)</code>: busca elements amb un atribut <code>name</code> específic.</li>
+<li><code>getElementById(id)</code>: retorna el node únic amb l'identificador especificat.</li>
+</ul>
+<p><strong>Mètodes moderns</strong></p>
+<p>Es recomana utilitzar els mètodes següents per la seva simplicitat i compatibilitat amb <strong>selectors CSS</strong>:</p>
+<ul>
+<li><code>querySelector(selector)</code>: retorna el primer element que coincideix amb el selector especificat.</li>
+<li><code>querySelectorAll(selector)</code>: retorna tots els elements coincidents com una <code>NodeList</code>.</li>
+</ul>
+<p><strong><em>Exemple:</em></strong>
+</p><div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Mètode clàssic</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elementsClassics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// Mètode modern</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elementModern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elementsModerns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</span></code></pre></div><p></p>
+<h4 id="processament-dels-nodelist">Processament dels NodeList</h4>
+<p>Les llistes <code>NodeList</code> suporten mètodes com <code>forEach</code>, però no són un array. Si necessitem funcionalitats d’array, podem convertir-les amb:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">)).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Funcions fletxa =&gt;</p>
+<p>Una funció fletxa és una abreviació d'una funció anònima. És a dir, l'expressió:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">el</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Seria equivalent a:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><strong>Recorrent els resultats d’una <code>NodeList</code></strong></p>
+<p>Quan treballem amb una <code>NodeList</code> retornada per <code>querySelectorAll</code>, podem recórrer els seus elements de diverses maneres:</p>
+<h5 id="1-amb-el-metode-foreach-mes-recomanable">1. <strong>Amb el mètode <code>forEach</code> (més recomanable):</strong></h5>
+<p>El mètode <code>forEach</code> està disponible directament a <code>NodeList</code> i és molt pràctic:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>Amb una funció fletxa, encara més compacte:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
+</span></code></pre></div>
+<h5 id="2-amb-un-bucle-for-classic">2. <strong>Amb un bucle <code>for</code> clàssic:</strong></h5>
+<p>La <code>NodeList</code> pot recórrer-se com un array utilitzant un bucle <code>for</code> clàssic:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h5 id="3-amb-un-bucle-forof">3. <strong>Amb un bucle <code>for...of</code>:</strong></h5>
+<p>Les <code>NodeList</code> són iterables, així que també podem utilitzar el bucle <code>for...of</code>:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h5 id="4-convertint-la-nodelist-en-un-array">4. <strong>Convertint la <code>NodeList</code> en un array:</strong></h5>
+<p>Si necessitem utilitzar mètodes avançats d’array, podem convertir la <code>NodeList</code> a un array amb <code>Array.from</code> o l’operador d'extenxió (<code>...</code>):</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">)).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// Alternativa amb l'operador d'extensió:</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">[...</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">)].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
+</span></code></pre></div>
+<h5 id="5-amb-un-bucle-forin-desaconsellat">5. <strong>Amb un bucle <code>for...in</code> (desaconsellat):</strong></h5>
+<p>Encara que tècnicament es pot utilitzar <code>for...in</code>, aquest bucle no és recomanable perquè itera sobre totes les propietats enumerables de l’objecte, no només sobre els elements:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">elements</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Això pot incloure propietats innecessàries</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<h3 id="creacio-i-modificacio-del-dom">Creació i modificació del DOM</h3>
+<p>El DOM és dinàmic i pot modificar-se per afegir, eliminar o alterar elements.</p>
+<h4 id="creacio-delements">Creació d'elements</h4>
+<p>Per tal de crear elements HTML amb JavaScript natiu:</p>
+<ol>
+<li>Creem un node de tipus <code>element</code> que represetna l'element en sí (<code>createElement</code>).</li>
+<li>Afegeix contingut al node (amb <code>createTextNode</code> o amb <code>innerHTML</code>).</li>
+<li>Inserim el node al document (amb <code>appendChild</code> o <code>insertAdjacentElement</code>).</li>
+</ol>
+<p>Veiem-ho amb un exemple per afegir un paràgraf al final del document:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">nouParagraf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span><span class="w"> </span><span class="c1">// Pas 1</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">nouParagraf</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Hola món!'</span><span class="p">;</span><span class="w">         </span><span class="c1">// Pas 2</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">nouParagraf</span><span class="p">);</span><span class="w">        </span><span class="c1">// Pas 3</span>
+</span></code></pre></div>
+<p>Actualment, disposem d'una alternativa més moderna, que és fer ús de <code>insertAdjacentHTML</code>:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s1">'beforeend'</span><span class="p">,</span><span class="w"> </span><span class="s1">'&lt;p&gt;Hola món!&lt;/p&gt;'</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Aquest mètode <code>insertAdjacentHTML</code> ens permet inserir un fragment de codi HTML com a part del DOM, sense necessitat de crear manualment nodes amb <code>createElement</code> o afegir-los amb <code>appendChild</code>. És útil quan volem inserir elements de manera eficient, ja que no cal modificar el DOM diverses vegades.</p>
+<p>En general la sintaxi de <code>insertAdjacentHTML</code> és:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">element</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="nx">position</span><span class="p">,</span><span class="w"> </span><span class="nx">html</span><span class="p">);</span>
+</span></code></pre></div>
+<p>On:</p>
+<ul>
+<li><code>position</code>: Indica on volem inserir el codi HTML en relació amb l'element seleccionat (element). Els valors possibles són:</li>
+<li><code>beforebegin</code>: Abans del node seleccionat.</li>
+<li><code>afterbegin</code>: Just dins del node seleccionat, abans del primer fill.</li>
+<li><code>beforeend</code>: Just dins del node seleccionat, després de l’últim fill.</li>
+<li><code>afterend</code>: Després del node seleccionat.</li>
+<li><code>html</code>: És una cadena (string) amb el codi HTML que volem inserir.</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Compte amb les cometes!</p>
+<p>Quan afegiu directament codi HTML en una cadena, aneu en compte amb respectar com fem ús de les cometes. Per exemple, si volem afegir un paràgraf amb l'<code>id="p1"</code> podriem fer:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>document.body.insertAdjacentHTML('beforeend', "&lt;p id='p1'&gt;Hola&lt;/p&gt;");
+</span></code></pre></div>
+<p>O bé:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>document.body.insertAdjacentHTML('beforeend', '&lt;p id="p1"&gt;Hola&lt;/p&gt;');
+</span></code></pre></div>
+<p>Però <strong>NO</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>document.body.insertAdjacentHTML('beforeend', "&lt;p id="p4"&gt;Hola 4&lt;/p&gt;");
+</span></code></pre></div>
+</div>
+<h4 id="supressio-delements">Supressió d'elements</h4>
+<p>Per tal d'eliminar un node, el primer que fem és localitzar-lo (amb <code>getElementById</code> o <code>querySelector</code>), i fer ús de <code>remove</code>o <code>removeChild</code>
+Utilitza <code>remove</code> o <code>removeChild</code>:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// Amb getElementById</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'idElement'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1">// Amb querySelector i un selector CSS</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#idElement'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Aquest mètode <code>remove</code> va ser introduit per l'especificació del <strong>DOM Live Standard</strong> al voltant de 2014-2015. En les especificacions anteriors del DOM, calia accedir al node pare i eliminar el fill, de la següent manera:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'elementId'</span><span class="p">);</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nx">element</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Gràficament, fariem el següent:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/supresio_nodes.png" data-desc-position="bottom"><img alt="" src="../img/supresio_nodes.png"></a></p>
+<h4 id="afegint-atributs-i-classes-als-nodes">Afegint atributs i classes als nodes</h4>
+<p>Si del que desitgem és afegir nous atributs al node seleccionat, podem fer ús del mètode <code>setAttribute</code> de la següent manera:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-example'</span><span class="p">,</span><span class="w"> </span><span class="s1">'valor'</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Amb això, hem seleccionat l'etiqueta <em>body</em>, i li hem afegit l'atribut <code>data-example</code>, amb el <code>valor</code> indicat.</p>
+<p>Si volem afegir-li, llevar-li o alternar una classe CSS ho farem a través de la propietat <code>classList</code> de l'element, de la següent manera:</p>
+<p>Per a classes:
+</p><div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">// Afegir una classe a la llista de classes</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'classe'</span><span class="p">);</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1">// Eliminar una classe de la llista</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'classe'</span><span class="p">);</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1">// Alterna la classe (si no està l'afig, i si està la lleva)</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'classe'</span><span class="p">);</span>
+</span></code></pre></div><p></p>
+<h4 id="manipulacio-directa-destils">Manipulació directa d’estils</h4>
+<p>Per tal de modificar els estils d'un element, podem fer-ho directament amb la propietat <code>style</code>:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'menu'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'#000'</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Tot i que per gestionar estils més complexos, és més pràctic fer ús de fulls d'estil amb <code>classList</code>, en lloc de modificar estils directament.</p>
+<h3 id="funcionalitats-avancades-del-dom">Funcionalitats avançades del DOM</h3>
+<h4 id="mutationobserver">MutationObserver</h4>
+<p>El <strong>MutationObserver</strong> és una API moderna que permet observar i respondre a canvis en el DOM. És més eficient i recomanable que utilitzar esdeveniments com <code>DOMSubtreeModified</code>, que són més antics i tenen problemes de rendiment.</p>
+<p>Un <strong>MutationObserver</strong> monitoritza canvis en un element específic i pot observar:</p>
+<ul>
+<li>Quan s'afigen o eliminen elements fills,</li>
+<li>Quan hi ha canvis als atributs,</li>
+<li>Quan es modifica el contingut del text</li>
+</ul>
+<p>Per fer ús d'un MutationObserver, seguirem la següent sintaxi:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">observer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MutationObserver</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nx">observer</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">targetNode</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</span></code></pre></div>
+<p>On:</p>
+<ul>
+<li><strong><code>callback</code></strong>: És una funció que s'executarà cada vegada que hi haja un canvi al DOM.</li>
+<li><strong><code>targetNode</code></strong>: És l'element que volem observar.</li>
+<li><strong><code>options</code></strong>: És un objecte que que defineix els tipus de canvis a observar.</li>
+</ul>
+<p>Veiem-ho de forma pràctica amb el següent exemplem, que monitoritzarà els canvis dins d'un div (tingueu en compte que aci mesclem Javscript i HTML per exemplificar aquesta funcionalitat, però no és una pràctica recomanable)</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"contenidor"</span><span class="p">&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contingut inicial<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">targetNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'contenidor'</span><span class="p">);</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="c1">// Callback per gestionar canvis: Observeu que estem donant nom a una funció anònima</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="c1">// i que aquesta s'expressa en forma de funció fletxa.</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">    </span><span class="c1">// A més, aquesta funció anònima rep dos arguments: mutationlist i observer.</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">mutationsList</span><span class="p">,</span><span class="w"> </span><span class="nx">observer</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">        </span><span class="c1">// el mètode forEach permet recórrer una llista l'elements, </span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">        </span><span class="c1">// i aplicar una funció sobre ells, mitjançant una funció fletxa</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">        </span><span class="nx">mutationsList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">mutation</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipus de canvi: </span><span class="si">${</span><span class="nx">mutation</span><span class="p">.</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mutation</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'childList'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Canvi en elements fills:'</span><span class="p">,</span><span class="w"> </span><span class="nx">mutation</span><span class="p">.</span><span class="nx">addedNodes</span><span class="p">);</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mutation</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'attributes'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Atribut canviat: </span><span class="si">${</span><span class="nx">mutation</span><span class="p">.</span><span class="nx">attributeName</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">    </span><span class="c1">// Crear l'observador</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">observer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MutationObserver</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">    </span><span class="c1">// Configurar què observar</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="w">    </span><span class="nx">observer</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">targetNode</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">        </span><span class="nx">childList</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Observar canvis en els fills</span>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">        </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Observar canvis en atributs</span>
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">        </span><span class="nx">subtree</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Incloure fills del subtree</span>
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a>
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a><span class="w">    </span><span class="c1">// Afegim canvis per provar-ho</span>
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">    </span><span class="c1">// Per a això fem ús de setTimeOut, que estableix un temporitzador</span>
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a><span class="w">    </span><span class="c1">// el qual al cap de 2 segons llançarà determinada funció</span>
+</span><span id="__span-22-37"><a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-38"><a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">nouParagraf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span>
+</span><span id="__span-22-39"><a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a><span class="w">        </span><span class="nx">nouParagraf</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Nou contingut afegit!'</span><span class="p">;</span>
+</span><span id="__span-22-40"><a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a><span class="w">        </span><span class="nx">targetNode</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">nouParagraf</span><span class="p">);</span>
+</span><span id="__span-22-41"><a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span><span id="__span-22-42"><a id="__codelineno-22-42" name="__codelineno-22-42" href="#__codelineno-22-42"></a>
+</span><span id="__span-22-43"><a id="__codelineno-22-43" name="__codelineno-22-43" href="#__codelineno-22-43"></a><span class="w">    </span><span class="c1">// I ara altre temporitzador que es dispararà als 4 segons</span>
+</span><span id="__span-22-44"><a id="__codelineno-22-44" name="__codelineno-22-44" href="#__codelineno-22-44"></a><span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-45"><a id="__codelineno-22-45" name="__codelineno-22-45" href="#__codelineno-22-45"></a><span class="w">        </span><span class="nx">targetNode</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-test'</span><span class="p">,</span><span class="w"> </span><span class="s1">'valor'</span><span class="p">);</span>
+</span><span id="__span-22-46"><a id="__codelineno-22-46" name="__codelineno-22-46" href="#__codelineno-22-46"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">4000</span><span class="p">);</span>
+</span><span id="__span-22-47"><a id="__codelineno-22-47" name="__codelineno-22-47" href="#__codelineno-22-47"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Si volem aturar d'observar canvis en el DOM, fem ús de <code>disconnect()</code>:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nx">observer</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Aquest mecanisme pot ser útil per detectar elements que es creen de manera dinàmica, per exemple en aplicacions de tipus SPA (Single Page Application), o per monitoritzar canvis al DOM per sincronitzar l'estat de l'aplicació.</p>
+<h4 id="shadow-dom">Shadow DOM</h4>
+<p>El <strong>Shadow DOM</strong> és una funcionalitat del DOM que permet crear una còpia encapsulada i independent del DOM dins d’un element amfitrió. Aquest sistema ofereix <strong>encapsulació d'estils i funcionalitats</strong>, el què significa que els estils i scripts dins del Shadow DOM no afecten el DOM global, ni viceversa. A més, facilita la reutilització de components.</p>
+<p>Com veurem més endavant, el <em>Shadow DOM</em> és una de les peces clau que momponen els <em>Web Components</em>.</p>
+<p>Un concepte clau a l'hora de treballar amb el <em>Shadow DOM</em> és el <em>Shadow Root</em> o l'<em>arrel Shadow</em>, que és el que ens permet convertir un element comú en un element amfitrió que conté el <em>Shadow DOM</em>. Dins de l'arrel Shadow podem definir tant elements HTML com estils CSS com interactivitat encapsulada.</p>
+<p>Veiem un exemple pràctic amb això:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">// Creem un element div que farà d'amfitrió (host)</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1">// Creem un arrel Shadow dins del host amb attachShadow</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1">// Amb el paràmetre mode indiquem si permetem l'accés al </span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="c1">// Shadow DOM (mode:open) o no (mode:closed), sent </span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1">// només gestionable pel navegador </span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">host</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'open'</span><span class="w"> </span><span class="p">});</span><span class="w"> </span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="c1">// Ara afegim HTML i CSS al Shadow DOM, utilitzant innerHTML</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="c1">// Aquests estils CSS encapsulats només afecten el contingut </span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="c1">// del Shadow DOM, no altres elements del DOM global.</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="sb">   &lt;style&gt;</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="sb">       /* Estils encapsulats, que només afecten al Shadow DOM */</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="sb">       p { color: red; font-weight: bold; }</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="sb">   &lt;/style&gt;</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="sb">   &lt;p&gt;Aquest paràgraf està dins del Shadow DOM&lt;/p&gt;`</span><span class="p">;</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="c1">// Afegim l'element amfitrió del Shadow Root al DOM global.</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="c1">// El contingut d'aquest serà visible, però completament </span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="c1">// independent del DOM extern</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">host</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="c1">// Afegim un paràgraf amb l'estil predeterminat</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s1">'beforeend'</span><span class="p">,</span><span class="w"> </span><span class="s1">'&lt;p&gt;Paràgraf amb estil normal&lt;/p&gt;'</span><span class="p">);</span>
+</span></code></pre></div>
+<p>El resultat serà que el paràgraf que apareix dins el Shadow DOM serà roig i en negreta, i els que hi són fora, tindran l'estil predeterminat.</p>
+<div class="admonition note">
+<p class="admonition-title">Modes d'encapsulació <code>open</code> vs <code>closed</code></p>
+<p>Quan creem l'arrel Shadow amb <code>attachShadow</code>, podem triar entre dos modes:</p>
+<ul>
+<li><strong><code>open</code>:</strong>  </li>
+<li>L'arrel Shadow és accessible via <code>element.shadowRoot</code> des de JavaScript.</li>
+<li>
+<p>Útil per depuració o quan necessitem accedir al contingut encapsulat.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">host</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'open'</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">host</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra el ShadowRoot</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong><code>closed</code>:</strong>  </p>
+</li>
+<li>El Shadow DOM no és accessible via <code>shadowRoot</code>.</li>
+<li>Millor per a components que requereixen més encapsulació i seguretat.</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">host</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'closed'</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">host</span><span class="p">.</span><span class="nx">shadowRoot</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra null</span>
+</span></code></pre></div>
+</div>
+<h5 id="exemple-amb-funcionalitat-i-interaccio">Exemple amb funcionalitat i interacció</h5>
+<p>El següent exemple conté un <em>div</em> amb l'<code>id</code> <em>contenidor</em>, dins el qual anem a afegir un <em>Shadow DOM</em> que conté un botó. </p>
+<p>Dins aquest Shadow DOM encapsularem els estils per al botó, per a que no interferisquen amb altres botons al DOM global. A més, afegirem un esdeveniment de click sobre el botó, fent ús d'<code>addEventListener</code> dins del Shadow DOM.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"contenidor"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'contenidor'</span><span class="p">);</span><span class="w"> </span><span class="c1">// Seleccionem el contenidor</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">shadowRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">host</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'open'</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Creem l'arrel Shadow</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="sb">        &lt;style&gt;</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="sb">            button {</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="sb">                background-color: blue;</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="sb">                color: white;</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="sb">                border: none;</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="sb">                padding: 10px;</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="sb">                cursor: pointer;</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="sb">            }</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="sb">        &lt;/style&gt;</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="sb">        &lt;button&gt;Fes clic&lt;/button&gt;</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="sb">    `</span><span class="p">;</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">    </span><span class="c1">// Afegim funcionalitat al botó dins del Shadow DOM</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">    </span><span class="nx">shadowRoot</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Botó dins del Shadow DOM!'</span><span class="p">);</span>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Observeu que aci hem afegit un nou tipus d'esdeveniment, el <em>clic</em> sobre un element, en aquet cas, un botó, i veiem també com mostrar missatges d'alerta des de Javascript.</p>
+<p>Per altra banda, observeu que aci, estem accedint al botó amb <code>querySelector</code>, a partir de la referència que tenim al <code>shadowRoot</code>.</p>
+<div class="admonition question">
+<p class="admonition-title">Repte!</p>
+<p>Canvia l'accés al botó, i en lloc de <code>shadowRoot.querySelector</code>, accedeix a aquest des de l'amfitrió. És a dir, des de <code>host.shadowRoot.querySelector</code>.</p>
+<p>Fet això, prova a canviar el mode <code>open</code> a <code>closed</code>, i comprova'n el funcionament, accedint des del <code>shadowRoot</code> i des del <code>host.shadowRoot</code>. Veus alguna diferència?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Sobre l'encapsulació amb Shadow DOM</p>
+<p>En començar el document, hem parlat d'un dels principis clàssics en programació web: Separar l'estructura (HTML) de la seua representació (CSS) i comportament (Javascript).</p>
+<p>Si t'adones, amb el ShadowDOM estem fent tot el contrari, i en un mateix component estem mesclant estructura, representació i comportament.</p>
+<p>Això respon a una evolució del paradigma, centrat en l'encapsulació a nivell de component, no a nivell de pàgina.</p>
+<p>Aquesta encapsulació ens proporciona modularitat i reutilització, ja que cada component encapsula tot el que necessita per a la seua funcionalitat, i l'estrucutra, representació i comportament estan dissenyays per treballar junts dins el context del component, evitant conflictes globals i garantint que els components siguen autònoms i reutilitzables.</p>
+<p>Aquest enfocament és útil en aplicacions modernes, on els components són unitats autònomes que es poden reutilitzar i combinar.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

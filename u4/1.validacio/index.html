@@ -1,0 +1,811 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../2.conversio/">
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Validació: DTD i XSD - U4. Validació i conversió de documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validacio-de-documents-per-a-lintercanvi-dinformacio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="U4. Validació i conversió de documents" class="md-header__button md-logo" aria-label="U4. Validació i conversió de documents" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            U4. Validació i conversió de documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Validació: DTD i XSD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="U4. Validació i conversió de documents" class="md-nav__button md-logo" aria-label="U4. Validació i conversió de documents" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    U4. Validació i conversió de documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Validació: DTD i XSD
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validació: DTD i XSD
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validacio-de-documents-per-a-lintercanvi-dinformacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validació de documents per a l'intercanvi d'informació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validació de documents per a l'intercanvi d'informació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacio-de-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validació de documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnologies-de-definicio-de-documents-dtd-i-xsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologies de definició de documents: DTD i XSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descripcio-de-documents-dts-i-xsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripció de documents: DTS i XSD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.conversio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conversió de documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.generaciopdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generació de documents PDF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validacio-de-documents-per-a-lintercanvi-dinformacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validació de documents per a l'intercanvi d'informació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validació de documents per a l'intercanvi d'informació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacio-de-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validació de documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnologies-de-definicio-de-documents-dtd-i-xsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologies de definició de documents: DTD i XSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descripcio-de-documents-dts-i-xsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripció de documents: DTS i XSD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+
+  <h1>Validació: DTD i XSD</h1>
+
+<h2 id="validacio-de-documents-per-a-lintercanvi-dinformacio">Validació de documents per a l'intercanvi d'informació</h2>
+<p>Anem a veure la importància de descriure correctament la informació, i com podem validar aquesta amb tecnologies com DTD i XSD.</p>
+<h3 id="validacio-de-documents">Validació de documents</h3>
+<p>Quan parlem de <strong>validació</strong> d’un document per a l’intercanvi d’informació, habitualment ens referim a un procés que verifica:</p>
+<ol>
+<li><strong>Estructura</strong>: Que el document segueix la jerarquia lògica i el conjunt d’etiquetes definit.</li>
+<li><strong>Contingut</strong>: Que els tipus de dades i restriccions (noms d’etiqueta, valors, ordre) responen a unes regles definides.</li>
+</ol>
+<p>En l’àmbit dels llenguatges de marques això ens aporta:</p>
+<ul>
+<li><strong>fiabilitat</strong>, ja que el receptor del document el podrà interpretar sense ambigüitats,</li>
+<li><strong>interoperabilitat</strong> entre sistemes que <em>entenen</em> el mateix idioma, i</li>
+<li><strong>qualitat de la informació</strong>, ja que evita errors de sintaxi en noms d’etiquetes i atributs, i facilita la detecció d’incoherències.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Conceptes</p>
+<ul>
+<li><strong>Document bé format</strong>: Un document ben format és aquell que compleix amb els requisits bàsics de sintaxi (etiquetes correctament anidades, element arrel únic, etc.).  </li>
+<li><strong>Document vàlid</strong>: Un document és vàlid quan és ben format, i a més compleix les regles marcades a la seua definició (DTD o XSD).</li>
+</ul>
+</div>
+<h3 id="tecnologies-de-definicio-de-documents-dtd-i-xsd">Tecnologies de definició de documents: DTD i XSD</h3>
+<p>Per descriure les regles d’un document XML, s’utilitzen principalment dos mètodes:</p>
+<ol>
+<li>
+<p><strong>Definició de tipus de document (DTD)</strong>  </p>
+<ul>
+<li>Un mecanisme més antic i senzill, però amb limitacions pel que fa a tipus de dades avançats o espais de noms.  </li>
+<li>Sintaxi pròpia (no és XML) i en general és menys extensible.  </li>
+<li>Definim quins elements poden aparéixer, en quin ordre, quins atributs i amb quin tipus (CDATA, ID, etc.).</li>
+</ul>
+</li>
+<li>
+<p><strong>XML Schema (XSD)</strong>  </p>
+<ul>
+<li>Evolució més potent que la DTD, redactada <strong>en format XML</strong>.  </li>
+<li>Permet definir <strong>tipus de dades rics</strong> (booleans, enters, dates, etc.), <strong>restriccions</strong> precises (longitud, rang, patrons...).  </li>
+<li>Suporta <strong>espais de noms</strong> (namespaces) i la integració amb altres esquemes, fent-lo molt adequat per a entorns complexos.  </li>
+</ul>
+</li>
+</ol>
+<p>Actualment, l’ús de <strong>XSD</strong> és molt freqüent en aplicacions web, serveis (SOAP, REST), i plataformes que requereixen intercanvi de dades amb tipatge exacte.</p>
+<h3 id="descripcio-de-documents-dts-i-xsd">Descripció de documents: DTS i XSD</h3>
+<h4 id="dtd">DTD</h4>
+<p>Un DTD es pot definir de manera local (interna al document) o de manera externa (amb un fitxer extern):</p>
+<ul>
+<li>De manera interna:
+   <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE nom_arrel [</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">&lt;!ELEMENT nom_arrel (fill1, fill2?)&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">&lt;!ELEMENT fill1 (#PCDATA)&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">&lt;!-- etc. --&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>]&gt;
+</span></code></pre></div></li>
+<li>De manera externa: 
+  <div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>`<span class="cp">&lt;!DOCTYPE nom_arrel SYSTEM "fitxer.dtd"&gt;</span>`
+</span></code></pre></div></li>
+</ul>
+<p>Un DTD bàsicament definex:</p>
+<ul>
+<li><strong>Elements</strong>: Es descriuen amb <code>&lt;!ELEMENT NomElement (regles_contenidor)&gt;</code>.  </li>
+<li><strong>Atributs</strong>: <code>&lt;!ATTLIST NomElement NomAtribut Tipus #REQUIRED o #IMPLIED ...&gt;</code>.  </li>
+<li><strong>Entitats</strong> i <strong>notacions</strong>: Mètodes per a constants, incloure referències externes (imatges, etc.).</li>
+</ul>
+<div class="admonition example exemple">
+<p class="admonition-title">Example</p>
+<p>Si accediu a <a href="https://pizza-rest-server-production.up.railway.app/xml/pizzes.xml">aquest enllaç</a> veureu un exemple de la informació que teniem sobre la pizzeria en format XML.</p>
+<p>Un possible DTD per validar aquest document seria:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;!ELEMENT pizzes (page, per_page, total_count, records, pizza+)&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">&lt;!ELEMENT page (#PCDATA)&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">&lt;!ELEMENT per_page (#PCDATA)&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cp">&lt;!ELEMENT total_count (#PCDATA)&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cp">&lt;!ELEMENT records (pizza+)&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cp">&lt;!ELEMENT pizza (nom, descripcio, ingredients, vegetaria, gluten, lactosa, imatge, preu)&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cp">&lt;!ELEMENT nom (#PCDATA)&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="cp">&lt;!ELEMENT descripcio (#PCDATA)&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="cp">&lt;!ELEMENT ingredients (#PCDATA)&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="cp">&lt;!ELEMENT vegetaria (#PCDATA)&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="cp">&lt;!ELEMENT gluten (#PCDATA)&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="cp">&lt;!ELEMENT lactosa (#PCDATA)&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="cp">&lt;!ELEMENT imatge (#PCDATA)&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="cp">&lt;!ELEMENT preu (#PCDATA)&gt;</span>
+</span></code></pre></div>
+<p>On tenim:</p>
+<ul>
+<li><code>&lt;pizzes&gt;</code> és l'element arrel, que conté informació relacionada amb les pizzes i la paginació. Aquest inclou:</li>
+<li><code>&lt;page&gt;</code>: El número de la pàgina actual.</li>
+<li><code>per_page&gt;</code> El nombre de pizzes per pàgina.</li>
+<li><code>&lt;total_count&gt;</code>: El total de pizzes disponibles a la base de dades.</li>
+<li><code>&lt;records&gt;</code>: Un element que conté múltiples elements <code>&lt;pizza&gt;</code>, representant cada una de les pizzes a la pàgina actual.</li>
+<li><code>&lt;records&gt;</code>: Aquest element conté una llista de pizzes (<pizza>), que són els registres actuals en la pàgina de resultats. <strong>Observeu el <code>+</code> que acompanya la pizza i que defineix una llista</strong>.</pizza></li>
+<li><code>&lt;pizza&gt;</code>: Representa una pizza individual amb els següents subelements:<ul>
+<li><code>&lt;nom&gt;</code>: Nom de la pizza (ex. "Pizza Margarita").</li>
+<li><code>&lt;descripcio&gt;</code>: Descripció de la pizza.</li>
+<li><code>&lt;ingredients&gt;</code>: Llista d'ingredients.</li>
+<li><code>&lt;vegetaria&gt;</code>: Indica si la pizza és vegetaria (true/false).</li>
+<li><code>&lt;gluten&gt;</code>: Indica si la pizza conté gluten (true/false).</li>
+<li><code>&lt;lactosa&gt;</code>: Indica si la pizza conté lactosa (true/false).</li>
+<li><code>&lt;imatge&gt;</code>: URL de la imatge de la pizza.</li>
+<li><code>&lt;preu&gt;</code>: Preu de la pizza.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Més informació..</p>
+<ul>
+<li><a href="https://www.mclibre.org/consultar/xml/lecciones/xml-dtd.html">DTD: Definición de Tipo de Documento, en McLibre</a>, amb un <a href="https://www.mclibre.org/consultar/xml/lecciones/xml-dtd-resumen.html">ressum</a></li>
+<li><a href="https://lm-xml-apuntes.readthedocs.io/apuntes/30_dtds.html">DTDs</a></li>
+</ul>
+</div>
+<h4 id="xsd-xml-schema">XSD (XML Schema)</h4>
+<p><strong>XML Schema</strong> ens permet definir l'estructura i les restriccions del contingut dels documents XML de manea més precisa que el DTD.</p>
+<p>A continució se't mostra com seria l'<strong>XSD</strong> per tal de descriure l'estructura del fitxer XML per a la informació paginada de la pizzeria. Intenta detectar en ell:</p>
+<ul>
+<li>Es defineix algun espai de noms?</li>
+<li>Quina etiqueta s'usa per definir elements simples?</li>
+<li>Quina etiqueta s'usa per definir elements compleos com llistes?</li>
+<li>S'indica d'alguna manera el tipat de les dades?</li>
+</ul>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="cm">&lt;!-- Definició de l'element "pizzes" --&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"pizzes"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="nt">&lt;xs:sequence&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">                </span><span class="cm">&lt;!-- Elements de la paginació --&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"page"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:int"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"per_page"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:int"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"total_count"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:int"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">                </span><span class="cm">&lt;!-- L'element "records" conté les pizzes --&gt;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"records"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                    </span><span class="nt">&lt;xs:complexType&gt;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                        </span><span class="nt">&lt;xs:sequence&gt;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                            </span><span class="cm">&lt;!-- Un o més elements de "pizza" --&gt;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"pizza"</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">                                </span><span class="nt">&lt;xs:complexType&gt;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">                                    </span><span class="nt">&lt;xs:sequence&gt;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">                                        </span><span class="cm">&lt;!-- Informació de la pizza --&gt;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"nom"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"descripcio"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"ingredients"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"vegetaria"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"gluten"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"lactosa"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"imatge"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">                                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">"preu"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xs:decimal"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">                                    </span><span class="nt">&lt;/xs:sequence&gt;</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">                                </span><span class="nt">&lt;/xs:complexType&gt;</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">                            </span><span class="nt">&lt;/xs:element&gt;</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">                        </span><span class="nt">&lt;/xs:sequence&gt;</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">                    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">                </span><span class="nt">&lt;/xs:element&gt;</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">            </span><span class="nt">&lt;/xs:sequence&gt;</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="nt">&lt;/xs:schema&gt;</span>
+</span></code></pre></div>
+<p>Examinem aquest esquema:</p>
+<ol>
+<li><strong><code>&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;</code></strong>:</li>
+<li>
+<p>Aquest és el <strong>namespace</strong> per a XSD, que ens permet utilitzar els elements de l'esquema XML definits per W3C.</p>
+</li>
+<li>
+<p><strong><code>&lt;xs:element name="pizzes"&gt;</code></strong>:</p>
+</li>
+<li>
+<p>Defineix l'element arrel del document XML, <strong>pizzes</strong>. Això serà l'element que contindrà tota la informació sobre les pizzes i la paginació.</p>
+</li>
+<li>
+<p><strong><code>&lt;xs:complexType&gt;</code> i <code>&lt;xs:sequence&gt;</code></strong>:</p>
+</li>
+<li>
+<p>Indiquen que l'element <strong>pizzes</strong> conté altres elements (en aquest cas, els de paginació i els registres de pizzes) i que aquests elements apareixen en un ordre determinat.</p>
+</li>
+<li>
+<p><strong>Elements de paginació</strong>:</p>
+</li>
+<li><strong><code>&lt;xs:element name="page" type="xs:int"/&gt;</code></strong>: El número de pàgina, que ha de ser un <strong>enter</strong> (<code>xs:int</code>).</li>
+<li><strong><code>&lt;xs:element name="per_page" type="xs:int"/&gt;</code></strong>: Nombre de pizzes per pàgina, també un <strong>enter</strong>.</li>
+<li>
+<p><strong><code>&lt;xs:element name="total_count" type="xs:int"/&gt;</code></strong>: El nombre total de pizzes disponibles.</p>
+</li>
+<li>
+<p><strong>L'element <code>records</code></strong>:</p>
+</li>
+<li>
+<p><strong><code>&lt;xs:element name="records"&gt;</code></strong>: Un element que conté tots els registres de les pizzes. És un <strong>complextype</strong> amb un <strong><code>maxOccurs="unbounded"</code></strong>, la qual cosa significa que pot contenir moltes pizzes (literalment unbounded sería <em>sense límits</em>).</p>
+</li>
+<li>
+<p><strong>Definició de l'element <code>pizza</code></strong>:</p>
+</li>
+<li>Cada <strong><code>&lt;pizza&gt;</code></strong> té diversos subelements, que es defineixen amb el tipus de dada corresponent:<ul>
+<li><strong><code>&lt;nom&gt;</code></strong> i <strong><code>&lt;descripcio&gt;</code></strong>: Strings (<code>xs:string</code>), contenen el nom i la descripció de la pizza.</li>
+<li><strong><code>&lt;vegetaria&gt;</code></strong>, <strong><code>&lt;gluten&gt;</code></strong> i <strong><code>&lt;lactosa&gt;</code></strong>: <strong>Booleans</strong> (<code>xs:boolean</code>), indiquen si la pizza és vegetaria, conté gluten o lactosa.</li>
+<li><strong><code>&lt;imatge&gt;</code></strong>: Una cadena (<code>xs:string</code>), que conté la URL de la imatge.</li>
+<li><strong><code>&lt;preu&gt;</code></strong>: Un valor decimal (<code>xs:decimal</code>), que indica el preu de la pizza.</li>
+</ul>
+</li>
+</ol>
+<h4 id="com-utilitzar-lxsd-per-validar-el-document-xml">Com utilitzar l'XSD per validar el document XML</h4>
+<p>Per utilitzar aquest XSD per validar un document XML, el document XML ha de tenir una referència a l'esquema XSD, de la següent manera:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">&lt;pizzes</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="na">xsi:schemaLocation=</span><span class="s">"https://pizza-rest-server-production.up.railway.app/xml/xsd pizzes.xsd"</span><span class="nt">&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;page&gt;</span>1<span class="nt">&lt;/page&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&lt;per_page&gt;</span>10<span class="nt">&lt;/per_page&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&lt;total_count&gt;</span>100<span class="nt">&lt;/total_count&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&lt;records&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="nt">&lt;pizza&gt;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="nt">&lt;nom&gt;</span>Pizza<span class="w"> </span>Margarita<span class="nt">&lt;/nom&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="nt">&lt;descripcio&gt;</span>Base<span class="w"> </span>fina,<span class="w"> </span>tomaca,<span class="w"> </span>mozzarella<span class="w"> </span>i<span class="w"> </span>alfàbrega.<span class="nt">&lt;/descripcio&gt;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">            </span><span class="nt">&lt;ingredients&gt;</span>Tomaca,<span class="w"> </span>mozzarella,<span class="w"> </span>alfàbrega<span class="nt">&lt;/ingredients&gt;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">            </span><span class="nt">&lt;vegetaria&gt;</span>true<span class="nt">&lt;/vegetaria&gt;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="nt">&lt;gluten&gt;</span>false<span class="nt">&lt;/gluten&gt;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">            </span><span class="nt">&lt;lactosa&gt;</span>true<span class="nt">&lt;/lactosa&gt;</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">            </span><span class="nt">&lt;imatge&gt;</span>http://example.com/margarita.jpg<span class="nt">&lt;/imatge&gt;</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="nt">&lt;preu&gt;</span>8.5<span class="nt">&lt;/preu&gt;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="nt">&lt;/pizza&gt;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nt">&lt;pizza&gt;</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">            </span><span class="nt">&lt;nom&gt;</span>Pizza<span class="w"> </span>Quatre<span class="w"> </span>Estacions<span class="nt">&lt;/nom&gt;</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">            </span><span class="nt">&lt;descripcio&gt;</span>Amb<span class="w"> </span>xampinyons,<span class="w"> </span>pernil,<span class="w"> </span>olives<span class="w"> </span>i<span class="w"> </span>formatge.<span class="nt">&lt;/descripcio&gt;</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">            </span><span class="nt">&lt;ingredients&gt;</span>Xampinyons,<span class="w"> </span>pernil,<span class="w"> </span>olives,<span class="w"> </span>formatge<span class="nt">&lt;/ingredients&gt;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">            </span><span class="nt">&lt;vegetaria&gt;</span>false<span class="nt">&lt;/vegetaria&gt;</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">            </span><span class="nt">&lt;gluten&gt;</span>true<span class="nt">&lt;/gluten&gt;</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">            </span><span class="nt">&lt;lactosa&gt;</span>true<span class="nt">&lt;/lactosa&gt;</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">            </span><span class="nt">&lt;imatge&gt;</span>http://example.com/quatre_estacions.jpg<span class="nt">&lt;/imatge&gt;</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">            </span><span class="nt">&lt;preu&gt;</span>10.0<span class="nt">&lt;/preu&gt;</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="nt">&lt;/pizza&gt;</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="nt">&lt;/records&gt;</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="nt">&lt;/pizzes&gt;</span>
+</span></code></pre></div>
+<p>Aci es fa referència a l'esquema <strong>pizzes.xsd</strong> mitjançant l'atribut <strong><code>xsi:schemaLocation</code></strong>, qui indica al processador XML on trobar l'XSD que validarà el document XML.</p>
+<div class="admonition note">
+<p class="admonition-title">Creació de descripcions de documents</p>
+<p>A l'hora de genera un DTD o XSD, comencem per identificar:</p>
+<ol>
+<li><strong>L’arrel</strong> o element principal (p. ex. <code>&lt;agenda&gt;</code>, <code>&lt;biblioteca&gt;</code>...).  </li>
+<li><strong>Els subelements</strong> i l’ordre, si és obligatori o opcional (DTD: <code>(#PCDATA)</code>, <code>*</code>, <code>+</code>, <code>?</code>, etc.; XSD: <code>&lt;xs:sequence&gt;</code>, <code>&lt;xs:choice&gt;</code>, etc.).  </li>
+<li><strong>Els atributs</strong>: de quin tipus són (CDATA, ID, enumeracions, etc.).  </li>
+<li><strong>Restriccions de valor</strong>: en XSD, l’ús de <code>&lt;xs:restriction&gt;</code> amb facetes.</li>
+</ol>
+<p>A partir de tot això, redactarem la definició. En XSD, sovint és útil crear <strong>tipus simples</strong> per a conceptes comuns (telèfon, codi postal), i <strong>tipus complexos</strong> per a estructures repetides (adreça, persona...). Les bones pràctiques inclouen:
+ - Reutilitzar tipus definits.<br>
+ - Separar en esquemes externs, si es preveu compartir-los.<br>
+ - Documentar amb <code>&lt;xs:annotation&gt;</code> i <code>&lt;xs:documentation&gt;</code>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Més informació...</p>
+<ul>
+<li><a href="https://lm-xml-apuntes.readthedocs.io/apuntes/40_esquemas_xml.html">XSD</a></li>
+</ul>
+</div>
+<h4 id="validacio-i-associacio">Validació i associació</h4>
+<p>Ja hem vist com associr el DTD o XSD al document.</p>
+<ul>
+<li><strong>Amb DTD</strong>: Enllaçant el DTD com a fitxer extern o en la pròpia definició de l'XML.
+    <div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">&lt;!DOCTYPE arrel SYSTEM "arxiu.dtd"&gt;</span>
+</span></code></pre></div></li>
+<li><strong>Amb XSD</strong>: Fem ús dels atributs <code>xmlns:xsi</code> i <code>xsi:schemaLocation</code>, per exemple:<br>
+    <div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;arrel</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://www.exemple.org  arrel.xsd"</span><span class="nt">&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>...
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">&lt;/arrel&gt;</span>
+</span></code></pre></div></li>
+</ul>
+<p>Per tal de validar els documents, necessitem un <strong>programa analitzador</strong> (parser) o una <strong>eina de validació</strong>, el qual:</p>
+<ul>
+<li>Verifica que el document estiga <strong>bé format</strong>. </li>
+<li>Comprova que cada element i atribut compleix el <strong>DTD/XSD</strong>.</li>
+</ul>
+<p>Si hi ha algun error (etiquetes mal anidades, valors fora de rang, etc.), la validació <strong>falla</strong> i rebem missatges que ajuden a corregir el document. Un cop validat, tenim la <strong>garantia</strong> que la informació és coherent amb el model definit.</p>
+<h5 id="eines-especifiques-per-a-la-validacio-i-el-disseny-desquemes">Eines específiques per a la validació i el disseny d’esquemes</h5>
+<p>Existixen diverses <strong>eines i plataformes</strong> que faciliten tant la creació de definicions (DTD/XSD) com la validació i la depuració de possibles errors:</p>
+<ol>
+<li><strong>Editors i validadors en línia</strong>  </li>
+<li><a href="https://www.freeformatter.com/xml-validator-xsd.html">Freeformatter XML Validator</a>  </li>
+<li><a href="https://www.utilities-online.info/xsdvalidation">Utilities-Online XSD Validation</a>  </li>
+<li>Etc.</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">Activitat. Validació i correcció d'errors.</p>
+<ul>
+<li>Fes ús d'un d'aquests validadors en línia i comprova si el fitxer de les pizzes en XML es valida correctament contra l'XSD.</li>
+<li>Com hauràs comprovat, apareixen diversos errors de validació, per tant, l'XML no és correcte. Intenta entendre què et diuen aquests errors i modifica l'XSD per a que la validació siga correcta.</li>
+</ul>
+</div>
+<!-- Fitxer XSD corregit:-> https://pizza-rest-server-production.up.railway.app/xml/xsd/pizzes2.xsd
+Fitxer XML que usa aquest XSD: https://pizza-rest-server-production.up.railway.app/xml/pizzes_xsd.xml
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

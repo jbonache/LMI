@@ -1,0 +1,766 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.classificacio_caracter%C3%ADstiques/">
+      
+      
+        <link rel="next" href="../3.eines_edicio/">
+      
+      
+      <link rel="icon" href="../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>2. Estructura i Sintaxi - Caracterització dels llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conceptes-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Caracterització dels llenguatges de marques" class="md-header__button md-logo" aria-label="Caracterització dels llenguatges de marques" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Caracterització dels llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Estructura i Sintaxi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Caracterització dels llenguatges de marques" class="md-nav__button md-logo" aria-label="Caracterització dels llenguatges de marques" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Caracterització dels llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.classificacio_caracter%C3%ADstiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Classificació i característiques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2. Estructura i sintaxi
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Estructura i sintaxi
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceptes-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptes bàsics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptes bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiquetes-o-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes o marques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atributs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.eines_edicio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Eines d'edició
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.documents_ben_formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Elaboració de documents ben formats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.espais_noms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Espais de noms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.AltresLlenguatges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Altres llenguatge de marques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.Markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Introducció a Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceptes-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptes bàsics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptes bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiquetes-o-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes o marques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atributs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+
+  <h1>2. Estructura i sintaxi</h1>
+
+<h2 id="conceptes-basics">Conceptes bàsics</h2>
+<p>Un document, en general, es compon del propi contingut del document (les dades) i una sèrie d'informacions que es superposen al contingut, que són les que aporten estructura al document i es diuen <strong>etiquetes</strong>. Aquestes etiquetes <em>marquen</em> el document, i li donen estructura.</p>
+<p>Un dels avantatges d'utilitzar aquesta informació afegida és que la representació del document serà independent del sistema informàtic utilitzat i millora l'accessibilitat, manteniment i reutilització del mateix.</p>
+<p>Anem a veure els diferents components dels llenguatges de marques i les seues principals característiques: <em>etiquetes</em> o <em>marques</em>, <em>elements</em>, <em>propietats</em> i <em>metadades</em>.</p>
+<h3 id="etiquetes-o-marques">Etiquetes o marques</h3>
+<p>Les <em>marques</em> són un conjunt de codis que s'afigen al text per establir el seu format de visualització, la forma com s'ha d'imprimir o l'estructura que té. S'afigen al text però no formen part d'aquest.</p>
+<p>Cada llenguatge té la seva pròpia col·lecció de marques amb la seva classificació i significat. Existeixen tres tipus d'etiquetes:</p>
+<ul>
+<li><strong>Apertura</strong>: S'expressen entre els caràcters <code>&lt;</code> i <code>&gt;</code>, i indiquen l'inicia d'un <em>element</em>. Per exemple: <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>.</li>
+<li><strong>Tancament</strong>: S'expressen entre <code>&lt;/</code> i  <code>&gt;</code>, i indiquen el final d'un *element. Exemple: <code>&lt;/p&gt;</code>. En alguns llenguatges concrets, les marques de tancament no són requerides.</li>
+<li><strong>Buida</strong>: S'expressent entre <code>&lt;</code> i <code>/&gt;</code>, i no tenen continut. Exemple: <code>&lt;br/&gt;</code>.</li>
+</ul>
+<p>Veiem un exemple en HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hola món, açò és un paràgraf<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span> que té un salt de línia al mig<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>On <code>&lt;p&gt;</code> i <code>&lt;/p&gt;</code> són les marques que delimiten un element de tipus paràgraf, i a més, a dins, conté una etiqueta de salt de línia. El resultat seria el següent:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Hola món, açò és un paràgraf
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>que té un salt de línia al mig
+</span></code></pre></div>
+<div class="admonition note">
+<p>En un document tot el que no són marques és contingut. Les etiquetes es poden escriure tant en majúscules (Ex: <code>&lt;HTML&gt;</code>) com en minúscules (ex: <code>&lt;html&gt;</code>). El navegador les interpreta igual, però <strong>la recomanació és fer ús de les minúscules</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referències a entitats</p>
+<p>Les referències a entitats són un tipus especial de marques, que serveixen per representar caracters especials que d'altra manera podrien ser interpretats incorrectament pel processador del llenguatge de marques.</p>
+<p>Aquestes referències són seqüències de caràcters que comencen amb un símbol <code>&amp;</code> i acaben amb un punt i coma <code>;</code>, i es fan servir per representar caràcters que tenen un significat especial en el llenguatge de marques, com ara <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>"</code>, i <code>'</code>.</p>
+<p>Veiem les més habituals:</p>
+<table>
+<thead>
+<tr>
+<th>Referència a entitat</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;lt;</code></td>
+<td>representa el caràcter <code>&lt;</code></td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>representa el caràcter <code>&gt;</code></td>
+</tr>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td>representa el caràcter <code>&amp;</code></td>
+</tr>
+<tr>
+<td><code>&amp;quot;</code></td>
+<td>representa el caràcter <code>"</code></td>
+</tr>
+<tr>
+<td><code>&amp;apos;</code></td>
+<td>representa el caràcter <code>'</code></td>
+</tr>
+</tbody>
+</table>
+<p>A més, aquestes referències a entitats també s'utilitzen per mostrar per exemple accents. Si volem mostrar un accent, utilitzarem una referència consistent la lletra a accentuar seguida del text <code>acute</code> per a accents tancats o <code>grave</code> per a accents oberts. Per exemple el caràcter <code>à</code> seria <code>&amp;agrave;</code> o <code>Ó</code>seria <code>&amp;Oacute</code>.</p>
+<p>Veiem un exemple pràctic. Per mostrar el següent text en una pàgina HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Per delimitar etiquetes en HTML farem ús de <span class="p">&lt;</span> <span class="nt">i</span> <span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Per tal que funcione correctament i el processador HTML del navegador interprete bé les etiquetes, haurem de fer ús de referències a entitats com:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Per delimitar etiquetes en HTML farem <span class="ni">&amp;uacute;</span>s de <span class="ni">&amp;lt;</span> i <span class="ni">&amp;gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Processadors XML o HTML</p>
+<p>Quan parlem de processador XML o HTML ens referim al programa o component que s'encarrega de llegir, interpretar i processar els documents expressats en llenguatges de marques, com XML o HTML. Aquest component s'encarrega de comprovar que el document siga vàlid, interpretar el seu contingut, i en el cas d'HTML, mostrar-lo. Els navegadors web, per exemple, realitzen aquesta funció.</p>
+</div>
+<h3 id="elements">Elements</h3>
+<p>Els <strong>elements</strong> són les unitats bàsiques dels documents, que defineix una part del contingut i la seva estructura. </p>
+<p>Els elements es component d'una <strong>etiqueta d'inici</strong>, el <strong>contingut</strong> i una <strong>etiqueta final</strong>.</p>
+<p>Veiem un exemple en HTML que representa una llista, amb diversos ítems:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>arros<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>pollastre<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>bajoqueta<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>En aquest codi tenim un element de tipus <em>llista no ordenada</em> (<code>&lt;ul&gt;</code>), que es compon de tres elements més de tipus <em>ítem de llista</em> (<code>&lt;li&gt;</code>).</p>
+<p>L'exemple anterior, podria també haver-se expressat com a:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>arros
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>pollastre
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>bajoqueta
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>És a dir, sense utilitzar etiquetes de tancament per als elements <code>&lt;li&gt;</code>. En aquest tipus d'etiquetes, igual que en <code>&lt;p&gt;</code>, es considera com a tancament l'aparició d'altre element amb la mateixa etiqueta.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important!</p>
+<p>No hem de confondre <em>element</em> amb <em>etiqueta</em>. Els elements són estructures completes que contenen etiquetes o marques i contingut.</p>
+</div>
+<h3 id="atributs">Atributs</h3>
+<p>Els elements poden tindre atributs, amb uns determinats valors, que s'expressen entre cometes dobles <code>"</code> o entre cometes simples <code>'</code>. Aquests atributs, a més poden tindre valors predeterminats assignats pel programador.</p>
+<p>Els atributs han d'anar inclosos dins els caràcters <code>&lt;</code> <code>&gt;</code> i si s'inclouen diverses parelles atribut/valor han d'anar separades per un espai en blanc. L'ordre en què apareixen els atributs és indiferent.</p>
+<p>Poden haver-hi atributs en les etiquetes d'apertura i en les etiquetes buides però no en les de tancament.</p>
+<p>En l'exemple següent l'element <code>&lt;html&gt;</code> indica el començament o arrel del document, el qual conté l'atribut <code>lang</code> (llengua) amb el valor <code>es</code> (espanyol), per indicar que aquest serà l'idioma del document.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>En aquest altre exemple l'element <code>&lt;meta&gt;</code>, que és un element buit, incorpora l'atribut <code>charset</code> que indica que el joc de caràcters a utilitzar és <code>utf-8</code>.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Si s'inclouen dos atributs quedaria:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"author"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Nom de l'autor"</span> <span class="p">/&gt;</span>
+</span></code></pre></div>
+<h3 id="metadades">Metadades</h3>
+<p>Les metadades, en general, proporcionen informació sobre les pròpies dades.</p>
+<p>En una pàgina HTML les metadades donen informació relativa al contingut de la pàgina, com puga ser exemple la temàtica, la descripció, la codificació utilitzada, paraules que descriuen la pàgina, etc.</p>
+<p>Aquestes metadades són utilitzades pels cercadors d'Internet per conéixer el continguts de la pàgina (temàtica, descripció) i és molt important que estiguen ben definides si volem que s'indexen correctament.</p>
+<p>L'element HTML associat a les metadades és <code>meta</code>. Per exemple:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"author"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Nom de l'autor"</span> <span class="p">/&gt;</span>
+</span></code></pre></div>
+<p>L'element de metadades <code>meta</code> conté l'atribut <code>name</code> que indica que l'atribut <code>content</code> serà el nom de l'autor. Ho veurem en més detall a la unitat sobre HTML.</p>
+<div class="admonition question">
+<p class="admonition-title">Detecció d'errors en el codi HTML</p>
+<p>Observar el següent codi HTML amb les diferents etiquetes d'apertura i tancament. Hi ha algun error?</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Exemple de codi HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Llenguatges de Marques<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>El Llenguatge de Marques (Markup Language) defineix l'estructura del text...<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Continguts<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Classificació i caraacterístiques<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Estructura i sintaxi<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Eines d'edició<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<details class="note">
+<summary>Consulta la resposta</summary>
+<p>Observa que després de tancar <code>&lt;/ul&gt;</code>, s'està tancant un <code>&lt;/p&gt;</code> que no s'ha obert.</p>
+</details>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
