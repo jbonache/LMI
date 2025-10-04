@@ -840,26 +840,75 @@
 </span></code></pre></div>
 </li>
 <li>
-<p><strong>Secció <code>&lt;head&gt;</code></strong>: Dins d’aquesta secció es poden incloure <strong>metadades</strong> com ara el títol de la pàgina, la <strong>codificació de caràcters</strong>, les <strong>descripcions de pàgina</strong> (metaetiquetes), <strong>enllaços a fulls d’estil, scripts i altres elements</strong> relacionats amb la configuració i el comportament de la pàgina.</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Títol de la pàgina <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<p><strong>Secció <code>&lt;head&gt;</code></strong>: Dins d’aquesta secció es poden incloure <strong>metadades</strong> com ara el títol de la pàgina, la <strong>codificació de caràcters</strong>, les <strong>descripcions de pàgina</strong> (metaetiquetes), <strong>enllaços a fulls d’estil, scripts i altres elements</strong> relacionats amb la configuració i el comportament de la pàgina. 
+  </p><div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Títol de la pàgina <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"estils.css"</span><span class="p">&gt;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"estils.css"</span><span class="p">&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></code></pre></div><p></p>
+<p>Veiem-los:</p>
+<ul>
+<li>
+<p><code>&lt;title&gt;</code> i <code>&lt;/title&gt;</code>: s’empra per definir el títol de la pàgina. És imprescindible en HTML5, per la qual cosa sempre cal afegir-ho. Aquest és el títol que es mostrarà a la barra de títol del navegador, en fer un marcador a la pàgina o als cercadors d’Internet.</p>
+</li>
+<li>
+<p><code>&lt;link&gt;</code>: s’utilitza per enllaçar amb recursos externs, generalment fulls d’estil CSS. Hi tornarem més endavant.</p>
+</li>
+<li>
+<p><code>&lt;style&gt;</code> i <code>&lt;/style&gt;</code>: ens permet definir estils específics per a la pàgina actual. Se sol emprar en combinació amb l’anterior, per això els tractarem en arribar als fulls d’estil.</p>
+</li>
+<li>
+<p><code>&lt;base&gt;</code>: defineix l’URL base per a la resta dels enllaços que incloem a la pàgina web. S’empra en casos molt concrets.</p>
+</li>
+<li>
+<p><code>&lt;script&gt;</code> i <code>&lt;/script&gt;</code>: és un altre element important que s’utilitza per englobar accions en altres llenguatges, generalment Javascript, per aconseguir que la pàgina web realitze determinades tasques. Aquestes són operacions que s’executen en accedir a la pàgina, augmentant-ne la versatilitat.</p>
+</li>
+</ul>
+<p><strong>Les metadades</strong></p>
+<p>L’etiqueta <code>&lt;meta&gt;</code> s’utilitza per afegir informació sobre la pàgina (metadades) i es col·loca dins de l’etiqueta <code>&lt;head&gt;</code>.</p>
+<p>Els motors de cerca utilitzen la informació proporcionada per aquesta etiqueta per millorar la cerca i la indexació del contingut web.</p>
+<p>Aquesta etiqueta inclou dos atributs principals:</p>
+<ul>
+<li><code>name</code>: Defineix el tipus d’informació que s’està proporcionant (per exemple, paraules clau, descripció, autor, etc.).</li>
+<li><code>content</code>: Conté el valor associat al tipus d’informació definit a l’atribut <code>&lt;name&gt;</code></li>
+</ul>
+<p>Exemple de <code>head</code> més complet:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"description"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Aquesta és una pàgina d'exemple sobre HTML."</span><span class="p">&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"keywords"</span> <span class="na">content</span><span class="o">=</span><span class="s">"HTML, meta, etiquetes"</span><span class="p">&gt;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"author"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Nom de l'autor"</span><span class="p">&gt;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span></code></pre></div>
+<p>En aquest exemple també veiem com, amb l’etiqueta <code>&lt;meta&gt;</code>, estem definint:</p>
+<ul>
+<li>
+<p>el <strong>joc de caràcters</strong> (charset, character set) del document HTML. És molt important fer-ho per a que la pàgina es visualitze correctament. S’indica amb l’etiqueta <code>&lt;meta charset="UTF-8"&gt;</code></p>
+</li>
+<li>
+<p>informació de <strong>l’autor</strong>, <strong>descripció</strong> de la pàgina, <strong>paraules clau</strong> (keywords). </p>
+</li>
+<li>
+<p>la <strong>vista del document</strong>, el <strong>viewport</strong>. El viewport és l’àrea visible d’una pàgina web per a l’usuari. Varia segons el dispositiu: serà menor en un telèfon mòbil que en una pantalla d’ordinador. Per a facilitar l’adaptabilitat de les pàgines als diferents dispositius, s’hauria d’afegir el següent viewport a totes les pàgines:  </p>
+<p>La part <code>width=device-width</code> estableix l’amplada de la pàgina per a que s’adapte a l’amplada de pantalla del dispositiu.<br>
+La part <code>initial-scale=1.0</code> estableix el nivell de zoom inicial quan el navegador carrega la pàgina per primera vegada.  </p>
+</li>
+</ul>
 </li>
 <li>
 <p><strong>Secció <code>&lt;body&gt;</code></strong>: Contingut de la pàgina: S’inclou dins de la secció <code>&lt;body&gt;</code>, es posa tot el contingut que es vol mostrar als visitants com ara, text, imatges, enllaços, taules i altres elements HTML.</p>
 </li>
 </ol>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a> <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un paràgraf de text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"imatge.jpg"</span>  <span class="na">alt</span><span class="o">=</span><span class="s">"Descripció imatge"</span><span class="p">&gt;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://www.exemple.com"</span><span class="p">&gt;</span>Enllaç a l’exemple<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a> <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a> <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un paràgraf de text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"imatge.jpg"</span>  <span class="na">alt</span><span class="o">=</span><span class="s">"Descripció imatge"</span><span class="p">&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://www.exemple.com"</span><span class="p">&gt;</span>Enllaç a l’exemple<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a> <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
 </span></code></pre></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/2/estructura_2.png" data-desc-position="bottom"><img alt="" src="../img/2/estructura_2.png" width="400px"></a></p>
 <p>Una vegada introduïda l’estructura bàsica d’un document HTML, és el moment de començar a introduir la resta d’etiquetes bàsiques t’HTML que donen contingut i sentit al document.</p>
@@ -871,15 +920,15 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">HTML</label><label for="__tabbed_1_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol del Lloc<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>     <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>          <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#home"</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>          <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#about"</span><span class="p">&gt;</span>Sobre Nosaltres<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>     <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol del Lloc<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>     <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>          <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#home"</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>          <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#about"</span><span class="p">&gt;</span>Sobre Nosaltres<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>     <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -908,9 +957,9 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">HTML</label><label for="__tabbed_2_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2024, Tots els drets reservats.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2024, Tots els drets reservats.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -927,10 +976,10 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">HTML</label><label for="__tabbed_3_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Títol de l'Article<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això és un article sobre HTML5.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Títol de l'Article<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això és un article sobre HTML5.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -948,10 +997,10 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">HTML</label><label for="__tabbed_4_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Títol de la Secció<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el contingut de la secció.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Títol de la Secció<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el contingut de la secció.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -981,15 +1030,15 @@
 <ul>
 <li>
 <p><strong>L'lement <code>div</code></strong> L'element <code>&lt;div&gt;</code> és un contenidor genèric que no aporta significat semàntic, però és útil per agrupar altres elements HTML. S'usa sovint per aplicar estils amb CSS o per controlar el disseny amb JavaScript.</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container"</span><span class="p">&gt;</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol Principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això és un paràgraf dins d'un div.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container"</span><span class="p">&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol Principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això és un paràgraf dins d'un div.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </li>
 <li>
 <p><strong>L'element <code>span</code></strong>: L'element <code>&lt;span&gt;</code> és similar al <code>&lt;div&gt;</code>, però es fa servir per agrupar contingut en línia. Sol utilitzar-se pe aplicar estils a parts del text dins d'altres elements.</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"important"</span><span class="p">&gt;</span>text important<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> dins d'un paràgraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"important"</span><span class="p">&gt;</span>text important<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> dins d'un paràgraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </li>
 </ul>
@@ -1013,19 +1062,19 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">HTML</label><label for="__tabbed_5_2">Markdown</label><label for="__tabbed_5_3">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Secció 1.1<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subsecció 1.1<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> Secció 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subsecció 2.1<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span> 
+<div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Secció 1.1<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subsecció 1.1<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> Secció 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subsecció 2.1<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span> 
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="gh"># Títol 1</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="gu">## Secció 1</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="gu">### Subsecció 1.1</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="gu">## Secció 2</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="gu">### Subsecció 2.1</span>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="gh"># Títol 1</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="gu">## Secció 1</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="gu">### Subsecció 1.1</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="gu">## Secció 2</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="gu">### Subsecció 2.1</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1045,12 +1094,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">HTML</label><label for="__tabbed_6_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el primer paràgraf. És una manera
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  senzilla d'estructurar text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ací hi ha un segon paràgraf.
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>   Cada paràgraf s'ajusta automàticament a la mida
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>   de la finestra del navegador.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el primer paràgraf. És una manera
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  senzilla d'estructurar text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ací hi ha un segon paràgraf.
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>   Cada paràgraf s'ajusta automàticament a la mida
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>   de la finestra del navegador.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1068,7 +1117,7 @@ Aquest és el primer paràgraf. És una manera senzilla d'estructurar text.<p></
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">HTML</label><label for="__tabbed_7_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Aquesta és una línia de text.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Aquesta és una nova línia de text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Aquesta és una línia de text.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Aquesta és una nova línia de text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1102,11 +1151,11 @@ Aquesta és una nova línia de text.
 <div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">HTML</label><label for="__tabbed_8_2">Markdown</label><label for="__tabbed_8_3">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negreta<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negreta<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Aquest és un text en <span class="gs">**negreta**</span>.
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Aquest és un text en <span class="gs">**negreta**</span>.
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1127,7 +1176,7 @@ Aquest és un text en <strong>negreta</strong>.
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">HTML</label><label for="__tabbed_9_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>important<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>important<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1148,11 +1197,11 @@ Aquest és un text <strong>important</strong>.
 <div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><input id="__tabbed_10_3" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">HTML</label><label for="__tabbed_10_2">Markdown</label><label for="__tabbed_10_3">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>cursiva<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>cursiva<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Aquest és un text en <span class="ge">*cursiva*</span>.
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Aquest és un text en <span class="ge">*cursiva*</span>.
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1173,7 +1222,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">HTML</label><label for="__tabbed_11_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>emfatitzat<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>emfatitzat<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1194,7 +1243,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio"><input id="__tabbed_12_2" name="__tabbed_12" type="radio"><div class="tabbed-labels"><label for="__tabbed_12_1">HTML</label><label for="__tabbed_12_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Exemple d’small <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Última actualització: 6-10-2024<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Exemple d’small <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Última actualització: 6-10-2024<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1215,7 +1264,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio"><input id="__tabbed_13_2" name="__tabbed_13" type="radio"><div class="tabbed-labels"><label for="__tabbed_13_1">HTML</label><label for="__tabbed_13_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La formula de l'aigua és H<span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span>O<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La formula de l'aigua és H<span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span>O<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1236,7 +1285,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio"><input id="__tabbed_14_2" name="__tabbed_14" type="radio"><div class="tabbed-labels"><label for="__tabbed_14_1">HTML</label><label for="__tabbed_14_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>2<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> representa dos elevat a la tercera potència.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>2<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> representa dos elevat a la tercera potència.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1257,7 +1306,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio"><input id="__tabbed_15_2" name="__tabbed_15" type="radio"><div class="tabbed-labels"><label for="__tabbed_15_1">HTML</label><label for="__tabbed_15_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una <span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>nova<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span> paraula afegida al text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una <span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>nova<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span> paraula afegida al text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1278,7 +1327,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio"><input id="__tabbed_16_2" name="__tabbed_16" type="radio"><div class="tabbed-labels"><label for="__tabbed_16_1">HTML</label><label for="__tabbed_16_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una <span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>paraula eliminada<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span> del text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una <span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>paraula eliminada<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span> del text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1299,7 +1348,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio"><input id="__tabbed_17_2" name="__tabbed_17" type="radio"><div class="tabbed-labels"><label for="__tabbed_17_1">HTML</label><label for="__tabbed_17_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>conferència<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> tindrà lloc a l'<span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>auditori<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> principal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>conferència<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> tindrà lloc a l'<span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>auditori<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> principal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1364,7 +1413,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio"><input id="__tabbed_18_2" name="__tabbed_18" type="radio"><div class="tabbed-labels"><label for="__tabbed_18_1">HTML</label><label for="__tabbed_18_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Els caràcters <span class="ni">&amp;lt;</span>, <span class="ni">&amp;gt;</span>, <span class="ni">&amp;quot;</span> i <span class="ni">&amp;amp;</span> poden donar problemes amb els texts en HTML<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Els caràcters <span class="ni">&amp;lt;</span>, <span class="ni">&amp;gt;</span>, <span class="ni">&amp;quot;</span> i <span class="ni">&amp;amp;</span> poden donar problemes amb els texts en HTML<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1408,7 +1457,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio"><input id="__tabbed_19_2" name="__tabbed_19" type="radio"><div class="tabbed-labels"><label for="__tabbed_19_1">HTML</label><label for="__tabbed_19_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/"</span><span class="p">&gt;</span>IES Jaume II el Just<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/"</span>  <span class="na">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="p">&gt;</span>Obrim en una nova finestra<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/"</span><span class="p">&gt;</span>IES Jaume II el Just<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/"</span>  <span class="na">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="p">&gt;</span>Obrim en una nova finestra<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1424,7 +1473,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio"><input id="__tabbed_20_2" name="__tabbed_20" type="radio"><div class="tabbed-labels"><label for="__tabbed_20_1">HTML</label><label for="__tabbed_20_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/wp-content/uploads/sites/33/2024/09/SOL-LICITUD-CONVALIDACIO-.pdf"</span> <span class="na">download</span><span class="p">&gt;</span>IES Jaume II el Just<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/wp-content/uploads/sites/33/2024/09/SOL-LICITUD-CONVALIDACIO-.pdf"</span> <span class="na">download</span><span class="p">&gt;</span>IES Jaume II el Just<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1440,7 +1489,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio"><input id="__tabbed_21_2" name="__tabbed_21" type="radio"><div class="tabbed-labels"><label for="__tabbed_21_1">HTML</label><label for="__tabbed_21_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:ja.murciaandres.edu.gva.es"</span><span class="p">&gt;</span>Professor<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:ja.murciaandres.edu.gva.es"</span><span class="p">&gt;</span>Professor<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1456,7 +1505,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio"><input id="__tabbed_22_2" name="__tabbed_22" type="radio"><div class="tabbed-labels"><label for="__tabbed_22_1">HTML</label><label for="__tabbed_22_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"tel: +34962829995"</span><span class="p">&gt;</span>Telefona l'IES<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"tel: +34962829995"</span><span class="p">&gt;</span>Telefona l'IES<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1472,11 +1521,11 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio"><input id="__tabbed_23_2" name="__tabbed_23" type="radio"><div class="tabbed-labels"><label for="__tabbed_23_1">HTML</label><label for="__tabbed_23_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="cm">&lt;!-- Identifiquem l’etiqueta amb l’atribut id seccio2  --&gt;</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">"seccio2"</span><span class="p">&gt;</span>`Secció 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Altres paràgrafs o continguts <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="cm">&lt;!-- Indiquem que l’enllaç apunta a seccio2 --&gt;</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#seccio2"</span><span class="p">&gt;</span>`Ves a la secció `2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  
+<div class="language-html highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="cm">&lt;!-- Identifiquem l’etiqueta amb l’atribut id seccio2  --&gt;</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">"seccio2"</span><span class="p">&gt;</span>`Secció 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Altres paràgrafs o continguts <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="cm">&lt;!-- Indiquem que l’enllaç apunta a seccio2 --&gt;</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#seccio2"</span><span class="p">&gt;</span>`Ves a la secció `2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1496,7 +1545,7 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio"><input id="__tabbed_24_2" name="__tabbed_24" type="radio"><div class="tabbed-labels"><label for="__tabbed_24_1">HTML</label><label for="__tabbed_24_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"javascript:alert('Hola Mon!');"</span><span class="p">&gt;</span> Executa JavaScript <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"javascript:alert('Hola Mon!');"</span><span class="p">&gt;</span> Executa JavaScript <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1513,11 +1562,11 @@ Aquest és un text en <em>cursiva</em>.
 <div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio"><input id="__tabbed_25_2" name="__tabbed_25" type="radio"><div class="tabbed-labels"><label for="__tabbed_25_1">HTML</label><label for="__tabbed_25_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Sota<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cavall<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Rei<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Sota<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cavall<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Rei<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1572,11 +1621,11 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio"><input id="__tabbed_26_2" name="__tabbed_26" type="radio"><div class="tabbed-labels"><label for="__tabbed_26_1">HTML</label><label for="__tabbed_26_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Primer element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Segon element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tercer element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Primer element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Segon element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tercer element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1600,14 +1649,14 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio"><input id="__tabbed_27_2" name="__tabbed_27" type="radio"><div class="tabbed-labels"><label for="__tabbed_27_1">HTML</label><label for="__tabbed_27_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Primer Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Paella, Fideuà o Arròs Negre<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Segon Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
-</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Entrecot, Lluç o Llobarro<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Postre<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
-</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Flam, Natilles o Fruita<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Primer Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Paella, Fideuà o Arròs Negre<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Segon Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Entrecot, Lluç o Llobarro<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Postre<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Flam, Natilles o Fruita<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1628,24 +1677,24 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio"><input id="__tabbed_28_2" name="__tabbed_28" type="radio"><div class="tabbed-labels"><label for="__tabbed_28_1">HTML</label><label for="__tabbed_28_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Primer Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
-</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Paella<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fideuà<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Arròs Negre<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>    <span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Segon Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
-</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>        <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>            <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Entrecot<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lluç<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-42-15"><a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Llobarro<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span id="__span-42-16"><a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span id="__span-42-17"><a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>        <span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
-</span><span id="__span-42-18"><a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a><span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Primer Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Paella<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fideuà<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Arròs Negre<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>    <span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Segon Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-43-11"><a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>        <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-43-12"><a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a>            <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-43-13"><a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Entrecot<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-43-14"><a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lluç<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-43-15"><a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Llobarro<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-43-16"><a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a>            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-43-17"><a id="__codelineno-43-17" name="__codelineno-43-17" href="#__codelineno-43-17"></a>        <span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-43-18"><a id="__codelineno-43-18" name="__codelineno-43-18" href="#__codelineno-43-18"></a><span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1679,16 +1728,16 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="29:2"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio"><input id="__tabbed_29_2" name="__tabbed_29" type="radio"><div class="tabbed-labels"><label for="__tabbed_29_1">HTML</label><label for="__tabbed_29_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span> 
-</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span> 
-</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
-</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span> 
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span> 
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1718,21 +1767,21 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="30:2"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio"><input id="__tabbed_30_2" name="__tabbed_30" type="radio"><div class="tabbed-labels"><label for="__tabbed_30_1">HTML</label><label for="__tabbed_30_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span> 
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
-</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span> 
-</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
-</span><span id="__span-44-11"><a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-44-12"><a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-44-13"><a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-44-14"><a id="__codelineno-44-14" name="__codelineno-44-14" href="#__codelineno-44-14"></a>        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Títol de la taula<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
-</span><span id="__span-44-15"><a id="__codelineno-44-15" name="__codelineno-44-15" href="#__codelineno-44-15"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span> 
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span> 
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Títol de la taula<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1759,61 +1808,6 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <h4 id="combinacio-de-celles">Combinació de cel·les</h4>
 <p>Es possible que alguna vegada necessitem que una cel·la vaja més enllà de la seua fila o la seua columna. Per a això farem ús de de cel·la <code>colspan</code> (per a columnes) i <code>rowspan</code> (per a files) indicant a quantes files o columnes s’expandiran.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="31:2"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio"><input id="__tabbed_31_2" name="__tabbed_31" type="radio"><div class="tabbed-labels"><label for="__tabbed_31_1">HTML</label><label for="__tabbed_31_2">Resultat</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
-</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>         <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">"2"</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
-</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">"2"</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
-</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-45-20"><a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a>    <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb cel·les combinades<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
-</span><span id="__span-45-21"><a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p></p><div style="color:black; font-family:Serif">
-        <table border="1">
-        <tbody><tr><!-- Encapçalament -->
-            <th>Capçalera columna 1</th>
-            <th>Capçalera columna 2</th>
-            <th>Capçalera columna 3</th>
-        </tr>
-        <tr><!-- Fila 1 -->
-            <td>Contingut 1</td>
-            <td colspan="2">Contingut 2</td>
-        </tr>
-        <tr><!-- Fila 2 -->
-            <td>Contingut 3</td>
-            <td rowspan="2">Contingut 4</td>
-            <td>Contingut 5</td>
-        </tr>
-        <tr><!-- Fila 3 -->
-            <td>Contingut 6</td>
-            <td>Contingut 7</td>
-        </tr>
-        </tbody><caption>Taula amb cel·les combinades</caption>
-    </table>
-</div><p></p>
-</div>
-</div>
-</div>
-<h4 id="columnes">Columnes</h4>
-<p>En un primer moment HTML no contempla les columnes com a element de treball: L’element bàsic dins de la taula és la cel·la i aquesta s’agrupa en files. HTML5 incorpora l’etiqueta <code>colgroup</code> que especifica un format per a una o més columnes. Aquesta etiqueta es situa després de l’etiqueta caption, si és el cas, i després de qualsevol altre element de fila o altres. El colgroup alberga en el seu interior etiquetes <code>col</code> que fan referència a l’estil de la columna. L’etiqueta col inclou l’atribut <code>span</code> que indica a quantes columnes s’ha d’expandir el seu estil.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio"><input id="__tabbed_32_2" name="__tabbed_32" type="radio"><div class="tabbed-labels"><label for="__tabbed_32_1">HTML</label><label for="__tabbed_32_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
@@ -1860,6 +1854,61 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
             <td>Contingut 6</td>
             <td>Contingut 7</td>
         </tr>
+        </tbody><caption>Taula amb cel·les combinades</caption>
+    </table>
+</div><p></p>
+</div>
+</div>
+</div>
+<h4 id="columnes">Columnes</h4>
+<p>En un primer moment HTML no contempla les columnes com a element de treball: L’element bàsic dins de la taula és la cel·la i aquesta s’agrupa en files. HTML5 incorpora l’etiqueta <code>colgroup</code> que especifica un format per a una o més columnes. Aquesta etiqueta es situa després de l’etiqueta caption, si és el cas, i després de qualsevol altre element de fila o altres. El colgroup alberga en el seu interior etiquetes <code>col</code> que fan referència a l’estil de la columna. L’etiqueta col inclou l’atribut <code>span</code> que indica a quantes columnes s’ha d’expandir el seu estil.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio"><input id="__tabbed_32_2" name="__tabbed_32" type="radio"><div class="tabbed-labels"><label for="__tabbed_32_1">HTML</label><label for="__tabbed_32_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
+</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>         <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">"2"</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-13"><a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">"2"</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-14"><a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-15"><a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-16"><a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
+</span><span id="__span-47-17"><a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-18"><a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-19"><a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-20"><a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a>    <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb cel·les combinades<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-47-21"><a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p></p><div style="color:black; font-family:Serif">
+        <table border="1">
+        <tbody><tr><!-- Encapçalament -->
+            <th>Capçalera columna 1</th>
+            <th>Capçalera columna 2</th>
+            <th>Capçalera columna 3</th>
+        </tr>
+        <tr><!-- Fila 1 -->
+            <td>Contingut 1</td>
+            <td colspan="2">Contingut 2</td>
+        </tr>
+        <tr><!-- Fila 2 -->
+            <td>Contingut 3</td>
+            <td rowspan="2">Contingut 4</td>
+            <td>Contingut 5</td>
+        </tr>
+        <tr><!-- Fila 3 -->
+            <td>Contingut 6</td>
+            <td>Contingut 7</td>
+        </tr>
         </tbody><colgroup>
             <col span="2" style="background-color:cyan">
             <col style="background-color:magenta">
@@ -1875,35 +1924,35 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="33:2"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio"><input id="__tabbed_33_2" name="__tabbed_33" type="radio"><div class="tabbed-labels"><label for="__tabbed_33_1">HTML</label><label for="__tabbed_33_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
-</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
-</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
-</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
-</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
-</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-13"><a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-14"><a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-47-15"><a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
-</span><span id="__span-47-16"><a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-17"><a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-18"><a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-19"><a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-47-20"><a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a>        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
-</span><span id="__span-47-21"><a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a>        <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
-</span><span id="__span-47-22"><a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
-</span><span id="__span-47-23"><a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-24"><a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 8<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-25"><a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 9<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-</span><span id="__span-47-26"><a id="__codelineno-47-26" name="__codelineno-47-26" href="#__codelineno-47-26"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</span><span id="__span-47-27"><a id="__codelineno-47-27" name="__codelineno-47-27" href="#__codelineno-47-27"></a>        <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
-</span><span id="__span-47-28"><a id="__codelineno-47-28" name="__codelineno-47-28" href="#__codelineno-47-28"></a>        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb thead, tbody i tfoot<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
-</span><span id="__span-47-29"><a id="__codelineno-47-29" name="__codelineno-47-29" href="#__codelineno-47-29"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-48-8"><a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+</span><span id="__span-48-9"><a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a>        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span><span id="__span-48-10"><a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
+</span><span id="__span-48-11"><a id="__codelineno-48-11" name="__codelineno-48-11" href="#__codelineno-48-11"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-12"><a id="__codelineno-48-12" name="__codelineno-48-12" href="#__codelineno-48-12"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-13"><a id="__codelineno-48-13" name="__codelineno-48-13" href="#__codelineno-48-13"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-14"><a id="__codelineno-48-14" name="__codelineno-48-14" href="#__codelineno-48-14"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-48-15"><a id="__codelineno-48-15" name="__codelineno-48-15" href="#__codelineno-48-15"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-48-16"><a id="__codelineno-48-16" name="__codelineno-48-16" href="#__codelineno-48-16"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-17"><a id="__codelineno-48-17" name="__codelineno-48-17" href="#__codelineno-48-17"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-18"><a id="__codelineno-48-18" name="__codelineno-48-18" href="#__codelineno-48-18"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-19"><a id="__codelineno-48-19" name="__codelineno-48-19" href="#__codelineno-48-19"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-48-20"><a id="__codelineno-48-20" name="__codelineno-48-20" href="#__codelineno-48-20"></a>        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span><span id="__span-48-21"><a id="__codelineno-48-21" name="__codelineno-48-21" href="#__codelineno-48-21"></a>        <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+</span><span id="__span-48-22"><a id="__codelineno-48-22" name="__codelineno-48-22" href="#__codelineno-48-22"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
+</span><span id="__span-48-23"><a id="__codelineno-48-23" name="__codelineno-48-23" href="#__codelineno-48-23"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-24"><a id="__codelineno-48-24" name="__codelineno-48-24" href="#__codelineno-48-24"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 8<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-25"><a id="__codelineno-48-25" name="__codelineno-48-25" href="#__codelineno-48-25"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 9<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-48-26"><a id="__codelineno-48-26" name="__codelineno-48-26" href="#__codelineno-48-26"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-48-27"><a id="__codelineno-48-27" name="__codelineno-48-27" href="#__codelineno-48-27"></a>        <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+</span><span id="__span-48-28"><a id="__codelineno-48-28" name="__codelineno-48-28" href="#__codelineno-48-28"></a>        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb thead, tbody i tfoot<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-48-29"><a id="__codelineno-48-29" name="__codelineno-48-29" href="#__codelineno-48-29"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1947,13 +1996,13 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 </div>
 <h3 id="imatges">Imatges</h3>
 <p>En un document HTML podem incloure imatges en diferents formats (jpg, gif, png...) a través de l’etiqueta <code>&lt;img&gt;</code>, que és una etiqueta d’autotancament. A més, l’etiqueta consta de l’atribut <code>src</code>, que fa referència a l’origen o adreça de la imatge i de l’atribut <code>alt</code>, que fa referència al text alternatiu que es mostrarà en cas que hi haja problemes per a mostrar la imatge. La seua sintaxi és la següent:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"url_o_ruta_a_la_imatge"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Text alternatiu"</span><span class="p">/&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"url_o_ruta_a_la_imatge"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Text alternatiu"</span><span class="p">/&gt;</span>
 </span></code></pre></div>
 <p>L’element img no sol anar directament en el <code>body</code>, si no dins d’altres elements com com paràgrafs, cel·les, títols, llistes o l'element contenidor <code>&lt;div&gt;</code> que veurem més endavant.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="34:2"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio"><input id="__tabbed_34_2" name="__tabbed_34" type="radio"><div class="tabbed-labels"><label for="__tabbed_34_1">HTML</label><label for="__tabbed_34_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1965,12 +2014,12 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="35:2"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio"><input id="__tabbed_35_2" name="__tabbed_35" type="radio"><div class="tabbed-labels"><label for="__tabbed_35_1">HTML</label><label for="__tabbed_35_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> 
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>     <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
-</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> 
-</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>     <span class="na">width</span><span class="o">=</span><span class="s">"200"</span> <span class="na">height</span><span class="o">=</span><span class="s">"100"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
-</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> 
-</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>     <span class="na">width</span><span class="o">=</span><span class="s">"30%"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> 
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>     <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> 
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>     <span class="na">width</span><span class="o">=</span><span class="s">"200"</span> <span class="na">height</span><span class="o">=</span><span class="s">"100"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://picsum.photos/300/200"</span> 
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>     <span class="na">width</span><span class="o">=</span><span class="s">"30%"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Imatge aleatòria"</span><span class="p">/&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1987,9 +2036,9 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="36:1"><input checked="checked" id="__tabbed_36_1" name="__tabbed_36" type="radio"><div class="tabbed-labels"><label for="__tabbed_36_1">HTML</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://portal.edu.gva.es/iesjaumeeljust/"</span><span class="p">&gt;</span>
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"logo_ieseljust.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"IES El Just"</span><span class="p">/&gt;</span>
-</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"http://portal.edu.gva.es/iesjaumeeljust/"</span><span class="p">&gt;</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"logo_ieseljust.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"IES El Just"</span><span class="p">/&gt;</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1999,7 +2048,7 @@ L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</co
 <div class="tabbed-set tabbed-alternate" data-tabs="37:2"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio"><input id="__tabbed_37_2" name="__tabbed_37" type="radio"><div class="tabbed-labels"><label for="__tabbed_37_1">HTML</label><label for="__tabbed_37_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/"</span> <span class="na">width</span><span class="o">=</span><span class="s">"500"</span> <span class="na">height</span><span class="o">=</span><span class="s">"500"</span><span class="p">/&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://portal.edu.gva.es/iesjaumeeljust/"</span> <span class="na">width</span><span class="o">=</span><span class="s">"500"</span> <span class="na">height</span><span class="o">=</span><span class="s">"500"</span><span class="p">/&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
