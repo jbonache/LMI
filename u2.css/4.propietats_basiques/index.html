@@ -364,6 +364,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#utilitzacio-i-aplicacio-de-tipografies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilització i aplicació de tipografies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#propietats-de-text" class="md-nav__link">
     <span class="md-ellipsis">
       Propietats de text
@@ -570,6 +579,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#utilitzacio-i-aplicacio-de-tipografies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilització i aplicació de tipografies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#propietats-de-text" class="md-nav__link">
     <span class="md-ellipsis">
       Propietats de text
@@ -734,6 +752,79 @@
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p">}</span>
 </span></code></pre></div>
 <p>En aquest cas, els valors de <code>font-size</code> i <code>font-family</code> són obligatoris. La resta (<code>font-style</code>, <code>font-weight</code> i <code>font-variant</code>) són opcionals, i si no s'especifiquen s'usa el valor predeterminat.</p>
+<h3 id="utilitzacio-i-aplicacio-de-tipografies">Utilització i aplicació de tipografies</h3>
+<p>Amb HTML5 és possible utilitzar fonts (tipografies) poc comunes sense que l'usuari les tinga instal·lades al seu disc dur i sense haver-les de convertir en imatge.</p>
+<p>En aquest cas n'hi ha prou amb incloure el fitxer de la font corresponent en una carpeta i crear la referència a aquesta font des del codi <code>CSS3</code>.</p>
+<p>Vegem com fer-ho pas a pas:</p>
+<p><strong>1. Decidim el format de font a utilitzar</strong></p>
+<p>Com passa amb tot, hi ha diversos formats de fonts i, com no, cada navegador té les seues preferències i enemistats.</p>
+<p>Vegem quins hi ha i com intentar contentar a tots.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">Tipus de font</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../img/ttf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Icona TrueType" src="../img/ttf.png" width="50px" /></a></td>
+<td style="text-align: left;"><strong>TrueType (ttf)</strong> – És el format més estàndard i acceptat per tots els navegadors, excepte pel nostre gran amic Internet Explorer.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../img/otf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Icona OpenType" src="../img/otf.png" width="50px" /></a></td>
+<td style="text-align: left;"><strong>OpenType (otf)</strong> – És un altre format molt estés i amb un nivell de compatibilitat molt semblant al ttf, per la qual cosa es pot utilitzar un o altre.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../img/eot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Icona Embedded OpenType" src="../img/eot.png" width="50px" /></a></td>
+<td style="text-align: left;"><strong>Embedded OpenType (eot)</strong> – És el format de font que només utilitza Internet Explorer a partir de la versió 6. Ha sigut declarat com a no estàndard per la W3C.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../img/woff.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Icona WebOpen Font" src="../img/woff.png" width="50px" /></a></td>
+<td style="text-align: left;"><strong>WebOpen Font (woff)</strong> – Encara que és el format de font oficial de la W3C, hi ha alguns navegadors i versions antigues que no el suporten.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Quina triem?</p>
+<p>Si volem abastar el màxim nombre de navegadors sense haver d’anar afegint formats de fonts indefinidament, podem utilitzar bàsicament <strong>ttf</strong>.</p>
+</div>
+<p><strong>2. Copiem les fonts que anem a utilitzar (fitxers ttf/eot)</strong></p>
+<p>Copiem l'arxiu ttf/eot amb la tipografia de lletra a la carpeta del projecte.</p>
+<p><a class="glightbox" href="../img/pas2.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Guardar" src="../img/pas2.jpg" /></a></p>
+<p><strong>3. Afegim la referència de les fonts al full d'estils CSS</strong></p>
+<p>Dins del codi CSS afegim la referència utilitzant el selector <code>@font-face {</code>.</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">  </span><span class="p">@</span><span class="k">font-face</span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">font-pizza</span><span class="o">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="nt">pizza</span><span class="p">.</span><span class="nc">ttf</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s1">&#39;truetype&#39;</span><span class="o">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div>
+<p>El nom que indiquem amb l’atribut <code>font-family</code> (en l’exemple anterior: <code>fuente_pizza</code>) és un nom que li donem a la font per poder fer-hi referència més endavant.</p>
+<p>Per contra, el nom que apareix en <code>src: url</code> (en l’exemple: <code>pizza.ttf</code>) és el nom exacte del fitxer ttf/otf/eot de la font que hem copiat, indicant sempre el format corresponent.</p>
+<ul>
+<li>Si és <strong>eot</strong>, el valor de l’atribut <code>format</code> ha de ser (<code>embedded-opentype</code>).</li>
+<li>Si és <strong>ttf</strong>, el valor de l’atribut <code>format</code> ha de ser (<code>truetype</code>).</li>
+<li>Si és <strong>otf</strong>, el valor de l’atribut <code>format</code> ha de ser (<code>opentype</code>).</li>
+<li>Si és <strong>woff</strong>, el valor de l’atribut <code>format</code> ha de ser (<code>woff</code>).</li>
+</ul>
+<p>Cal indicar que, si les fonts les hem col·locades en la mateixa carpeta on es troba el fitxer CSS, no és necessari indicar el nom ni la ruta de cap carpeta.</p>
+<p><strong>3. Apliquem la tipografia (com ja sabem)</strong></p>
+<p>Quan vulguem que el text contingut en un <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;p&gt;</code> o una etiqueta semàntica utilitze una de les fonts referenciades amb <code>@font-face</code>, utilitzem la propietat <code>font-family</code> per indicar quina tipografia de les referenciades en el punt anterior volem utilitzar.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CSS</label><label for="__tabbed_1_2">Exemple</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">.</span><span class="nc">format_pizza</span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="k">font</span><span class="o">-</span><span class="n">pizza</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="mi">38</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../img/text_pizza.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="text_pizza" src="../img/text_pizza.png" /></a></p>
+</div>
+</div>
+</div>
 <h3 id="propietats-de-text">Propietats de text</h3>
 <h4 id="colors">Colors</h4>
 <p>La propietat <strong>color</strong> s’utilitza per definir el color del text. El color s’especifica per:</p>
@@ -744,13 +835,13 @@
 </ul>
 <p>Consulteu els <a href="https://www.w3schools.com/cssref/css_colors_legal.asp">valors de color CSS</a> per obtenir una llista completa de possibles valors de color.</p>
 <p>El color de text predeterminat per a una pàgina es defineix al selector de cos:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Més informació</p>
@@ -760,34 +851,34 @@
 </ul>
 </div>
 <p>La propietat <strong>background-color</strong> defineix el color de fons d’un element:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgrey</span><span class="p">;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgrey</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <h4 id="alineacio">Alineació</h4>
 <p>La propietat <strong>text-align</strong> s’utilitza per establir l’alineació horitzontal d’un text:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CSS</label><label for="__tabbed_1_2">HTML</label><label for="__tabbed_1_3">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">CSS</label><label for="__tabbed_2_2">HTML</label><label for="__tabbed_2_3">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">justify</span><span class="p">;</span><span class="w"> </span><span class="c">/* Text alineat a esquerra i dreta */</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">justify</span><span class="p">;</span><span class="w"> </span><span class="c">/* Text alineat a esquerra i dreta */</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">  </span><span class="p">}</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Capçalera 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Capçalera 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Capçalera 3<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Històries e sants actes dels sants pares. No es porien sostenir en. Astúcia dels cavallers ha bastat aterrar les. Són estades compilades per tal que per oblivió no fossen. Antigues que no seria suficient. Armes sues e de la Comtessa lo qual. És de la forma com deu ésser fet. De cavalleria seran deduïdes en certa part del llibre. Era entrat en cinc llices de camp clos u. Del qual en lo món molt triümfava nomenat lo. Dignitat militar deu ésser molt decorada perquè sens aquella los. Virtuosos com sien espills molt clars exemples e virtuosa doctrina. Encara los actes frescs de nostres dies és estat. Set parts de cavalleria seran deduïdes en. Dari; les aventures de Lançalot. D&#39;honor e glòria e la fama d&#39;aquell no deu preterir.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Capçalera 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Capçalera 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Capçalera 3<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Històries e sants actes dels sants pares. No es porien sostenir en. Astúcia dels cavallers ha bastat aterrar les. Són estades compilades per tal que per oblivió no fossen. Antigues que no seria suficient. Armes sues e de la Comtessa lo qual. És de la forma com deu ésser fet. De cavalleria seran deduïdes en certa part del llibre. Era entrat en cinc llices de camp clos u. Del qual en lo món molt triümfava nomenat lo. Dignitat militar deu ésser molt decorada perquè sens aquella los. Virtuosos com sien espills molt clars exemples e virtuosa doctrina. Encara los actes frescs de nostres dies és estat. Set parts de cavalleria seran deduïdes en. Dari; les aventures de Lançalot. D&#39;honor e glòria e la fama d&#39;aquell no deu preterir.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -801,21 +892,21 @@
 </div>
 </div>
 <p>La propietat <strong>vertical-align</strong> estableix l’alineació vertical d’un element. És util per a imatges. </p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">img</span><span class="p">.</span><span class="nc">a</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">baseline</span><span class="p">;</span><span class="w"> </span><span class="c">/* Valor per defecte */</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">img</span><span class="p">.</span><span class="nc">b</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span><span class="w"> </span><span class="c">/* Dalt */</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nt">img</span><span class="p">.</span><span class="nc">c</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">bottom</span><span class="p">;</span><span class="w"> </span><span class="c">/* Baix */</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nt">img</span><span class="p">.</span><span class="nc">d</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">middle</span><span class="p">;</span><span class="w"> </span><span class="c">/* Centrat verticalment */</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">img</span><span class="p">.</span><span class="nc">a</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">baseline</span><span class="p">;</span><span class="w"> </span><span class="c">/* Valor per defecte */</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">}</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nt">img</span><span class="p">.</span><span class="nc">b</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span><span class="w"> </span><span class="c">/* Dalt */</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nt">img</span><span class="p">.</span><span class="nc">c</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">bottom</span><span class="p">;</span><span class="w"> </span><span class="c">/* Baix */</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">}</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="nt">img</span><span class="p">.</span><span class="nc">d</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">middle</span><span class="p">;</span><span class="w"> </span><span class="c">/* Centrat verticalment */</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_vertical-align">Veieu els exemples a la web de W3Schools</a></p>
 <h4 id="decoracio-del-text">Decoració del text</h4>
@@ -827,33 +918,33 @@
 <li>La propietat <strong>text-decoration-thickness</strong> s’utilitza per establir el gruix de la línia de decoració.</li>
 <li>La propietat <strong>text-decoration</strong> s’usa per a establir totes les propietats.</li>
 </ul>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="k">text-decoration-line</span><span class="p">:</span><span class="w"> </span><span class="kc">overline</span><span class="p">;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="k">text-decoration-style</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="p">;</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="k">text-decoration-thickness</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">  </span><span class="k">text-decoration-line</span><span class="p">:</span><span class="w"> </span><span class="kc">line-through</span><span class="p">;</span>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="k">text-decoration-style</span><span class="p">:</span><span class="w"> </span><span class="kc">double</span><span class="p">;</span>
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">  </span><span class="k">text-decoration-thickness</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="p">}</span>
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="k">text-decoration-line</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">  </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
-</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="k">text-decoration-style</span><span class="p">:</span><span class="w"> </span><span class="kc">dotted</span><span class="p">;</span>
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">}</span>
-</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
-</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="w"> </span><span class="kc">red</span><span class="w"> </span><span class="kc">double</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
-</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="c">/* Elimina el subratllat dels enllaços */</span>
-</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">  </span><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="k">text-decoration-line</span><span class="p">:</span><span class="w"> </span><span class="kc">overline</span><span class="p">;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="k">text-decoration-style</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="p">;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="k">text-decoration-thickness</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">  </span><span class="k">text-decoration-line</span><span class="p">:</span><span class="w"> </span><span class="kc">line-through</span><span class="p">;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">  </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">  </span><span class="k">text-decoration-style</span><span class="p">:</span><span class="w"> </span><span class="kc">double</span><span class="p">;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">  </span><span class="k">text-decoration-thickness</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">}</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">  </span><span class="k">text-decoration-line</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">  </span><span class="k">text-decoration-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">  </span><span class="k">text-decoration-style</span><span class="p">:</span><span class="w"> </span><span class="kc">dotted</span><span class="p">;</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="p">}</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="w"> </span><span class="kc">red</span><span class="w"> </span><span class="kc">double</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="c">/* Elimina el subratllat dels enllaços */</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="w">  </span><span class="p">}</span>
 </span></code></pre></div>
 <p><a href="https://www.w3schools.com/css/css_text_decoration.asp">Veieu l'exemple a W3Schools</a></p>
 <h3 id="imatges-de-fons">Imatges de fons</h3>
@@ -867,16 +958,16 @@
 <li><strong>background-attachment</strong>: per a establir si la imatge de fons es mou amb la pàgina (<em>scroll</em>) o es queda estàtica (<em>fixed</em>).</li>
 <li><strong>background</strong>: per a establir totes les propietats de fons.</li>
 </ul>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">   </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;img\_tree.png&quot;</span><span class="p">);</span><span class="w"> </span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">no-repeat</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span><span class="k">background-position</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">   </span><span class="k">background-attachment</span><span class="p">:</span><span class="w"> </span><span class="kc">scroll</span><span class="p">;</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;img\_tree.png&quot;</span><span class="p">)</span><span class="w"> </span><span class="kc">no-repeat</span><span class="w"> </span><span class="kc">right</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">   </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;img\_tree.png&quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">   </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">no-repeat</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">   </span><span class="k">background-position</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">   </span><span class="k">background-attachment</span><span class="p">:</span><span class="w"> </span><span class="kc">scroll</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;img\_tree.png&quot;</span><span class="p">)</span><span class="w"> </span><span class="kc">no-repeat</span><span class="w"> </span><span class="kc">right</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="p">}</span>
 </span></code></pre></div>
 <p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_background_shorthand">Veiem un exemple a la web de W3Schools</a></p>
 
