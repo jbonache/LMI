@@ -1,0 +1,908 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Desenvolupament d'Aplicacions Web. 1r curs.</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-creacio-duna-pagina-web-corporativa-amb-estil-propi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Desenvolupament d&#39;Aplicacions Web. 1r curs." class="md-header__button md-logo" aria-label="Desenvolupament d'Aplicacions Web. 1r curs." data-md-component="logo">
+      
+  <img src="img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament d'Aplicacions Web. 1r curs.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Pràctica1: HTML i CSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Desenvolupament d&#39;Aplicacions Web. 1r curs." class="md-nav__button md-logo" aria-label="Desenvolupament d'Aplicacions Web. 1r curs." data-md-component="logo">
+      
+  <img src="img/logo.svg" alt="logo">
+
+    </a>
+    Desenvolupament d'Aplicacions Web. 1r curs.
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    1. Pràctica1: HTML i CSS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Pràctica1: HTML i CSS
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#practica-creacio-duna-pagina-web-corporativa-amb-estil-propi" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Pràctica: Creació d'una pàgina web corporativa amb estil propi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Pràctica: Creació d&#39;una pàgina web corporativa amb estil propi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcio-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Descripció general
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinamica-de-treball" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dinàmica de treball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-1-estructura-de-directoris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 1. 🗂️ Estructura de directoris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-2-plantilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 2. Plantilla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-3-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 3. 📝 Text
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#practica-creacio-duna-pagina-web-corporativa-amb-estil-propi" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Pràctica: Creació d'una pàgina web corporativa amb estil propi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Pràctica: Creació d&#39;una pàgina web corporativa amb estil propi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcio-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Descripció general
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinamica-de-treball" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dinàmica de treball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-1-estructura-de-directoris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 1. 🗂️ Estructura de directoris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-2-plantilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 2. Plantilla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-3-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 3. 📝 Text
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>1. Pràctica1: HTML i CSS</h1>
+
+<h2 id="practica-creacio-duna-pagina-web-corporativa-amb-estil-propi">🧩 Pràctica: Creació d'una pàgina web corporativa amb estil propi</h2>
+<h3 id="descripcio-general">🧱 Descripció general</h3>
+<p>Has de dissenyar una <strong>pàgina web informativa</strong> per a una empresa real o inventada. Aquesta web ha de transmetre una imatge clara i coherent de l'empresa i estar formada per diverses seccions organitzades de manera lògica.</p>
+<p>Cada alumne/a triarà <strong>el nom, el sector, el contingut i l'estètica</strong> del seu projecte.</p>
+<hr />
+<h3 id="dinamica-de-treball">Dinàmica de treball</h3>
+<ul>
+<li>
+<p>La pàgina web anirà fent-se a tandes d'exercicis.</p>
+</li>
+<li>
+<p>En acabar un grup d’exercicis, hauràs de fer l’entrega corresponent a eixos exercicis.</p>
+</li>
+<li>
+<p>Aquestes entregues s’avaluaran com a <strong>pràctiques</strong>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="exercici-1-estructura-de-directoris">Exercici 1. 🗂️ Estructura de directoris</h3>
+<p>En aquest exercici anem a crear l’estructura bàsica de directoris (carpetes) de les teues pàgines web.</p>
+<ol>
+<li>Ves a la teua carpeta <strong>Documents</strong> i crea una carpeta anomenada <code>public_html</code>.  </li>
+<li>Dins d’aquesta, crea una carpeta on anirà la teua pàgina web, anomenada <code>empresa</code>.  </li>
+<li>I dins d’aquesta, crea tres carpetes més:  <ul>
+<li><code>img</code></li>
+<li><code>css</code></li>
+<li><code>fonts</code></li>
+</ul>
+</li>
+</ol>
+<p>Crea també, dins de <code>public_html</code>, una carpeta anomenada <code>proves</code>, per a guardar les pàgines que no siguen de la web de la teua empresa.</p>
+<p>L’estructura resultant ha de ser aquesta:</p>
+<p><a class="glightbox" href="img/exercici_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="directoris" src="img/exercici_1.png" /></a></p>
+<h3 id="exercici-2-plantilla">Exercici 2. Plantilla</h3>
+<p>En aquesta pràctica crearàs la <strong>plantilla bàsica</strong> de la teua primera pàgina web.</p>
+<ol>
+<li>Crea una pàgina sense contingut amb les metadades següents:</li>
+<li><strong>Codificació:</strong> <code>UTF-8</code></li>
+<li><strong>Autor:</strong> <code>author: el teu nom</code></li>
+<li><strong>Descripció:</strong> <code>description: "nom de l’empresa."</code></li>
+<li><strong>Paraules clau:</strong> <code>keywords: "paraules relacionades amb els articles de la teua empresa, separades amb comes"</code></li>
+<li>
+<p><strong>Viewport</strong></p>
+</li>
+<li>
+<p>Comprova que la <strong>codificació de la pàgina</strong> és <code>UTF-8</code> (en propietats del document).</p>
+</li>
+<li>
+<p>Guarda la plantilla amb el nom <strong><code>plantilla_empresa.html</code></strong> dins de la carpeta <code>proves</code>.</p>
+</li>
+<li>
+<p>Torna-la a guardar amb el nom <strong><code>index.html</code></strong> dins de la carpeta <code>empresa</code>.</p>
+</li>
+<li>
+<p>Edita la pàgina <strong><code>index.html</code></strong> i escriu un <strong>text de prova</strong> dins de l’etiqueta <code>&lt;body&gt;</code> de la pàgina.</p>
+</li>
+<li>
+<p>Guarda-la i comprova que es visualitza correctament al navegador.</p>
+</li>
+</ol>
+<h3 id="exercici-3-text">Exercici 3. 📝 Text</h3>
+<p>A partir de l’arxiu <strong><code>index.html</code></strong> de la pràctica anterior, heu de crear el contingut d’una pàgina que mostre informació sobre la vostra empresa.  </p>
+<p>La pàgina ha de tindre, com a mínim, les seccions següents:</p>
+<ul>
+<li><strong>Informació de l’empresa:</strong> nom, adreça, sector, etc.</li>
+<li><strong>Descripció de l’empresa:</strong> breu història, característiques, etc.</li>
+<li><strong>Productes:</strong> una breu descripció dels productes que comercialitza o de les activitats que realitza.</li>
+</ul>
+<hr />
+<h4 id="elements-html-que-ha-de-contindre-la-pagina">Elements HTML que ha de contindre la pàgina</h4>
+<ol>
+<li>Un <strong>títol</strong> (<code>&lt;title&gt;</code>) amb el nom de l’empresa.  </li>
+<li><strong>Informació sobre la pàgina</strong> amb les etiquetes vistes fins ara.  </li>
+<li><strong>Títols</strong> necessaris (atenció a l’ordre de niuament i a l’estructura del document).  </li>
+<li><strong>Paràgrafs</strong> per al text.  </li>
+<li><strong>Elements d’èmfasi:</strong> <code>&lt;em&gt;</code> i <code>&lt;strong&gt;</code>.  </li>
+<li><strong>Elements semàntics</strong> utilitzats correctament, com a mínim:<ul>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;main&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li>(Opcionalment també <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, etc.)</li>
+</ul>
+</li>
+<li>Altres elements que considereu necessaris.</li>
+</ol>
+<h4 id="1a-entrega">📦 1a Entrega</h4>
+<p>Comprimeix la carpeta <strong><code>public_html</code></strong> en format <strong>ZIP</strong> i entrega-la a <strong>Aules</strong> amb el nom <em>entrega1.zip</em></p>
+<!-- descomentar o baixar per a activar lse següents tasques
+
+---
+
+## Exercici 4. 🎨 Propietats de text
+
+Crea un **full d’estil extern** anomenat `general.css` per a la teua pàgina.  
+Guarda’l dins de la carpeta `css` i **enllaça’l** a totes les pàgines de la teua web.
+
+Defineix les següents propietats d’estils:
+
+---
+
+### `body`
+- `font-family:` utilitza una família **sans serif**.
+
+---
+
+### Títols (`h1`, `h2`, …)
+- `font-family:` utilitza una família **serif** o **sans serif**.  
+  Opcionalment, pots utilitzar una **font externa** guardada en la carpeta `fonts`, o una **font de Google**.
+- `font-size:` utilitza diversos valors en **em**.
+- `font-style:` prova diversos valors com *normal*, *italic* o *oblique*, segons el nivell de la capçalera.
+- `font-weight:` prova diversos valors segons el nivell de la capçalera.
+
+---
+
+### `p`
+- `font-family:` utilitza una família **serif**.
+- `font-size:` utilitza valors en **%**.
+
+
+## Exercici 5. 🎨🎨 Més propietats de text
+
+Modifica el full d’estil **`general.css`** per a afegir les següents propietats d’estils:
+
+---
+
+### Títols (`h1`, `h2`, …)
+- `text-align`
+- `text-decoration`
+- `text-shadow` *(opcional)*
+- `text-transform` *(opcional)*
+
+---
+
+### `p`
+- `text-align`
+- `line-height` *(opcional)*
+- `text-indent` *(opcional)*
+
+## Exercici 6. 🖌️ Colors
+
+Modifica el full d’estil **`general.css`** per a afegir les propietats de **color de text** i **color de fons** als següents elements:
+
+- **`body`**: text i fons.  
+- **Capçaleres (`h1`, `h2`, …)**: text i fons.  
+- **`p`**: només text.
+
+Utilitza les **tres formes de codificar els colors**:
+1. Noms de color (`red`, `blue`, `green`, etc.).
+2. Valors **RGB** (`rgb(255, 0, 0)`).
+3. Valors **hexadecimals** (`#FF0000`).
+
+Per a triar la combinació de colors pots utilitzar **[Adobe Color](https://color.adobe.com/)** o **[W3Schools Color Picker](https://www.w3schools.com/colors/colors_picker.asp)**.
+
+
+### 📦 2a Entrega
+
+Comprimeix la carpeta **`public_html`** en format **ZIP** i entrega-la a **Aules** amb el nom *entrega2.zip*
+
+## Exercici 7. 🔗 Enllaços externs
+
+Crea una nova pàgina anomenada **`enlaces.html`** i afegeix **3 enllaços externs** relacionats amb els articles de la teua empresa.  
+Utilitza també les etiquetes `<hx>`, `<p>`, etc. necessàries.  
+Crea també un **enllaç relatiu** a la pàgina **`index.html`**.
+
+En la teua pàgina **`index.html`** crea un **enllaç intern relatiu** a la pàgina **`enlaces.html`** que acabes de crear.
+
+Els **enllaços interns** entre les teues pàgines han d’estar dins de l’etiqueta `<nav>`.
+
+---
+
+## Exercici 8. 🔗🔗 Enllaços locals
+
+Crea una nova pàgina anomenada **`contacte.html`** i afegeix la informació de contacte de la teua empresa:
+- Adreça postal completa
+- Telèfon (inventat)
+- Correu electrònic (enllaç de correu electrònic)
+
+Utilitza també les etiquetes `<hx>`, `<p>`, etc. necessàries.  
+Crea **enllaços relatius** a la resta de pàgines del teu lloc web.
+
+En la resta de pàgines, crea enllaços relatius a la pàgina **`contacte.html`**.  
+Tots aquests enllaços interns han d’estar dins de l’etiqueta `<nav>`.
+
+En **`general.css`**, crea els **estils per als enllaços** (colors i `text-decoration`) i prova diversos valors per a:
+- `a:link`
+- `a:visited`
+- `a:hover`
+- `a:active`
+
+🗺️ Opcionalment, insereix un **mapa de Google Maps** amb la direcció de la teua empresa.
+
+---
+
+## Exercici 9. 📄 Llistes
+
+Crea una pàgina anomenada **`productes.html`**.  
+En aquesta pàgina crea **llistes** amb les categories de productes de la teua empresa, amb alguns dels productes més destacats.  
+Utilitza **llistes numerades** i **sense numerar**, o una combinació d’ambdues.
+
+Opcionalment, utilitza **llistes de definició**.
+
+Crea **estils per a les teues llistes**: canvia els **marcadors** i, opcionalment, utilitza **imatges com a marcadors**.
+
+Afegeix **enllaços relatius** a la resta de pàgines dins de l’etiqueta `<nav>`.
+
+Afegeix també els enllaços necessaris perquè la nova pàgina siga **accessible des de les barres de navegació** de totes les pàgines del teu lloc web.
+
+---
+
+## Exercici 10. 🖼️ Imatges
+
+Modifica la pàgina **`productes.html`** per a afegir almenys **3 imatges** dels productes llistats.  
+Insereix també una o diverses imatges a la pàgina **`index.html`**.
+
+Totes les imatges han de tindre **text alternatiu (`alt`)** amb la descripció del seu contingut i han d’estar guardades dins de la carpeta `img` (`empresa/img`).
+
+Modifica les imatges amb el **GIMP** per tal que la seua mida s’ajuste a la pàgina.  
+Estableix també l’**ample** i **alt** amb l’atribut `style`.
+
+Fes altres modificacions amb **CSS** al teu gust:
+- Centrar imatges  
+- Vores arrodonides  
+- Imatges responsives  
+
+---
+
+## Exercici 11. 🖼️ Imatges de fons
+
+Modifica el full d’estil **`general.css`** per a afegir **imatges de fons**, utilitzant les propietats `background`.
+
+### 📦 3a Entrega 
+
+Comprimeix la carpeta **`public_html`** en format **ZIP** i entrega-la a **Aules** amb el nom *entrega3.zip* 
+
+---
+
+## Exercici 12. Classes
+
+Crea una classe anomenada **`destacat`** i aplica-la a un paràgraf de la teua pàgina **`index.html`**.  
+Defineix regles per al tipus de lletra, color, ressaltat, etc., de manera que el paràgraf es diferencie de la resta.  
+Opcionalment, aplica-la a altres paràgrafs de la teua web.
+
+---
+
+## Exercici 13. `<span>`
+
+Dins d’un altre paràgraf de la pàgina **`index.html`**, posa una frase dins d’una etiqueta `<span>` i aplica-li la classe **`destacat`**.  
+En el full d’estil **CSS**, crea un estil nou que només s’aplique als **`span.destacat`** que estiguen dins de paràgrafs, diferent de l’estil de l’exercici anterior.
+
+---
+
+## Exercici 14. Id’s i estils de llistes
+
+Crea un **id** anomenat **`main-nav`** i aplica’l a l’etiqueta `<nav>` de totes les pàgines que tinguen enllaços de navegació interns.  
+Fica els enllaços com a elements d’una **llista no ordenada** i crea els estils CSS perquè es visualitze en forma de **menú horitzontal**.
+
+---
+
+## Exercici 15. 🎵 🎥 Multimèdia
+
+Crea, dins del directori arrel de la teua web, una carpeta anomenada **`media`**.  
+Crea una pàgina anomenada **`multimedia.html`** dins del directori principal.
+
+En aquesta pàgina has d’inserir:
+
+- Un **arxiu de vídeo** (amb mida reduïda)  
+- Un **arxiu d’àudio**  
+- Un **vídeo de YouTube**
+
+Guarda els dos primers arxius dins de la carpeta `media`.
+
+Afegeix els **enllaços necessaris** perquè la nova pàgina siga accessible des de les barres de navegació de totes les pàgines.  
+Tots aquests enllaços han d’estar dins de l’etiqueta `<nav>`.
+
+---
+
+## Exercici 16. Creació de taules
+
+Crea una pàgina anomenada **`horari.html`** dins de la teua carpeta personal.  
+En aquesta pàgina, crea una **taula** amb l’horari de l’empresa.
+
+- Utilitza `<thead>` i `<th>` per a la primera fila (dies de la setmana).  
+- Utilitza `<tbody>` per a la resta.  
+- Fes servir els atributs `colspan` i `rowspan` per agrupar hores.
+
+Afegeix enllaços relatius dins de `<nav>` perquè siga accessible des de totes les pàgines.
+
+Maqueta amb CSS la taula utilitzant:
+- `border`, `border-collapse`
+- `text-align`, `vertical-align`
+- Colors de fons i text
+- Amplària (`width`) i altura (`height`) per a la taula i els seus elements
+
+### 📦 4a Entrega
+
+Comprimeix la carpeta **`public_html`** en format **ZIP** i entrega-la a **Aules** amb el nom *entrega4.zip*
+
+---
+
+## Exercici 17. Formularis I
+
+Modifica la pàgina **`contacte.html`** per a afegir un **formulari de contacte** amb els següents elements:
+
+- **Nom:** `input type="text"`  
+- **Correu electrònic:** `input type="email"`  
+- **Missatge:** `<textarea>`  
+- **Botó enviar:** `input type="submit"`
+
+Utilitza `<fieldset>` i `<legend>`.  
+El mètode del formulari ha de ser **GET**.
+
+---
+
+## Exercici 18. Formularis II
+
+Crea la pàgina **`registre.html`** per al registre d’usuaris a la teua web.  
+Crea un **formulari** (mètode **GET**) amb els següents elements, agrupats amb `<fieldset>` i `<legend>`:
+
+### Informació personal
+- Nom (`text`)
+- Cognoms (`text`, mida 40)
+- Adreça (`text`, mida 60)
+- Població (`text`)
+- Correu electrònic (`email`)
+- Telèfon (`tel`)
+- Data de naixement (`date`)
+- Sexe (`radio`): home, dona, altres
+
+### Contrasenya
+- Contrasenya (`password`)
+- Reescriure contrasenya (`password`)
+
+### Informació professional
+- Nom de l’empresa (`text`)
+- Web de l’empresa (`url`, mida 60)
+- Any de fundació (`number`, mínim 1500, màxim 2050)
+- Sectors (`checkbox`, almenys 5 opcions)
+
+### Botó enviar
+- `input type="submit"`
+
+Els **camps en negreta** són **requerits** (`required`).
+
+Afegeix els enllaços necessaris dins de `<nav>`.
+
+### 📦 5a Entrega
+
+Comprimeix la carpeta **`public_html`** en format **ZIP** i entrega-la a **Aules** amb el nom *entrega5.zip*
+
+---
+
+## Exercici 19 i pràctica FINAL
+
+En aquesta pràctica donarem els **retocs finals** al nostre lloc web.  
+Es recomana fer-la quan tingues acabades les pràctiques anteriors.  
+L’objectiu és crear un **lloc web realista**, amb una estructura i aparença més professionals.
+
+### Accions recomanades
+
+- Afegir un **CSS reset o normalize** a totes les pàgines.  
+- Pujar la web al **servidor web del professor**:  `ec2-xxxxxxxxxxx.compute-1.amazonaws.com` (demanar-la al professor)
+- Utilitzar **Flexbox** per a maquetar la web.
+
+### 📦 Entrega FINAL
+
+Comprimeix la carpeta **`public_html`** en format **ZIP** i entrega-la a **Aules** amb el nom *nom_empresa.zip*
+
+------------------------------------------------------------------------
+-->
+
+<!--
+## 🔍 Avaluació
+
+  ------------------------------------------------------------------------
+  Criteri              Descripció                 Ponderació
+  -------------------- -------------------------- ------------------------
+  **Estructura HTML**  Ús correcte d'etiquetes,   25%
+                       jerarquia i semàntica.     
+
+  **Full d'estil CSS** Coherència tipogràfica,    25%
+                       alineacions i decoracions  
+                       correctes.                 
+
+  **Coherència         Relació entre disseny i    20%
+  visual**             identitat de l'empresa.    
+
+  **Contingut propi**  Texts i idees originals,   15%
+                       sense còpies automàtiques. 
+
+  **Explicació         Capacitat per justificar   15%
+  personal**           les eleccions de disseny.  
+  ------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## ⚠️ Indicacions importants
+
+-   El contingut ha de ser **redactat per l'alumne**, no generat
+    automàticament.\
+-   Durant la defensa o revisió, s'haurà d'explicar com funciona el codi
+    i quines decisions s'han pres.\
+-   Es valorarà la **comprensió del codi**, no només el resultat
+    visual.\
+-   L'ús d'assistents automàtics (IA o generadors de codi) està permès
+    només com a eina de consulta o inspiració, **no per generar
+    directament la solució final**.
+
+------------------------------------------------------------------------
+
+## ✨ Extensió opcional (per a qui vulga anar més enllà)
+
+-   Afegir una tipografia externa (Google Fonts o local).\
+-   Aplicar una versió responsive adaptada a mòbils.\
+-   Crear una petita animació o efecte d'interacció al menú.
+
+------------------------------------------------------------------------
+
+## 🧠 Finalitat pedagògica
+
+Amb aquesta pràctica l'alumne aprèn a: - Organitzar el contingut d'una
+web amb estructura semàntica.\
+- Aplicar principis bàsics de tipografia i disseny visual.\
+- Crear i vincular un full d'estil extern.\
+- Raonar les seues decisions tècniques i estètiques.
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
