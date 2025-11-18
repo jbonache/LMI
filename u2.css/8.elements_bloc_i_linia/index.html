@@ -625,8 +625,8 @@
 </ul>
 <p><a class="glightbox" href="../img/block_inline.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Element en bloc i en línia" src="../img/block_inline.jpg" width="400px" /></a></p>
 <ul>
-<li>El primer element és un paràgraf que ocupa tota la línia perquè és un element de block.</li>
-<li>El segon element és un enllaç que ocupa només l’espai necessari pel seu contingut ja que és un element inline.</li>
+<li>El primer element és un <strong>paràgraf</strong> que ocupa tota la línia perquè és un <strong>element de block</strong>.</li>
+<li>El segon element és un <strong>enllaç</strong> que ocupa només l’espai necessari pel seu contingut ja que és un <strong>element inline</strong>.</li>
 </ul>
 <p>Podem canviar la disposició amb la propietat <strong>display</strong>:</p>
 <ul>
@@ -634,18 +634,69 @@
 <li><strong>display: block</strong>: mostra un element com si fora de bloc.</li>
 <li><strong>display: inline-block</strong>: mostra un element en línia, però permet afegir-li width i height.</li>
 </ul>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"> </span><span class="c">/* Mostra els li uns al costat dels altres */</span><span class="w"> </span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CSS</label><label for="__tabbed_1_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"> </span><span class="c">/* Mostra els psràgrafs uns al costat dels altres */</span><span class="w"> </span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">   </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"> </span><span class="err">/\*</span><span class="w"> </span><span class="err">Mostra</span><span class="w"> </span><span class="err">els</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">uns</span><span class="w"> </span><span class="err">baix</span><span class="w"> </span><span class="err">dels</span><span class="w"> </span><span class="err">altres</span><span class="w"> </span><span class="err">\*/</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"> </span><span class="c">/* Mostra els li uns al costat dels altres */</span><span class="w"> </span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">   </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span><span class="w"> </span><span class="err">/\*</span><span class="w"> </span><span class="err">Mostra</span><span class="w"> </span><span class="err">els</span><span class="w"> </span><span class="err">li</span><span class="w"> </span><span class="err">uns</span><span class="w"> </span><span class="err">al</span><span class="w"> </span><span class="err">costat</span><span class="w"> </span><span class="err">dels</span><span class="w"> </span><span class="err">altres</span><span class="w"> </span><span class="err">\*/</span><span class="w"> </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="err">/\*</span><span class="w"> </span><span class="err">amb</span><span class="w"> </span><span class="err">2px</span><span class="w"> </span><span class="err">d&#39;ample</span><span class="w"> </span><span class="err">\*/</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"> </span><span class="c">/* Mostra els a uns baix dels altres */</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span><span class="w"> </span><span class="c">/* Mostra els li uns al costat dels altres */</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* amb 50  px d&#39;ample */</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
 </span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><html>
+  <head>
+  <style>
+  p {
+    display: inline; /<em> Mostra els psràgrafs uns al costat dels altres </em>/ 
+  }
+  a {
+    display: block; /<em> Mostra els a uns baix dels altres </em>/
+  }
+  li {
+    display: inline-block; /<em> Mostra els li uns al costat dels altres </em>/
+    width: 100px; /<em> amb 80px d'ample </em>/
+  }
+  </style>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  <body>
+  <p>Paràgraf 1</p>
+  <p>Paràgraf 2</p>
+  <ul>
+    <li>Element1</li>
+    <li>Element2</li>
+    <li>Element3</li>
+  </ul>
+  <a href="http://www.google.com" target="_blank">Google</a>
+  <p>Aquest últim paràgraf es mostra en el bloc de després de l'enllaç.</p>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+  </html></p>
+</div>
+</div>
+</div>
 <h3 id="visibilitat-dels-elements">Visibilitat dels elements</h3>
 <p>També podem usar <strong>display: none</strong> per a amagar contingut:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">h1</span><span class="p">.</span><span class="nc">hidden</span><span class="w"> </span><span class="p">{</span>
@@ -699,7 +750,7 @@
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"> </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Per a finalitzar, canviem els colors, alineacions i paddings dels elements. Altres millores interessants sónu tilitzar el selector <strong>a:hover</strong> per a canviar els colors quan passem per damunt d’un element o usar un selector de classe per a mostrar d’un color diferent l’element del menú en el qual ens trobem:</p>
+<p>Per a finalitzar, canviem els colors, alineacions i paddings dels elements. Altres millores interessants són utilitzar el selector <strong>a:hover</strong> per a canviar els colors quan passem per damunt d’un element o usar un selector de classe per a mostrar d’un color diferent l’element del menú en el qual ens trobem:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="k">list-style-type</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
@@ -800,7 +851,5 @@
       <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+  </body>
 </html>
