@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <title>Resultat GET</title>
+</head>
+<body>
+  <h2>Dades rebudes (mètode GET)</h2>
+
+  <div id="resultat"></div>
+
+  <script>
+    // Obté els paràmetres de la URL
+    const params = new URLSearchParams(window.location.search);
+
+    // Construeix el text
+    const resultat = `
+      <p><strong>Nom:</strong> ${params.get('nom') || ''}</p>
+      <p><strong>Sexe:</strong> ${params.get('sexe') || ''}</p>
+      <p><strong>Email:</strong> ${params.get('email') || ''}</p>
+      <p><strong>Password:</strong> ${params.get('password') || ''}</p>
+    `;
+
+    document.getElementById('resultat').innerHTML = resultat;
+  </script>
+</body>
+</html>
+

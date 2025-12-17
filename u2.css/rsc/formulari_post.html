@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+      <meta charset="utf-8">
+      <title>Formulari POST</title>
+    </head>
+    <body>
+      <h2>Formulari amb mètode POST</h2>
+      <form action="/rsc/resultat_post.html" method="post" target="_blank">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required><br>
+        <label>Sexe:</label>
+        <input type="radio" id="home" name="sexe" value="Home" required> Home
+        <input type="radio" id="dona" name="sexe" value="Dona"> Dona<br>
+        <label for="email">Correu electrònic:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Contrasenya:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Enviar">
+      </form>
+
+      <script>
+        document.getElementById('formulari').addEventListener('submit', function(e) {
+          e.preventDefault(); // Evitem que s’enviï realment
+
+          const dades = new FormData(this);
+          const obj = {};
+          dades.forEach((valor, clau) => obj[clau] = valor);
+
+          // Guardem les dades al localStorage (simula l’enviament POST)
+          localStorage.setItem('dadesFormulari', JSON.stringify(obj));
+
+          // Anem a la pàgina de resultat
+          window.location.href = 'resultat_post.html';
+        });
+      </script>
+      
+    </body>
+    </html>
+
