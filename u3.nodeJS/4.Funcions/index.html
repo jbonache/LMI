@@ -403,33 +403,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#funcions-anonimes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Funcions anònimes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#funcions-com-a-valors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Funcions com a valors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#closures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closures
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -570,33 +543,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#funcions-anonimes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Funcions anònimes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#funcions-com-a-valors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Funcions com a valors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#closures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closures
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -723,141 +669,177 @@
 <p>La recomanació és utilitzar sempre la paraula reservada <code>let</code> i definir les variables sempre de forma local als àmbits on es necessiten. Quan cal passar variables a una funció, ho farem sempre amb el pas d'arguments.</p>
 </div>
 <h3 id="funcions-fletxa">Funcions fletxa</h3>
-<p>L'estàndard ES6 introdueix una forma més concisa de definir funcions: les <strong>funcions fletxa</strong>. Aquestes es declaren amb la notació <code>() =&gt; {}</code>, on els <strong>arguments</strong> de la funció són la part de l'esquerra de la fletxa (<code>=&gt;</code>), i van entre parèntesi, i el <strong>cos</strong> de la funció a la part dreta.</p>
-<p>Per exemlple, la funció <code>suma</code> que hme definit abans:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">suma</span><span class="p">(</span><span class="nx">numero1</span><span class="p">,</span><span class="w"> </span><span class="nx">numero2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">numero1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero2</span><span class="p">;</span>
+<p>L'estàndard ES6 introdueix una forma més concisa de definir funcions: les <strong>funcions fletxa</strong>. Aquestes es declaren amb la notació <code>() =&gt; {}</code>, on els <strong>arguments</strong> de la funció són la part de l'esquerra de la fletxa (<code>=&gt;</code>), i van entre parèntesi, i el <strong>cos</strong> de la funció a la part dreta.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nx">paràmetres</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="c1">// cos de la funció</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>Podreia representar-se com a:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">numero1</span><span class="p">,</span><span class="w"> </span><span class="nx">numero2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">numero1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero2</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Per exemple, la funció <code>suma</code> que hem definit abans:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">suma</span><span class="p">(</span><span class="nx">numero1</span><span class="p">,</span><span class="w"> </span><span class="nx">numero2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">numero1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero2</span><span class="p">;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>A més, quan el cos de la funció conté només una línia, com és el cas anterior, podem ometre el cos <code>{}</code> i el <code>return</code>, de manera que quede:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">numero1</span><span class="p">,</span><span class="w"> </span><span class="nx">numero2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">numero1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero2</span><span class="p">;</span>
+<p>Podria representar-se com a:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">numero1</span><span class="p">,</span><span class="w"> </span><span class="nx">numero2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">numero1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero2</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Un aspecte interessant de les funcions fletxa és que no tenen el seu propi àmbit de <code>this</code>. Ho veurme amb més profunditat en la POO.</p>
+<p>A més, quan el cos de la funció conté només una línia, com és el cas anterior, podem ometre el cos <code>{}</code> i el <code>return</code>, de manera que quede:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">numero1</span><span class="p">,</span><span class="w"> </span><span class="nx">numero2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">numero1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero2</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>S’utilitza <code>const</code> perquè la funció no ha de canviar una vegada definida. No podrem assignar-li un valor directament a la constant <code>suma</code>, però sí podrem invocar-la més vegades.</p>
+<ul>
+<li>suma = 5;       // Error</li>
+<li>suma = () =&gt; 0; // Error</li>
+<li>suma(3,2);      // Correcte (suma=5)</li>
+</ul>
+</div>
+<p>Un aspecte interessant de les funcions fletxa és que no tenen el seu propi àmbit de <code>this</code>. Ho veurem amb més profunditat en la POO.</p>
 <h3 id="callbacks">Callbacks</h3>
 <p>Un callback és <strong>una funció</strong> que es passa com a <strong>argument</strong> a una altra funció i que s'invoca dins el codi de la mateixa funció.</p>
 <p>Veiem-ho amb un exemple:</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">saluda</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola!&quot;</span><span class="p">);</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">callback</span><span class="p">();</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kd">function</span><span class="w"> </span><span class="nx">acomiada</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Adéu!&quot;</span><span class="p">);</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nx">saluda</span><span class="p">(</span><span class="nx">acomida</span><span class="p">);</span><span class="w"> </span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">saluda</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola!&quot;</span><span class="p">);</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">callback</span><span class="p">();</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="kd">function</span><span class="w"> </span><span class="nx">acomiada</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Adéu!&quot;</span><span class="p">);</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nx">saluda</span><span class="p">(</span><span class="nx">acomida</span><span class="p">);</span><span class="w"> </span>
 </span></code></pre></div>
 <p>Quin és el resultat de l'execució anterior?</p>
 <p>Veiem un altre exemple, fent ús ara de la funció de JS <code>setTimeout</code>. Aquesta funció fa una pausa del temps que li indiquem al segon argument, i passat aquest, invoca la funció que li proporcionem com a primer argument (en aquest cas, en forma de funció fletxa):</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Això s&#39;executa després de 2 segons.&quot;</span><span class="p">);</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
-</span></code></pre></div>
-<h3 id="funcions-anonimes">Funcions anònimes</h3>
-<p>Les funcions, també poden ser anònimes, és a dir, que no tinguen un nom. Aquestes funcions, normalment s'utilitzen en assignacions o com a callbacks.</p>
-<p>Veiem-ho amb un exemple, basant-nos en l'anterior:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola des d&#39;una funció anònima!&quot;</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Això s&#39;executa després de 2 segons.&quot;</span><span class="p">);</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
 </span></code></pre></div>
-<p>Veieu que el funcionament és el mateix, amb la diferència que hem reemplaçat la funció fletxa per un <code>function</code> al qual no li hem proporcionat nom.</p>
-<h3 id="funcions-com-a-valors">Funcions com a valors</h3>
-<p>En JS, les <strong>funcions</strong> són tractades com a <strong>valors</strong>. Això significa que <strong>poden ser assignades a variables</strong>, <strong>emmagatzemades en arrays</strong>, passades com <strong>arguments</strong> o <strong>retornades</strong> per altres funcions.</p>
-<p>Per exemple:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">multiplica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">opera</span><span class="p">(</span><span class="nx">funcio</span><span class="p">,</span><span class="w"> </span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">funcio</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">);</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">opera</span><span class="p">(</span><span class="nx">multiplica</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Crida multiplica(5, 3)</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra 15</span>
-</span></code></pre></div>
-<h3 id="closures">Closures</h3>
-<p>Un closure és una funció que <em>recorda</em> les variables del seu àmbit extern, fins i tot després que aquest àmbit haja finalitzat.</p>
-<p>Veiem un exemple més clar:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">creaSalutacio</span><span class="p">(</span><span class="nx">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">salutacio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hola, </span><span class="si">${</span><span class="nx">nom</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">salutacio</span><span class="p">);</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">};</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">saludaJoan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">creaSalutacio</span><span class="p">(</span><span class="s2">&quot;Joan&quot;</span><span class="p">);</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nx">saludaJoan</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Hola, Joan!&quot;</span>
-</span></code></pre></div>
-<p>Els closures en JS ens introdueixen algunes de les idees de la programació orientada a objectes, com l'encapsulació o l'ús de mètodes per manipular dades privades. Veiem alguns exemples per il·lustrar això:</p>
-<h4 id="encapsulacio">Encapsulació</h4>
-<p>Amb els <em>closures</em> podem <em>tancar</em> variables en un àmbit privat, de manaera que només siguen accessibles mitjançant funcions internes.</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">creaComptador</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variable encapsulada</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="nx">comptador</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Comptador: </span><span class="si">${</span><span class="nx">comptador</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">decrementa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="nx">comptador</span><span class="o">--</span><span class="p">;</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Comptador: </span><span class="si">${</span><span class="nx">comptador</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">consulta</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">comptador</span><span class="p">;</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="c1">// Retornem les funcions que necessitem</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">,</span><span class="w"> </span><span class="nx">decrementa</span><span class="p">,</span><span class="w"> </span><span class="nx">consulta</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="p">}</span>
-</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
-</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="kd">const</span><span class="w"> </span><span class="nx">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">creaComptador</span><span class="p">();</span>
-</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>
-</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="nx">comptador</span><span class="p">.</span><span class="nx">incrementa</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Comptador: 1&quot;</span>
-</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="nx">comptador</span><span class="p">.</span><span class="nx">incrementa</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Comptador: 2&quot;</span>
-</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="nx">comptador</span><span class="p">.</span><span class="nx">decrementa</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Comptador: 1&quot;</span>
-</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">comptador</span><span class="p">.</span><span class="nx">consulta</span><span class="p">());</span>
-</span></code></pre></div>
-<p>En aquest exemple, la variable comptador es troba encapsulada dins la funció <code>creaComptador</code>. Dins la funció hem creat mètodes o funcions (<code>incrementa</code>, <code>decrementa</code> i <code>consulta</code>) que serveixen per accedir, de manera controlada a aquesta variable, ocultant detalls de la seua implementació.</p>
-<p>Els closures, a més, permeten mantenir un estat persistent entre les crides a les funcions definides en ell (el valor del comptador no es perd), ja que està guardat en el propi closure.</p>
+<div class="admonition question">
+<p class="admonition-title">Ara et toca a tu...</p>
+<p><a class="md-button centrat" href="../Exercicis/#funcions-fletxa-i-callbacks">Exercicis funcions fletxa i callback!</a></p>
+</div>
 <!--
+## Funcions anònimes
+
+Les funcions, també poden ser anònimes, és a dir, que no tinguen un nom. Aquestes funcions, normalment s'utilitzen en assignacions o com a callbacks.
+
+Veiem-ho amb un exemple, basant-nos en l'anterior:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola des d&#39;una funció anònima!&quot;</span><span class="p">);</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span></code></pre></div>
+
+Veieu que el funcionament és el mateix, amb la diferència que hem reemplaçat la funció fletxa per un `function` al qual no li hem proporcionat nom.
+
+## Funcions com a valors
+
+En JS, les **funcions** són tractades com a **valors**. Això significa que **poden ser assignades a variables**, **emmagatzemades en arrays**, passades com **arguments** o **retornades** per altres funcions.
+
+Per exemple:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">multiplica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">opera</span><span class="p">(</span><span class="nx">funcio</span><span class="p">,</span><span class="w"> </span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">funcio</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">);</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">opera</span><span class="p">(</span><span class="nx">multiplica</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Crida multiplica(5, 3)</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mostra 15</span>
+</span></code></pre></div>
+
+## Closures
+
+Un closure és una funció que *recorda* les variables del seu àmbit extern, fins i tot després que aquest àmbit haja finalitzat.
+
+Veiem un exemple més clar:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">creaSalutacio</span><span class="p">(</span><span class="nx">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">salutacio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hola, </span><span class="si">${</span><span class="nx">nom</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">salutacio</span><span class="p">);</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">saludaJoan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">creaSalutacio</span><span class="p">(</span><span class="s2">&quot;Joan&quot;</span><span class="p">);</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nx">saludaJoan</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Hola, Joan!&quot;</span>
+</span></code></pre></div>
+
+Els closures en JS ens introdueixen algunes de les idees de la programació orientada a objectes, com l'encapsulació o l'ús de mètodes per manipular dades privades. Veiem alguns exemples per il·lustrar això:
+
+### Encapsulació
+
+Amb els *closures* podem *tancar* variables en un àmbit privat, de manaera que només siguen accessibles mitjançant funcions internes.
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">creaComptador</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variable encapsulada</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="nx">comptador</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Comptador: </span><span class="si">${</span><span class="nx">comptador</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">decrementa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="nx">comptador</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Comptador: </span><span class="si">${</span><span class="nx">comptador</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">consulta</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">comptador</span><span class="p">;</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">    </span><span class="c1">// Retornem les funcions que necessitem</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">,</span><span class="w"> </span><span class="nx">decrementa</span><span class="p">,</span><span class="w"> </span><span class="nx">consulta</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="p">}</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="kd">const</span><span class="w"> </span><span class="nx">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">creaComptador</span><span class="p">();</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="nx">comptador</span><span class="p">.</span><span class="nx">incrementa</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Comptador: 1&quot;</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="nx">comptador</span><span class="p">.</span><span class="nx">incrementa</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Comptador: 2&quot;</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="nx">comptador</span><span class="p">.</span><span class="nx">decrementa</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Comptador: 1&quot;</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">comptador</span><span class="p">.</span><span class="nx">consulta</span><span class="p">());</span>
+</span></code></pre></div>
+
+En aquest exemple, la variable comptador es troba encapsulada dins la funció `creaComptador`. Dins la funció hem creat mètodes o funcions (`incrementa`, `decrementa` i `consulta`) que serveixen per accedir, de manera controlada a aquesta variable, ocultant detalls de la seua implementació.
+
+Els closures, a més, permeten mantenir un estat persistent entre les crides a les funcions definides en ell (el valor del comptador no es perd), ja que està guardat en el propi closure.
+
 ## Funcions immediatament invocades (IIFE)
 
 Una **funció immediatament invocada** (*IIFE, Immediately Invoked Function Expressions*) és una funció que s'executa només es defineix. S'utilitza per encapsular variables i evitar conflictes amb altres parts del codi. Veiem-ho amb un exemple:
 
-<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola des d&#39;una IIFE!&quot;</span><span class="p">);</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">})();</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola des d&#39;una IIFE!&quot;</span><span class="p">);</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">})();</span>
 </span></code></pre></div>
 
 Aquestes funcions són specialment útils quan necessitem encapsular variables i evitar que contaminen l'àmbit global. Això és útil en projectes grans o quan s'integren diversos scripts en una mateixa pàgina.
 
 Per exemple, suposem que estem creant una aplicació i volem definir variables i funcions que no han de ser accessibles des de l'exterior. Podem utlitzar una IIFE per encapsular aquestes funcionalitats:
 
-<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="c1">// Variables i funcions encapsulades</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="nx">contador</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`El comptador ara és: </span><span class="si">${</span><span class="nx">contador</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">reset</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="nx">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;El comptador s&#39;ha reiniciat.&quot;</span><span class="p">);</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="c1">// Exposem només el que volem</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">        </span><span class="nx">incrementa</span><span class="o">:</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">,</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">        </span><span class="nx">reset</span><span class="o">:</span><span class="w"> </span><span class="nx">reset</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="p">};</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="p">})();</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="c1">// Variables i funcions encapsulades</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">        </span><span class="nx">contador</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`El comptador ara és: </span><span class="si">${</span><span class="nx">contador</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">reset</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">        </span><span class="nx">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;El comptador s&#39;ha reiniciat.&quot;</span><span class="p">);</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="c1">// Exposem només el que volem</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">        </span><span class="nx">incrementa</span><span class="o">:</span><span class="w"> </span><span class="nx">incrementa</span><span class="p">,</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">        </span><span class="nx">reset</span><span class="o">:</span><span class="w"> </span><span class="nx">reset</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="p">})();</span>
 </span></code></pre></div>
 
 
