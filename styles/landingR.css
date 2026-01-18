@@ -119,6 +119,12 @@
   height: auto;
 }
 
+.disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none; /* evita clics */
+}
+
 /* --- OCULTAR ELEMENTOS ESPECÍFICOS EN LA PORTADA --- */
 .md-search {
   display: none !important;
