@@ -717,7 +717,7 @@ document$.subscribe(() => { lightbox.reload() });
             let encertat = false;
             for (let i = 0; i != intents; i++) {
                 let resposta = prompt("Endevina la frase secreta:");
-                if (resposta.toLowerCase() == paraulaSecreta) {
+                if (resposta.toLowerCase() === paraulaSecreta.toLowerCase()) {
                     alert("Enhorabona! La porta de la cova s'ha obert.");
                     encertat = true;
                     break;
