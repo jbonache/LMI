@@ -53,16 +53,7 @@
     
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  </head>
   
   
     
@@ -455,7 +446,7 @@
 <p>Abans de començar repassa els <a href="https://jbonache.github.io/LMI/u3.nodeJS/Anexos/">anexos</a> del temari on podràs veure com incrustar codi javascript en html, com utilitzar les funcions de <code>prompt()</code>, <code>alert()</code>, a llibreria <code>Math()</code>, etcétera.</p>
 <hr />
 <h3 id="1-joc-de-pedra-paper-o-tisores">1. Joc de pedra, paper o tisores</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enunciat</label><label for="__tabbed_1_2">Simulació</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enunciat</label><label for="__tabbed_1_2">Simulació</label><label for="__tabbed_1_3">Simulació Imatges</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Crea un joc on l’usuari introduïsca "pedra", "paper" o "tisores" amb <code>prompt()</code>. El programa genera aleatòriament una de les opcions i indica amb <code>alert()</code> si l’usuari ha guanyat, ha perdut o ha empatat.</p>
@@ -465,6 +456,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Pedra, Paper o Tisores</title>
+    <style>
+    div img {
+        display: inline-block;
+        margin: 10px;
+    }
+    </style>
     <script>
         function play() {
             let opcions = ["pedra", "paper", "tisores"];
@@ -496,16 +493,7 @@
             }
         }
     </script>
- <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+</head>
 <body>
     <div style="
         border: 1px solid #ccc;
@@ -529,9 +517,79 @@
         <button style="margin:4px;padding:6px 12px;background: #a0e79b" onclick="play()">Jugar!</button>
     </div>
 </div>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+</body>
+</html></p>
+</div>
+<div class="tabbed-block">
+<p><html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedra, Paper o Tisores</title>
+    <style>
+    div img {
+        display: inline-block;
+        margin: 10px;
+    }
+    </style>
+    <script>
+        function play2(usuari) {
+            let opcions = ["pedra", "paper", "tisores"];
+            let ordinador = opcions[Math.floor(Math.random() * 3)];
+            alert("Ordinador ha triat: " + ordinador);
+            if (usuari === ordinador) {
+                alert("Empat!");
+            } else if (usuari === "pedra") {
+                if (ordinador === "tisores") {
+                    alert("Has guanyat!");
+                } else {
+                    alert("Has perdut!");
+                }
+            } else if (usuari === "paper") {
+                if (ordinador === "pedra") {
+                    alert("Has guanyat!");
+                } else {
+                    alert("Has perdut!");
+                }
+            } else if (usuari === "tisores") {
+                if (ordinador === "paper") {
+                    alert("Has guanyat!");
+                } else {
+                    alert("Has perdut!");
+                }
+            } else {
+                alert("Opció no vàlida!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-top: 1em;
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        max-width: 500px;">
+    <div style="
+        background: #e0e0e0;
+        padding: 6px 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        gap: 6px;">
+        <span style="width:12px;height:12px;background:#ff5f56;border-radius:50%"></span>
+        <span style="width:12px;height:12px;background:#ffbd2e;border-radius:50%"></span>
+        <span style="width:12px;height:12px;background:#27c93f;border-radius:50%"></span>
+    </div>
+    <div style="padding: 16px; text-align: center;">
+        <p>Coneixes el joc de Pedra, Paper i Tisores?</p>
+        <div>
+           <img src="../img/pedra.png" width="50" height="50" alt="Imatge clicable1" onclick="play2('pedra')">
+           <img src="../img/paper.png" width="50" height="50" alt="Imatge clicable2" onclick="play2('paper')">
+           <img src="../img/tisores.png" width="50" height="50" alt="Imatge clicable3" onclick="play2('tisores')">
+        </div>
+    </div>
+</div>
+</body>
 </html></p>
 </div>
 </div>
@@ -585,16 +643,7 @@ Cada botó ha de generar un número aleatori entre 1 i 6 i mostrar-lo amb <code>
             dau1 = dau2 = dau3 = 0;
         }
     </script>
- <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+</head>
 <body>
     <div style="
         border: 1px solid #ccc;
@@ -625,9 +674,7 @@ Cada botó ha de generar un número aleatori entre 1 i 6 i mostrar-lo amb <code>
         </button>
     </div>
 </div>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+</body>
 </html></p>
 </div>
 </div>
@@ -656,16 +703,7 @@ document$.subscribe(() => { lightbox.reload() });
             alert("Has encertat " + puntuacio + " de 3 preguntes.");
         }
     </script>
- <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+</head>
 <body>
     <div style="
         border: 1px solid #ccc;
@@ -689,9 +727,7 @@ document$.subscribe(() => { lightbox.reload() });
         <button style="margin:4px;padding:6px 12px;background: #f0af4d" onclick="trivial()">Vinga!</button>
     </div>
 </div>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+</body>
 </html></p>
 </div>
 </div>
@@ -730,16 +766,7 @@ document$.subscribe(() => { lightbox.reload() });
             }
         }
     </script>
- <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+</head>
 <body>
     <div style="
         border: 1px solid #ccc;
@@ -763,9 +790,7 @@ document$.subscribe(() => { lightbox.reload() });
         <button style="margin:4px;padding:6px 12px;background: #f0af4d" onclick="alibaba()">Dir la frase màgica!</button>
     </div>
 </div>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+</body>
 </html></p>
 </div>
 </div>
