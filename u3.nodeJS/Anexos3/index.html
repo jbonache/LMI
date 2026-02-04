@@ -1,0 +1,999 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Anexos2/">
+      
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>III - POO: objectes bàsics i avançats - Manipulació de documents web: Javascript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objecte-number-en-javascript" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-header__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Manipulació de documents web: Javascript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              III - POO: objectes bàsics i avançats 
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-nav__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Manipulació de documents web: Javascript
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jbonache.github.io/LMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índex Curs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.generalitats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Generalitats de Javascript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.Elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Elements de llenguatge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.Funcions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Funcions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.PrgEstructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Programació Estructurada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.POO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Programació Orientada a Objectes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exercicis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercicis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Anexos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Anexos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Anexos1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    I - Recursos de programació estructurada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Anexos2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    II - Orientació a Objectes basada en prototips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    III - POO: objectes bàsics i avançats 
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    III - POO: objectes bàsics i avançats 
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-number-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte Number en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-string-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte String en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-date-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte Date en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-array-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte Array en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-number-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte Number en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-string-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte String en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-date-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte Date en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecte-array-en-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objecte Array en JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+
+  <h1>III - POO: objectes bàsics i avançats </h1>
+
+<h2 id="objecte-number-en-javascript">Objecte <code>Number</code> en JavaScript</h2>
+<p><code>Number</code> és l’objecte natiu de JavaScript que representa <strong>valors numèrics</strong>, tant enters com decimals. </p>
+<p>Encara que existeix el constructor <code>Number</code>, habitualment s’utilitzen <strong>valors literals</strong>, ja que JavaScript encapsula automàticament els nombres com a objectes quan és necessari.</p>
+<p><strong>Mètodes estàtics més utilitzats</strong></p>
+<ul>
+<li>
+<p><code>Number.isNaN(valor)</code> : Comprova si un valor és <code>NaN</code>.</p>
+</li>
+<li>
+<p><code>Number.isInteger(valor)</code> : Indica si un valor és un nombre enter.</p>
+</li>
+<li>
+<p><code>Number.parseInt(text)</code> : Converteix una cadena a un nombre enter.</p>
+</li>
+<li>
+<p><code>Number.parseFloat(text)</code> : Converteix una cadena a un nombre decimal.</p>
+</li>
+</ul>
+<p><strong>Exemples</strong></p>
+<p>1) Situació habitual: llegir una quantitat introduïda com a text (per exemple, des d’un formulari o un <code>prompt</code>) i convertir-la a <strong>nombre enter</strong>. <code>parseInt</code> llig el text fins que troba un caràcter que no és numèric:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">edatText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;18 anys&quot;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">.</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">edatText</span><span class="p">);</span><span class="w">   </span><span class="c1">// edat val 18</span>
+</span></code></pre></div></p>
+<p>2) Diferència pràctica entre <code>parseInt</code> i <code>parseFloat</code>:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Number</span><span class="p">.</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;3.75&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// 3</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Number</span><span class="p">.</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;3.75&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3.75</span>
+</span></code></pre></div></p>
+<p>3) A tindre en compte:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Number</span><span class="p">.</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// NaN</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Number</span><span class="p">.</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN</span>
+</span></code></pre></div></p>
+<p><strong>Mètodes d’instància més utilitzats</strong></p>
+<ul>
+<li>
+<p><code>toFixed(decimals)</code> : Retorna una representació del nombre amb un nombre fix de decimals.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.5678</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">n</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// 4.56</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><code>toString()</code> : Converteix el nombre a una cadena de text.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">valor</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span><span class="w">  </span><span class="c1">// &quot;50&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><code>valueOf()</code> : Retorna el valor primitiu del nombre.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">num</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span><span class="w">  </span><span class="c1">//20</span>
+</span></code></pre></div></p>
+</li>
+</ul>
+<hr />
+<h2 id="objecte-string-en-javascript">Objecte <code>String</code> en JavaScript</h2>
+<p><code>String</code> és l’objecte que representa <strong>cadenes de text</strong> en JavaScript. Tot text literal, com <code>"Hola món"</code>, és un <code>String</code>.</p>
+<p>Encara que existeix el constructor <code>new String()</code>, en la pràctica <strong>sempre s’utilitzen literals de text</strong>.</p>
+<p><strong>Mètodes més utilitzats</strong></p>
+<ul>
+<li>
+<p>Transformació de text</p>
+<ul>
+<li><code>toUpperCase()</code> → converteix tot el text a majúscules</li>
+<li><code>toLowerCase()</code> → converteix tot el text a minúscules</li>
+<li><code>trim()</code> → elimina espais inicials i finals</li>
+<li><code>trimStart()</code> → elimina espais inicials</li>
+<li><code>trimEnd()</code> → elimina espais finals</li>
+</ul>
+</li>
+<li>
+<p>Accés i manipulació</p>
+<ul>
+<li><code>charAt(index)</code> → retorna el caràcter en la posició indicada</li>
+<li><code>charCodeAt(index)</code> → retorna el codi Unicode del caràcter</li>
+<li><code>length</code> → longitud del text</li>
+<li><code>substring(inici, fi)</code> → retorna una subcadena</li>
+<li><code>concat()</code> → concatena cadenes</li>
+<li><code>split(separador)</code> → converteix el text en un array segons el separador</li>
+<li><code>includes(text)</code> → comprova si conté un text concret</li>
+<li><code>startsWith(text)</code> → comprova si comença amb un text</li>
+<li><code>endsWith(text)</code> → comprova si acaba amb un text</li>
+<li><code>replace(textAntic, textNou)</code> → substitueix parts del text</li>
+</ul>
+</li>
+<li>
+<p>Conversió</p>
+<ul>
+<li><code>toString()</code> → converteix a text (per si és objecte)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="objecte-date-en-javascript">Objecte <code>Date</code> en JavaScript</h2>
+<p><code>Date</code> és l’objecte natiu que permet treballar amb <strong>dates i hores</strong> en JavaScript. Permet obtenir, manipular i calcular amb <strong>anys, mesos, dies, hores, minuts, segons i mil·lisegons</strong>.</p>
+<ul>
+<li>Es crea amb el constructor <code>new Date()</code>.</li>
+<li>Si no es passa cap paràmetre, retorna la <strong>data i hora actuals</strong>.</li>
+<li>Les dates internament es guarden com a <strong>mil·lisegons des del 1 de gener de 1970 (Unix Epoch)</strong>.</li>
+</ul>
+<p><strong>Creació de dates</strong></p>
+<ul>
+<li><code>new Date()</code> → data i hora actuals</li>
+<li><code>new Date(any, mes, dia, hores, minuts, segons, ms)</code> → data específica</li>
+<li><code>new Date("YYYY-MM-DD")</code> → data a partir d’una cadena</li>
+<li><code>new Date(ms)</code> → data a partir de mil·lisegons des del 1970</li>
+</ul>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Data i hora actual</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">// Data concreta per any, mes, dia</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">data1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2026</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4 de febrer 2026 (mes 1 = febrer)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1">// Data a partir de cadena ISO</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;2026-02-04T12:30:00&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>Mètodes més utilitzats</strong></p>
+<ul>
+<li>
+<p>Obtenir parts de la data</p>
+<ul>
+<li><code>getFullYear()</code> → any complet (ex. 2026)</li>
+<li><code>getMonth()</code> → mes (0–11, 0=gener)</li>
+<li><code>getDate()</code> → dia del mes (1–31)</li>
+<li><code>getDay()</code> → dia de la setmana (0=diumenge)</li>
+<li><code>getHours()</code> → hores (0–23)</li>
+<li><code>getMinutes()</code> → minuts (0–59)</li>
+<li><code>getSeconds()</code> → segons (0–59)</li>
+<li><code>getMilliseconds()</code> → mil·lisegons (0–999)</li>
+</ul>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;2026-02-04T12:34:56&quot;</span><span class="p">);</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span><span class="w">   </span><span class="c1">// 2026</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span><span class="w">      </span><span class="c1">// 2 (febrer)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span><span class="w">       </span><span class="c1">// 4</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span><span class="w">        </span><span class="c1">// 3 (dimecres)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span><span class="w">      </span><span class="c1">// 12</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span><span class="w">    </span><span class="c1">// 34</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span><span class="w">    </span><span class="c1">// 56</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getMilliseconds</span><span class="p">();</span><span class="w"> </span><span class="c1">// 0</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nx">d</span><span class="p">.</span><span class="nx">getTime</span><span class="p">();</span><span class="w">       </span><span class="c1">// mil·lisegons des del 1970</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>Modificar parts de la data</p>
+<ul>
+<li><code>setFullYear(any)</code> → canvia l’any</li>
+<li><code>setMonth(mes)</code> → canvia el mes (0–11)</li>
+<li><code>setDate(dia)</code> → canvia el dia del mes</li>
+<li><code>setHours(hores)</code> → canvia les hores</li>
+<li><code>setMinutes(minuts)</code> → canvia els minuts</li>
+<li><code>setSeconds(segons)</code> → canvia els segons</li>
+<li><code>setMilliseconds(ms)</code> → canvia els mil·lisegons</li>
+<li><code>setTime(ms)</code> → defineix la data a partir de mil·lisegons des del 1970</li>
+</ul>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;2026-02-04T12:34:56&quot;</span><span class="p">);</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span><span class="mf">2027</span><span class="p">);</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span><span class="w">       </span><span class="c1">// juny</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="mf">15</span><span class="p">);</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="mf">18</span><span class="p">);</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setMinutes</span><span class="p">(</span><span class="mf">45</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="mf">30</span><span class="p">);</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setMilliseconds</span><span class="p">(</span><span class="mf">500</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nx">d</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="mf">1675500000000</span><span class="p">);</span><span class="w"> </span><span class="c1">// defineix data des de mil·lisegons</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>Representació de la data</p>
+</li>
+<li>
+<p><code>toString()</code> → retorna la data completa en format text local</p>
+</li>
+<li><code>toDateString()</code> → només data</li>
+<li><code>toTimeString()</code> → només hora</li>
+<li><code>toISOString()</code> → format ISO 8601 (ex. <code>"2026-02-04T12:34:56.789Z"</code>)</li>
+<li><code>toLocaleDateString()</code> → format data segons local</li>
+<li><code>toLocaleTimeString()</code> → format hora segons local</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;2026-02-04T12:34:56&quot;</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nx">d</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span><span class="w">            </span><span class="c1">// &quot;Wed Feb 04 2026 12:34:56 GMT+0100 (CET)&quot;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nx">d</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">();</span><span class="w">        </span><span class="c1">// &quot;Wed Feb 04 2026&quot;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nx">d</span><span class="p">.</span><span class="nx">toTimeString</span><span class="p">();</span><span class="w">        </span><span class="c1">// &quot;12:34:56 GMT+0100 (CET)&quot;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nx">d</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">();</span><span class="w">          </span><span class="c1">// &quot;2026-02-04T11:34:56.000Z&quot;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nx">d</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span><span class="w">  </span><span class="c1">// &quot;4/2/2026&quot; (format segons local)</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nx">d</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span><span class="w">  </span><span class="c1">// &quot;12:34:56&quot; (format segons local)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="objecte-array-en-javascript">Objecte <code>Array</code> en JavaScript</h2>
+<p><code>Array</code> és l’objecte natiu que representa <strong>col·leccions ordenades de valors</strong> en JavaScript. Característiques:  </p>
+<ul>
+<li>Els elements de l'array poden ser de qualsevol tipus: nombres, cadenes, objectes, altres arrays…  i es poden barrejar.</li>
+<li>IMPORTANT: l’índex comença en 0.  </li>
+<li>Es pot crear amb literals <code>[]</code> o amb el constructor <code>new Array()</code>.  </li>
+</ul>
+<p><strong>Creació d’Arrays</strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Literal</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">noms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Joan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Laura&quot;</span><span class="p">];</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">mix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Marc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;producte&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">llet</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;preu&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1.27</span><span class="p">}]</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">// Constructor</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayBuit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">();</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arrayTamaño5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// array amb 5 posicions buides</span>
+</span></code></pre></div>
+<p><strong>Mètodes més utilitzats</strong></p>
+<ul>
+<li>
+<p>Afegir i eliminar elements</p>
+<ul>
+<li><code>push(valor)</code> → afegeix un element al final de l’array</li>
+<li><code>pop()</code> → elimina l’últim element de l’array</li>
+<li><code>shift()</code> → elimina el primer element de l’array</li>
+<li><code>unshift(valor)</code> → afegeix un element al principi de l’array</li>
+<li><code>slice(inici, fi)</code> → retorna una còpia d’una sub-secció de l’array des d'inici a fi, sense incloure a aques (fi - 1). Si no es posa inici, sols un parametre, es retorna la sub-secció a partir del valor indicat.</li>
+<li>
+<p><code>splice(index, count, elements...)</code> → elimina i/o afegeix elements en qualsevol posició de l’array. 
+        index: indica des d'on s'inicia a borrar/afegir
+        count: valors a borrar/afegir des d'inici. 0 indica cap
+        elements: valor a afegir</p>
+</li>
+<li>
+<p><code>sort()</code> → ordena els elements de l’array</p>
+</li>
+<li><code>reverse()</code> → inverteix l’ordre dels elements</li>
+</ul>
+</li>
+</ul>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// push → afegir al final</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">nums</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">6</span><span class="p">);</span><span class="w">       </span><span class="c1">// [1,2,3,4,5,6]</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">// pop → eliminar l’últim element</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nx">nums</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w">         </span><span class="c1">// [1,2,3,4,5]</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1">// unshift → afegir al principi</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nx">noms</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="s2">&quot;Pau&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;Pau&quot;,&quot;Anna&quot;,&quot;Joan&quot;,&quot;Laura&quot;]</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1">// shift → eliminar el primer element</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="nx">noms</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span><span class="w">        </span><span class="c1">// [&quot;Anna&quot;,&quot;Joan&quot;,&quot;Laura&quot;]</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="c1">// Retornar una còpia d&#39;una secció de l&#39;array</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="c1">//let nums = [10, 20, 30, 40, 50];</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="kd">let</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// array = [30, 40, 50]</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="kd">let</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// array = [20, 30, 40]</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="c1">// Eliminar elements a partir d&#39;una posició </span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="c1">// nums = [10, 20, 30, 40, 50];</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="nx">nums</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// nums → [10, 40, 50]</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>Accés i informació</p>
+<ul>
+<li><code>length</code> → retorna la longitud de l’array</li>
+<li><code>indexOf(valor)</code> → retorna la posició d’un element, o -1 si no existeix</li>
+<li><code>includes(valor)</code> → retorna true si l’element existeix, false en cas contrari</li>
+</ul>
+</li>
+</ul>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">nums</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w">           </span><span class="c1">// 5</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">noms</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Joan&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nx">noms</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Marc&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
