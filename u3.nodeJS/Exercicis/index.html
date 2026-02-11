@@ -468,6 +468,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#programacio-orientada-a-objectes-en-javascript-amb-es6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programació Orientada a Objectes en JavaScript amb ES6
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -650,6 +659,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#programacio-orientada-a-objectes-en-javascript-amb-es6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programació Orientada a Objectes en JavaScript amb ES6
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -754,6 +772,46 @@
     Escriu una funció <code>salutació(nom = "amic")</code> que mostre "Hola, [nom]!". Si no es passa cap nom, ha de mostrar "Hola, amic!".</p>
 </li>
 </ol>
+<h3 id="programacio-orientada-a-objectes-en-javascript-amb-es6">Programació Orientada a Objectes en JavaScript amb ES6</h3>
+<h4 id="definicio-duna-classe-basica">Definició d’una classe bàsica</h4>
+<ol>
+<li>
+<p>Crea una classe <code>Cotxe</code> amb les propietats <code>marca</code>, <code>model</code>, <code>color</code>, <code>combustible</code>, <code>es_electric</code> i <code>any</code>. Defineix 2 constructors diferents, pero assegura't que el <code>combustible</code> per defecte siga "Gasolina" i <code>es_electric</code> per defecte siga "false". Afegeix <code>getters</code> i <code>setters</code>, així com un mètode <code>descripcio</code> que retorne una cadena amb tots els detalls del cotxe de forma descriptiva, és a dir, en una frase que descriga el cotxe.  </p>
+<blockquote>
+<p>Instancia 4 objectes de <code>Cotxe</code> amb diferents valors i crida el mètode <code>descripció</code> per a cadascun. Mostra per l'eixida estàndar la descrici-o de cadascun dels cotxes.</p>
+</blockquote>
+</li>
+<li>
+<p>Crea una classe <code>Empleat</code> amb les propietats <code>nom</code> i <code>sou</code>. Afegeix un constructor que inicialitze aquests valors (per defecte si no es passa sou, aquest serà el SMI de 1221€). Afegeix els <code>getters</code> i <code>setters</code> de forma que el sou no puga ser inferior al SMI i un mètode <code>pujatSou</code> i altre <code>baixarSou</code> que incremente o decremente el sou amb el valor que es passe per paràmetre, sense que el sou puga ser inferior SMI. Reescriu el mètode <code>toString</code> per a que mostre el nom i el sou en forma de frase. </p>
+<blockquote>
+<p>Instancia dos empleats i comprova el mètode <code>toString</code>. Puja el sou del primer empleat amb 200€ i al segon empleat baixa-li 150€. Comprova que no es rebase el SMI d'un empleat.</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="us-dherencia-i-metodes-estatics">Ús d’herència i mètodes estàtics</h4>
+<ol>
+<li>
+<p><strong>Herència i ús de <code>super</code></strong><br />
+       Crea una classe <code>Vehicle</code> amb una propietat <code>velocitat</code>. Defineix un mètode <code>accelerar</code> que augmente la velocitat. A continuació, crea una subclasse <code>Moto</code> que herete de <code>Vehicle</code> i afegeix una propietat <code>marca</code>. </p>
+<blockquote>
+<p>Comprova que la subclasse hereta correctament la funcionalitat del mètode <code>accelerar</code> amb algunes instàncies i aumentant o decrementant la velocitat.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Redefinició de mètodes a subclasses</strong><br />
+        Crea una classe <code>Animal</code> amb un mètode <code>ferSoroll</code> que mostre "L'animal fa soroll". Crea dues subclasses, <code>Gat</code> i <code>Gos</code>, que redefinisquen el mètode per a mostrar sons específics (per exemple, "miau" i "bup").</p>
+<blockquote>
+<p>Comprova els sorolls dels animals, segons siguen gos o gat.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Ús de mètodes estàtics</strong><br />
+        Defineix una classe <code>Matemàtiques</code> amb un mètode estàtic <code>sumar</code> que accepte dos números i retorne el resultat.</p>
+<blockquote>
+<p>Comprova que pots cridar a <code>Matemàtiques.sumar</code> sense haver de crear una instància de la classe i que retorne el resultat de la suma.</p>
+</blockquote>
+</li>
+</ol>
 <!--
 ## **5. Programació Orientada a Objectes amb prototips**
 
@@ -774,7 +832,7 @@
 #### **7. Herència i polimorfisme**
 
 17. **Herència simple**  
-    Defineix una classe `Animal` amb una propietat `nom` i un mètode `ferSoroll`. Crea una subclasse `Gos` que redefinisca `ferSoroll` per a mostrar “bup”. Instancia un gos i crida al seu mètode `ferSoroll`.
+    Defineix una classe `Animal` amb una propietat `nom` i un mètode `ferSoroll`. Crea una subclasse `Gos` que redefinisca `ferSoroll` per a mostrar “uau”. Instancia un gos i crida al seu mètode `ferSoroll`.
 
 18. **Herència amb `super`**  
     Crea una classe `Dispositiu` amb una propietat `marca` i un mètode `encendre`. A continuació, crea una subclasse `Ordinador` que afegisca una propietat `model` i redefineix el mètode `encendre` utilitzant `super`.
@@ -782,19 +840,15 @@
 19. **Polimorfisme amb funcions de prototip**  
     Defineix un prototip `Figura` amb un mètode `area` que retorne 0. Crea dos funcions constructores `Rectangle` i `Cercle` que hereten de `Figura` i redefineixen `area` per a calcular l'àrea específica de cada forma. 
 
-
-
-
-
 ### **Bateria d’exercicis sobre Programació Orientada a Objectes en JavaScript**
 
 #### **1. Conceptes bàsics**
 
 1. **Definició d’una classe bàsica**  
-   Crea una classe `Cotxe` amb les propietats `marca`, `model` i `any`. Afegeix un mètode `descripció` que retorne una cadena amb tots els detalls del cotxe. Instancia dos objectes de `Cotxe` amb diferents valors i crida el mètode `descripció` per a cada un.
+   Crea una classe `Cotxe` amb les propietats `marca`, `model`, `color`, `combustible`, `es_electric` i `any`. Defineix 2 constructors diferents, pero assegura't que el `combustible` per defecte siga "Gasolina" i `es_electric` per defecte siga "false". Afegeix getters i setters, així com un mètode `descripcio` que retorne una cadena amb tots els detalls del cotxe de forma descriptiva, és a dir, en una frase que descriga el cotxe   . 
 
 2. **Instanciació d’objectes**  
-   Utilitza la classe `Persona` dels exemples. Crea una nova propietat `edat` i afegeix un mètode `presentació` que mostre el nom i l’edat de la persona. Instancia dos persones amb noms i edats diferents i comprova que el mètode `presentació` funciona correctament.
+   Instancia 4 objectes de `Cotxe` amb diferents valors i crida el mètode `descripció` per a cadascun. Mostra per l'eixida estàndar la descrici-o de cadascun dels cotxes.
 
 #### **2. Orientació a Objectes basada en prototips**
 
@@ -818,7 +872,7 @@
 #### **4. Creació de Classes i Ús d’Herència amb la sintaxi ES6**
 
 8. **Classes i constructor amb paràmetres per defecte**  
-   Defineix una classe `Empleat` amb propietats `nom`, `càrrec` i `sou`. Assegura que el `càrrec` per defecte siga "Operari". Crea instàncies amb diferents valors per a comprovar el funcionament del constructor i els valors per defecte.
+   Defineix una classe `Empleat` amb propietats `nom`, `carrec` i `sou`. Assegura que el `carrec` per defecte siga "Operari". Crea instàncies amb diferents valors per a comprovar el funcionament del constructor i els valors per defecte.
 
 9. **Herència i ús de `super`**  
    Crea una classe `Vehicle` amb una propietat `velocitat`. Defineix un mètode `accelerar` que augmente la velocitat. A continuació, crea una subclasse `Moto` que herete de `Vehicle` i afegeix una propietat `marca`. Comprova que la subclasse hereta correctament la funcionalitat del mètode `accelerar`.
