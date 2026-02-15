@@ -1,0 +1,695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Jocs_javascript/">
+      
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>3. Javascript: Gestor de Tasques - Desenvolupament d'Aplicacions Web. 1r curs.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estructura-del-projecte" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Desenvolupament d&#39;Aplicacions Web. 1r curs." class="md-header__button md-logo" aria-label="Desenvolupament d'Aplicacions Web. 1r curs." data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament d'Aplicacions Web. 1r curs.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Javascript: Gestor de Tasques
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Desenvolupament d&#39;Aplicacions Web. 1r curs." class="md-nav__button md-logo" aria-label="Desenvolupament d'Aplicacions Web. 1r curs." data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Desenvolupament d'Aplicacions Web. 1r curs.
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jbonache.github.io/LMI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índex Curs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Pràctica HTML i CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jocs_javascript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Javascript: Minijocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3. Javascript: Gestor de Tasques
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Javascript: Gestor de Tasques
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del projecte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-classe-tasca" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Classe Tasca
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-classe-gestortasques" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Classe GestorTasques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-funcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Funcions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del projecte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-classe-tasca" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Classe Tasca
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-classe-gestortasques" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Classe GestorTasques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-funcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Funcions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>3. Javascript: Gestor de Tasques</h1>
+
+<p>Anem a desenvolupar una pàgina web senzilla per a un <strong>Gestor de Tasques</strong> fent ús programació Orientada a Objectes (POO) amb JavaScript.
+Treballarem els següents continguts:</p>
+<ul>
+<li>Classes i mètodes</li>
+<li>Arrays i estructures de control</li>
+<li>Interacció amb l’usuari mitjançant <code>prompt</code>, <code>alert</code> i <code>confirm</code></li>
+<li>Maquetació bàsica amb HTML i disseny visual amb CSS</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Simulació</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><video width="640" height="360" controls>
+     <source src="../rsc/simulacio.webm" type="video/webm">
+ </video></p>
+</div>
+</div>
+</div>
+<h3 id="estructura-del-projecte">Estructura del projecte</h3>
+<p>El projecte consta de <strong>tres fitxers</strong> principals:</p>
+<p><strong>1. <a href="../rsc/index.html" download>index.html</a></strong>
+Conté:</p>
+<ul>
+<li>El títol de l’aplicació</li>
+<li>Els botons d’interacció</li>
+<li>L’enllaç al fitxer JavaScript</li>
+<li>L’enllaç al full d’estils CSS</li>
+</ul>
+<p>Aquest arxiu <strong>es proporciona ja implementat</strong>, però però ho podreu adaptar al vostre gust.</p>
+<p><strong>2. <a href="../rsc/estil.css" download>estil.css</a></strong></p>
+<p>Defineix l’aparença visual aplicada a la pàgina <code>index.html</code> </p>
+<p>Aquest arxiu <strong>es proporciona ja implementat</strong>, però però ho podreu adaptar al vostre gust.</p>
+<p><strong>3. <a href="../rsc/app.js" download>app.js</a></strong></p>
+<p>Conté la lògica de la pàgina web i tindrà les següents funcionalitats:</p>
+<ul>
+<li>Crear tasques noves.</li>
+<li>Marcar tasques com a completades o pendents.</li>
+<li>Mostrar tasques pendents.</li>
+<li>Mostrar tasques completades.</li>
+<li>Eliminar tasques existents.</li>
+</ul>
+<p>Tot el codi haurà d’estar implementat dins del fitxer <strong><code>app.js</code></strong>, que <strong>se vos proporciona incomplet</strong>.</p>
+<p>A continuació es detalla, amb pseudocodi, la implementació del contingut de l'script <code>app.js</code>:</p>
+<h3 id="31-classe-tasca">3.1 Classe <code>Tasca</code></h3>
+<p>En aquesta primera part has d’implementar una classe anomenada <code>Tasca</code>.</p>
+<h4 id="atributs">Atributs</h4>
+<p>Cada objecte de tipus <code>Tasca</code> ha de tindre:</p>
+<ul>
+<li><code>text</code> → una cadena de text que descriga la tasca.</li>
+<li><code>completada</code> → un valor booleà que indique si la tasca està completada.</li>
+</ul>
+<blockquote>
+<p>L’atribut <code>completada</code> ha d’inicialitzar-se a <code>false</code>.</p>
+</blockquote>
+<h4 id="constructor">Constructor</h4>
+<p>El constructor de la classe ha de:</p>
+<ol>
+<li>Rebre com a paràmetre el text de la tasca.</li>
+<li>Assignar aquest text a l’atribut <code>text</code>.</li>
+<li>Inicialitzar l’atribut <code>completada</code> a <code>false</code>.</li>
+</ol>
+<h4 id="metodes">Mètodes</h4>
+<p>Has d’implementar els següents mètodes dins de la classe:</p>
+<h5 id="canviarestat"><code>canviarEstat()</code></h5>
+<ul>
+<li>No rep paràmetres.</li>
+<li>Canvia el valor de <code>completada</code>:</li>
+<li>Si és <code>false</code>, ha de passar a <code>true</code>.</li>
+<li>Si és <code>true</code>, ha de passar a <code>false</code>.</li>
+</ul>
+<h5 id="mostrar"><code>mostrar()</code></h5>
+<ul>
+<li>No rep paràmetres.</li>
+<li>Ha de retornar el text de la tasca.</li>
+</ul>
+<hr />
+<h3 id="32-classe-gestortasques">3.2 Classe <code>GestorTasques</code></h3>
+<p>En aquesta segona part has d’implementar una classe anomenada <code>GestorTasques</code>, que s’encarregarà de gestionar totes les tasques creades.</p>
+<h4 id="atributs_1">Atributs</h4>
+<p>La classe ha de tindre:</p>
+<ul>
+<li><code>tasques</code> → un array que emmagatzeme totes les tasques creades.</li>
+</ul>
+<blockquote>
+<p>Aquest array s’ha d’inicialitzar buit en el constructor.</p>
+</blockquote>
+<h4 id="constructor_1">Constructor</h4>
+<p>El constructor de la classe ha de:</p>
+<ol>
+<li>Crear l’array <code>tasques</code>.</li>
+<li>Inicialitzar-lo com un array buit.</li>
+</ol>
+<h4 id="metodes_1">Mètodes</h4>
+<p>Has d’implementar els següents mètodes:</p>
+<h5 id="afegirtascatext"><code>afegirTasca(text)</code></h5>
+<ul>
+<li>Rep com a paràmetre un text.</li>
+<li>Crea una nova instància de la classe <code>Tasca</code> amb aquest text.</li>
+<li>Afig la nova tasca a l’array <code>tasques</code>.</li>
+</ul>
+<h5 id="obtindrependents"><code>obtindrePendents()</code></h5>
+<ul>
+<li>No rep paràmetres.</li>
+<li>Recorre l’array <code>tasques</code>.</li>
+<li>Crea un nou array.</li>
+<li>Afig a aquest nou array només les tasques que <strong>no estiguen completades</strong>.</li>
+<li>Retorna l’array amb les tasques pendents.</li>
+</ul>
+<h5 id="obtindrecompletades"><code>obtindreCompletades()</code></h5>
+<ul>
+<li>No rep paràmetres.</li>
+<li>Recorre l’array <code>tasques</code>.</li>
+<li>Crea un nou array.</li>
+<li>Afig a aquest nou array només les tasques que <strong>estiguen completades</strong>.</li>
+<li>Retorna l’array amb les tasques completades.</li>
+</ul>
+<h5 id="eliminartascaindex"><code>eliminarTasca(index)</code></h5>
+<ul>
+<li>Rep com a paràmetre un índex.</li>
+<li>Elimina de l’array <code>tasques</code> la tasca situada en la posició indicada.</li>
+<li>Has de controlar que l’índex siga vàlid abans d’eliminar.</li>
+</ul>
+<hr />
+<h3 id="33-funcions">3.3 Funcions</h3>
+<p>En aquesta part has d’implementar diverses funcions fora de les classes.<br />
+Aquestes funcions permetran interactuar amb l’usuari mitjançant <code>prompt</code>, <code>alert</code> i <code>confirm</code>.</p>
+<h4 id="afegirtasca"><code>afegirTasca()</code></h4>
+<p>Aquesta funció ha de:</p>
+<ol>
+<li>Demanar a l’usuari el text d’una nova tasca mitjançant <code>prompt</code>.</li>
+<li>Comprovar que l’usuari no ha premut “Cancel·lar” i que ha escrit algun text.</li>
+<li>Si el text és vàlid:<ul>
+<li>Cridar el mètode <code>afegirTasca(text)</code> del gestor.</li>
+<li>Mostrar un missatge de confirmació amb <code>alert</code>.</li>
+</ul>
+</li>
+</ol>
+<h4 id="mostrarpendents"><code>mostrarPendents()</code></h4>
+<p>Aquesta funció ha de:</p>
+<ol>
+<li>Obtenir la llista de tasques pendents mitjançant <code>obtindrePendents()</code>.</li>
+<li>Si no hi ha tasques pendents:<ul>
+<li>Mostrar un missatge indicant-ho i finalitzar la funció.</li>
+</ul>
+</li>
+<li>Si n’hi ha:<ul>
+<li>Construir un missatge amb:<ul>
+<li>Un títol.</li>
+<li>La llista numerada de les tasques (utilitzant el mètode <code>mostrar()</code>).</li>
+</ul>
+</li>
+<li>Demanar a l’usuari que introduïsca el número d’una tasca.</li>
+<li>Comprovar que l’opció siga vàlida.</li>
+<li>Si és correcta:<ul>
+<li>Canviar l’estat de la tasca seleccionada.</li>
+<li>Mostrar un missatge de confirmació.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="mostrarcompletades"><code>mostrarCompletades()</code></h4>
+<p>Aquesta funció ha de:</p>
+<ol>
+<li>Obtenir la llista de tasques completades mitjançant <code>obtindreCompletades()</code>.</li>
+<li>Si no hi ha tasques completades:<ul>
+<li>Mostrar un missatge indicant-ho i finalitzar la funció.</li>
+</ul>
+</li>
+<li>Si n’hi ha:<ul>
+<li>Construir un missatge amb:<ul>
+<li>Un títol.</li>
+<li>La llista numerada de les tasques.</li>
+</ul>
+</li>
+<li>Demanar a l’usuari que introduïsca el número d’una tasca.</li>
+<li>Comprovar que l’opció siga vàlida.</li>
+<li>Si és correcta:<ul>
+<li>Canviar l’estat de la tasca seleccionada.</li>
+<li>Mostrar un missatge de confirmació.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="eliminartasca"><code>eliminarTasca()</code></h4>
+<p>Aquesta funció ha de:</p>
+<ol>
+<li>Comprovar si existeixen tasques en el gestor.<ul>
+<li>Si no n’hi ha, mostrar un missatge i finalitzar.</li>
+</ul>
+</li>
+<li>Si n’hi ha:<ul>
+<li>Mostrar totes les tasques numerades.</li>
+<li>Demanar a l’usuari el número de la tasca que vol eliminar.</li>
+<li>Comprovar que el número siga vàlid.</li>
+<li>Demanar confirmació amb <code>confirm</code>.</li>
+<li>Si l’usuari confirma:<ul>
+<li>Cridar el mètode <code>eliminarTasca(index)</code> del gestor.</li>
+<li>Mostrar un missatge indicant que la tasca ha sigut eliminada.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
