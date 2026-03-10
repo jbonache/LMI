@@ -475,9 +475,9 @@
 <div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/fitxerJS.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </div>
-<p>Quan el navegador web rep un document HTML, el converteix en una estructura que es pot <em>renderitzar</em> o <em>dibuixar</em> a la finestra del navegador. Aquesta estructura jeràrquica es coneix com el <strong>DOM</strong> (Document Object Model). Quan un document HTML porta associat codi JavaScript, aquest s'ha d'executar ina vegada el <em>DOM</em> està completament construït.</p>
+<p>Quan el navegador web rep un document HTML, el converteix en una estructura que es pot <em>renderitzar</em> o <em>dibuixar</em> a la finestra del navegador. Aquesta estructura jeràrquica es coneix com el <strong>DOM</strong> (Document Object Model). Quan un document HTML porta associat codi JavaScript, aquest s'ha d'executar una vegada el <em>DOM</em> està completament construït.</p>
 <p><strong>Punt d'entrada al JavaScript</strong></p>
-<p>El punt d'entrada recomanat per executar codi JavaScript és l'event <code>DOMContentLoaded</code>, que s'activa quan el navegador ha carregat i processat completament l'estructura HTML, sense esperar que es carreguen recursos externs com imatges o fulls d'estil.</p>
+<p>El punt d'entrada recomanat per executar codi JavaScript és l'event <strong><code>DOMContentLoaded</code></strong>, que <strong>s'activa quan el navegador ha carregat i processat completament l'estructura HTML</strong>   , sense esperar que es carreguen recursos externs com imatges o fulls d'estil.</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="c1">// Codi JavaScript</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">});</span>
@@ -501,6 +501,22 @@
 <p class="admonition-title"><code>DOMContentLoaded</code> o <code>onload</code>?</p>
 <p>El mes recomanable i preferible és utilitzar l'esdeveniment <code>DOMContentLoaded</code>, ja que generalment no necessitem esperar a que estiguen carregats tots els recursos associats al document per executar el codi Javascript.</p>
 <p>Si, per alguna raó, cal assegurar-se que absolutament tots els recursos estan carregats abans d'executar el codi, es pot utilitzar <code>window.onload</code>.</p>
+<p>Resumint:</p>
+<p><strong><code>DOMContentLoaded</code></strong></p>
+<ul>
+<li>S’executa quan el <strong>DOM (HTML)</strong> està completament carregat i processat.  </li>
+<li><strong>No espera</strong> que es carreguen imatges, vídeos o altres recursos externs.</li>
+</ul>
+<p><strong><code>window.onload</code></strong>  </p>
+<ul>
+<li>S’executa quan <strong>tota la pàgina</strong> està completament carregada.  </li>
+<li><strong>Espera</strong> que es carreguen tots els recursos (HTML, CSS, imatges, etc.).</li>
+</ul>
+<p><strong>Ordre d’execució:</strong></p>
+<ol>
+<li><code>DOMContentLoaded</code>  </li>
+<li><code>window.onload</code></li>
+</ol>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Funcions anònimes i funcions amb nom</p>
@@ -513,6 +529,50 @@
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">// Associem la funció a l&#39;event DOMContentLoaded</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">iniciarApp</span><span class="p">);</span>
 </span></code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Execici</p>
+<p>En aquest exercici crearàs una pàgina web senzilla per observar <strong>quan s’executen els events <code>DOMContentLoaded</code> i <code>window.onload</code></strong>.</p>
+<ol>
+<li>Crea un fitxer anomenat <code>prova_events.html</code> i escriu el següent codi:</li>
+</ol>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Prova events<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;DOMContentLoaded&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;DOM carregat (DOMContentLoaded)&quot;</span><span class="p">);</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tot carregat (window.onload)&quot;</span><span class="p">);</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="p">};</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Prova de càrrega de la pàgina<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://picsum.photos/1200/800&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<ol>
+<li>Obri la pàgina al navegador</li>
+<li>Obri la <strong>consola del navegador</strong> (<code>F12</code>).</li>
+<li>Recarrega la pàgina.</li>
+</ol>
+<h5 id="observa-el-resultat">Observa el resultat</h5>
+<p>Mira <strong>quin missatge apareix primer</strong> a la consola.</p>
+<h5 id="respon-les-preguntes">Respon les preguntes</h5>
+<ul>
+<li>Quin event s’executa primer?</li>
+<li>Per què <code>window.onload</code> tarda més a executar-se?</li>
+<li>Què passaria si la pàgina tinguera moltes imatges grans o més imatges? Prova a posar moltes imatges (pots copiar la etiqueta img)</li>
+<li>Com podries fer que abans de res apareguera un missatge per consola que diguera "Carregant..."</li>
+</ul>
 </div>
 
 
