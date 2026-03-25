@@ -1275,15 +1275,15 @@ document$.subscribe(() => { lightbox.reload() });
 <h4 id="scriptjs">script.js</h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>Guía d&#39;implementació:
 </span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
-</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>1. Seleccionar contenidor: On es mostraran totes les targetes.
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>1. Seleccionar contenidor: des d&#39;on es mostraran (penjaran) totes les targetes.
 </span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>2. Preguntar quantitat de targetes: s&#39;utilitzarà per a repetir el procés (bucle de generació de targetes).
-</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>3. Bucle per producte: Cada iteració crea una nova targeta.
-</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>4. Demanar dades: Nom, preu i opcionalment imatge.
-</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>5. Crear elements HTML: div per la targeta, h2 pel nom, p pel preu, url imatge (opcional).
-</span><span id="__span-52-8"><a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>6. Afegir contingut: Escriure la informació dins dels elements.
-</span><span id="__span-52-9"><a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a>7. Construir targeta: Posar els elements dins del div.
-</span><span id="__span-52-10"><a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a>8. Estil directe (opcional): Destacar productes especials.
-</span><span id="__span-52-11"><a id="__codelineno-52-11" name="__codelineno-52-11" href="#__codelineno-52-11"></a>9. Afegir al contenidor: Inserir la targeta al DOM per a que es mostre a la pàgina.
+</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>3. Bucle per cada producte: Cada iteració crea una nova targeta.
+</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>    - Demanar dades: Nom, preu i opcionalment url d&#39;una imatge. També si es un producte especial (Sí o No)
+</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>    - Crear elements HTML: div per la targeta, h2 pel nom, p pel preu, img amb atribut src per a la imatge (opcional).
+</span><span id="__span-52-8"><a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>    - Afegir contingut: Escriure la informació dins dels elements; nom i preu
+</span><span id="__span-52-9"><a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a>    - Construir targeta: Posar els elements dins de l&#39;element div
+</span><span id="__span-52-10"><a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a>    - Estil directe: Destacar productes especials. Per exemple, mostrar el fons de la targeta d&#39;un color o el text del producte amb altre 
+</span><span id="__span-52-11"><a id="__codelineno-52-11" name="__codelineno-52-11" href="#__codelineno-52-11"></a>    - Afegir al contenidor: Inserir la targeta al DOM per a que es mostre a la pàgina.
 </span></code></pre></div>
 </div>
 <!-- solució script.js
