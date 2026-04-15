@@ -524,7 +524,9 @@
 <h2 id="events-en-javascript">Events en JavaScript</h2>
 <p>En la programació tradicional, el flux d'execució està ben definit de la primera instrucció a l'última, a través de seqüències d'instruccions i sentències de control de flux.</p>
 <p>La programació web està <strong>dirigida a esdeveniments</strong>, associant funcions o mètodes com a resposta a determinades accions de l'usuari o successos del sistema. Quan es produeix un esdeveniment, s'executa la funció associada, anomenada <em>gestor d'esdeveniments</em> o <em>event handler</em>.</p>
-<p>Els navegadors moderns suporten un model d'esdeveniments basat en els principis definits en el <strong>DOM de nivell 2</strong>, que ha estat ampliat i millorat pel <strong>DOM Living Standard</strong>. Aquest estàndard viu, mantingut per WHATWG, introdueix funcionalitats modernes i alternatives a esdeveniments obsolets, com l'ús de <code>MutationObserver</code> per monitoritzar canvis al DOM. </p>
+<!--Els navegadors moderns suporten un model d'esdeveniments basat en els principis definits en el **DOM de nivell 2**, que ha estat ampliat i millorat pel **DOM Living Standard**. Aquest estàndard viu, mantingut per WHATWG, introdueix funcionalitats modernes i alternatives a esdeveniments obsolets, com l'ús de `MutationObserver` per monitoritzar canvis al DOM. 
+-->
+
 <h3 id="tipus-desdeveniments">Tipus d'esdeveniments</h3>
 <p>Els esdeveniments es poden classificar en diversos grups segons el seu origen:</p>
 <ul>
@@ -628,11 +630,12 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Esdeveniments del DOM</p>
-<p>Actualment, els esdeveniments sobre el DOM es gestionen directament amb <code>MutationObserver</code>, en lloc de fer ús de diversos esdeveniments per detectar els diversos canvis al DOM. Esdeveniments antics com <strong><code>DOMSubtreeModified</code></strong>, <strong><code>DOMNodeInserted</code></strong>, i altres estan <strong>obsolets</strong>.</p>
-<p>Recordem com podem fer ús del <code>MutationObserver</code>
- <div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">observer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MutationObserver</span><span class="p">((</span><span class="nx">mutations</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<!--
+!!! note "Esdeveniments del DOM"
+     Actualment, els esdeveniments sobre el DOM es gestionen directament amb `MutationObserver`, en lloc de fer ús de diversos esdeveniments per detectar els diversos canvis al DOM. Esdeveniments antics com **`DOMSubtreeModified`**, **`DOMNodeInserted`**, i altres estan **obsolets**.
+
+     Recordem com podem fer ús del `MutationObserver`
+     <div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">observer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MutationObserver</span><span class="p">((</span><span class="nx">mutations</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nx">mutations</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">mutation</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Canvi detectat: </span><span class="si">${</span><span class="nx">mutation</span><span class="p">.</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">});</span>
@@ -642,8 +645,9 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">childList</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">subtree</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">});</span>
-</span></code></pre></div></p>
-</div>
+</span></code></pre></div>
+-->
+
 <h3 id="gestors-desdeveniments-event-handlers">Gestors d'esdeveniments (Event Handlers)</h3>
 <h4 id="models-antics-onclick-etc">Models antics (<code>onclick</code>, etc.)</h4>
 <p>Els mètodes com <code>onclick</code>, <code>onload</code>, etc., s’utilitzaven històricament per associar esdeveniments directament als elements HTML. Això està <strong>desaconsellat</strong> perquè barreja comportament i estructura.</p>
@@ -720,9 +724,9 @@ On: </p>
 </span></code></pre></div>
 <details class="question">
 <summary>Analitza els esdeveniments que estem capturant en el codi anterior. Copia'l en un document HTML i observa a la consola de les eines de desenvolupament què passa quan fas clic en el text.</summary>
-<p>Cadaelement del DOM (des de <code>&lt;body&gt;</code> fins a l'element més profund) té dos gestors associats:
-  - Un per a la fase de <strong>captura</strong> (<code>true</code>).
-  - Un altre per a la fase de <strong>bubbling</strong> (<code>false</code>).</p>
+<p>Cada element del DOM (des de <code>&lt;body&gt;</code> fins a l'element més profund) té dos gestors associats:<br />
+    - Un per a la fase de <strong>captura</strong> (<code>true</code>).<br />
+    - Un altre per a la fase de <strong>bubbling</strong> (<code>false</code>).</p>
 <p>Si executem el codi podem veure com es produeix aquesta captura d'esdeveniments, en l'ordre que hem indicat al principi de l'apartat, és a dir, primer es realitzen els events de Capture des de l'arrel fins l'element més profund, i després el bubbling, en ordre invers.</p>
 <div class="language-text highlight"><pre><span></span><code>```
 Capturing en &lt;body&gt;
@@ -778,20 +782,26 @@ Bubbling en &lt;body&gt;
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Enllaç clicat, però no redirigit.&#39;</span><span class="p">);</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">});</span>
 </span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">DOM XSS</p>
-<p>Aquesta funció podria utilitzar-se per realitzar un atac DOM XSS (Cross Site Scripting basat en el DOM), si un usuari malintencionat aconsegueix modificar el Javascrip en el navegador de l'usuari.</p>
-<p>Per exemple, si tenim el codi:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.google.com&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;link1&quot;</span><span class="p">&gt;</span>Vés al buscador de Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<!--
+!!! note "DOM XSS"
+    Aquesta funció podria utilitzar-se per realitzar un atac DOM XSS (Cross Site Scripting basat en el DOM), si un usuari malintencionat aconsegueix modificar el Javascrip en el navegador de l'usuari.
+
+    Per exemple, si tenim el codi:
+
+    <div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.google.com&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;link1&quot;</span><span class="p">&gt;</span>Vés al buscador de Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<p>I s'aconsegueix injectar el següent javascript:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;link1&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+    I s'aconsegueix injectar el següent javascript:
+
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;link1&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">        </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://bing.com&quot;</span><span class="p">;</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">});</span>
 </span></code></pre></div>
-<p>Tot i que fins i tot en el codi de la pàgina l'enllaç siga correcte, quan fem clic serem redirigits a altre buscador.</p>
-</div>
+
+    Tot i que fins i tot en el codi de la pàgina l'enllaç siga correcte, quan fem clic serem redirigits a altre buscador.
+-->
+
 <h3 id="lobjecte-event">L'objecte Event</h3>
 <p>Quan creem una funció per gestionar un esdeveniment sobre un element, sovint necessitem informació sobre el propi esdeveniment, com la tecla que s'ha premut en un esdeveniment de teclat, la posició del ratolí on s'ha fet clic, o una referència a l'objecte on s'ha produït l'esdeveniment.</p>
 <p>L'objecte <code>event</code>, creat automàticament pel navegador, encapsula aquesta informació i <strong>la proporciona com a argument de la funció gestora</strong>. Aquest objecte <code>event</code> inclou propietats i mètodes estàndard que permeten interactuar amb l'esdeveniment.</p>
@@ -885,7 +895,25 @@ Bubbling en &lt;body&gt;
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Altres esdeveniments de ratolí</p>
-<p>A l'exemple anterior, només es detectaran els clicks del botó esquerre. Si volem gestionar els altres botons, caldrà fer ús d'esdeveniments del ratolí més específics com <code>mousedown</code> i <code>mouseup</code>. </p>
+<p>A l'exemple anterior, només es detectaran els clicks del botó esquerre. Si volem gestionar els altres botons, caldrà fer ús d'esdeveniments del ratolí més específics com <code>contextmenu</code>, <code>mousedown</code> i <code>mouseup</code>. 
+ <div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;contextmenu&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">           </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Posició X:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">           </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Posició Y:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">clientY</span><span class="p">);</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">           </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Botó clicat:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2 (dret)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">       </span><span class="p">});</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousedown&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">           </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Botó esquerre clicat&#39;</span><span class="p">);</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">       </span><span class="p">}</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">           </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Botó central clicat&#39;</span><span class="p">);</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">       </span><span class="p">}</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">           </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Botó dret clicat&#39;</span><span class="p">);</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">       </span><span class="p">}</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">   </span><span class="p">});</span>
+</span></code></pre></div></p>
 </div>
 <ul>
 <li><strong>Propietats per a esdeveniments de teclat</strong></li>
@@ -913,141 +941,219 @@ Bubbling en &lt;body&gt;
 </tbody>
 </table>
 <p><strong>Exemple:</strong></p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Tecla premuda:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Enter&quot;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Codi de tecla:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;KeyA&quot;</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ALT premut:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">altKey</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">});</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Tecla premuda:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Enter&quot;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Codi de tecla:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;KeyA&quot;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ALT premut:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">altKey</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">});</span>
 </span></code></pre></div>
-<h4 id="gestio-desdeveniments-objectes-i-this">Gestió d'esdeveniments, objectes i <code>this</code></h4>
-<p>Quan gestionem esdeveniments dins de <strong>classes</strong> o <strong>objectes</strong>, és important entendre el comportament de <strong><code>this</code></strong>. El valor de <strong><code>this</code></strong> depèn del context on es crida una funció. Això pot causar problemes quan treballem amb esdeveniments, perquè <strong><code>this</code></strong> dins d’un gestor d’esdeveniments es refereix a l'element HTML que l’ha generat, no a l’objecte o classe.</p>
-<h5 id="el-paper-de-this-dins-duna-classe"><strong>El paper de <code>this</code> dins d'una classe</strong></h5>
-<ol>
-<li>
-<p><strong>Dins d'una classe</strong>, <strong><code>this</code></strong> fa referència a l'objecte instanciat de la classe:
-   <div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nom</span><span class="o">=</span><span class="s2">&quot;Sense Nom&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nx">mostraNom</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="nx">app</span><span class="p">.</span><span class="nx">mostraNom</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Sense Nom&quot;</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app2</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">(</span><span class="s2">&quot;La meua App&quot;</span><span class="p">)</span>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="nx">app</span><span class="p">.</span><span class="nx">mostraNom</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;La meua App&quot;</span>
-</span></code></pre></div></p>
+<div class="admonition abstract">
+<p class="admonition-title">Tanda d'exercicis per a esdeveniments de <code>click</code></p>
+<p>Per a tots els exercicis:</p>
+<ul>
+<li>Has d’utilitzar <code>addEventListener</code></li>
+<li>L’esdeveniment serà <code>"click"</code></li>
+<li>Cal seleccionar correctament els elements del DOM</li>
+</ul>
+<p><strong>Exercici 1: Comptador</strong></p>
+<p>Crea un botó que, cada vegada que es faça clic, incremente un número que es mostra en pantalla.</p>
+<p>Instruccions</p>
+<ul>
+<li>Afegeix un botó (<code>&lt;button&gt;</code>) amb el text <strong>“Sumar”</strong></li>
+<li>Mostra un número inicial (per exemple, 0)</li>
+<li>Cada clic ha d’augmentar el valor en 1</li>
+<li>El resultat s’ha de veure actualitzat en la pàgina</li>
+</ul>
+<p>Necessitaràs:</p>
+<ul>
+<li>Una variable per guardar el valor  </li>
+<li>Accedir a l’element on es mostra el número  </li>
+<li>Un <code>addEventListener("click", ...)</code>  </li>
+</ul>
+<hr />
+<p><strong>Exercici 2: Mostrar i ocultar missatge</strong></p>
+<p>Fes que un missatge aparega i desaparega cada vegada que es fa clic en un botó.</p>
+<p>Instruccions</p>
+<ul>
+<li>Crea un botó amb el text <strong>“Mostrar/Ocultar”</strong></li>
+<li>Afegeix un paràgraf amb un missatge (per exemple: “Missatge secret”)</li>
+<li>El missatge ha d’estar ocult inicialment </li>
+<li>En fer clic:<ul>
+<li>Si està ocult → es mostra</li>
+<li>Si està visible → s’oculta</li>
+</ul>
 </li>
-<li>
-<p><strong>Dins d'un gestor d’esdeveniments</strong>, però, <strong><code>this</code></strong> canvia i apunta a l’element HTML que ha generat l’esdeveniment:</p>
+</ul>
+<p>Ajuda: pots utilitzar la propietat <code>style.display</code></p>
+<hr />
+<p><strong>Exercici 3: Canviar color</strong></p>
+<p>Crea una caixa que canvie de color quan es faça clic sobre ella.</p>
+<p>Instruccions</p>
+<ul>
+<li>Crea un <code>div</code> amb una mida visible (per exemple, 100x100 px)</li>
+<li>Assigna-li un color inicial</li>
+<li>Quan es faça clic sobre la caixa:<ul>
+<li>El color ha de canviar</li>
+</ul>
 </li>
-</ol>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
+</ul>
+<p>Ampliació</p>
+<ul>
+<li>Fes que alterne entre dos colors  </li>
+<li>Fes que canvie a un color aleatori cada vegada</li>
+</ul>
+<p>Ajuda: pots modificar la propietat <code>style.background</code></p>
+</div>
+<!--
+
+### Gestió d'esdeveniments, objectes i `this`
+
+Quan gestionem esdeveniments dins de **classes** o **objectes**, és important entendre el comportament de **`this`**. El valor de **`this`** depèn del context on es crida una funció. Això pot causar problemes quan treballem amb esdeveniments, perquè **`this`** dins d’un gestor d’esdeveniments es refereix a l'element HTML que l’ha generat, no a l’objecte o classe.
+
+#### **El paper de `this` dins d'una classe**
+
+1. **Dins d'una classe**, **`this`** fa referència a l'objecte instanciat de la classe:
+   <div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nom</span><span class="o">=</span><span class="s2">&quot;Sense Nom&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="p">});</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p">}</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nx">mostraNom</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">}</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nx">app</span><span class="p">.</span><span class="nx">mostraNom</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;Sense Nom&quot;</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app2</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">(</span><span class="s2">&quot;La meua App&quot;</span><span class="p">)</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="nx">app</span><span class="p">.</span><span class="nx">mostraNom</span><span class="p">();</span><span class="w"> </span><span class="c1">// Mostra &quot;La meua App&quot;</span>
 </span></code></pre></div>
-<ul>
-<li>En aquest exemple, <strong><code>this.nom</code></strong> és <strong><code>undefined</code></strong> perquè <strong><code>this</code></strong> apunta a l'element HTML (<code>#botó</code>), no a l'objecte <code>App</code>.</li>
-</ul>
-<h5 id="solucions-modernes-al-problema-de-this"><strong>Solucions modernes al problema de <code>this</code></strong></h5>
-<ul>
-<li><strong>1. Utilitzar funcions fletxa</strong></li>
-</ul>
-<p>Les funcions fletxa <strong>no tenen el seu propi context de <code>this</code></strong>. En lloc d’això, hereten el valor de <strong><code>this</code></strong> del context on s’han definit. Això les fa ideals per a gestionar aquest problema.</p>
-<p><strong>Exemple:</strong>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
+
+2. **Dins d'un gestor d’esdeveniments**, però, **`this`** canvia i apunta a l’element HTML que ha generat l’esdeveniment:
+
+   <div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nom</span><span class="o">=</span><span class="s2">&quot;Sense Nom&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">       </span><span class="p">}</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
 </span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Sense nom&quot; o el nom amb què s&#39;haja instanciat</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
 </span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="p">});</span>
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p">}</span>
 </span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
 </span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
 </span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
-</span></code></pre></div></p>
-<p>Ací, la funció fletxa fa que <strong><code>this</code></strong> seguisca referint-se a l’objecte <code>App</code>, fins i tot dins del gestor d’esdeveniments.</p>
-<ul>
-<li><strong>2. Utilitzar el mètode <code>bind()</code></strong></li>
-</ul>
-<p>El mètode <strong><code>bind()</code></strong> permet fixar el valor de <strong><code>this</code></strong> en una funció, assegurant que no canvie dins del gestor d’esdeveniments.</p>
-<p><strong>Exemple:</strong>
+</span></code></pre></div>
+
+   - En aquest exemple, **`this.nom`** és **`undefined`** perquè **`this`** apunta a l'element HTML (`#botó`), no a l'objecte `App`.
+
+
+#### **Solucions modernes al problema de `this`**
+
+* **1. Utilitzar funcions fletxa**
+
+Les funcions fletxa **no tenen el seu propi context de `this`**. En lloc d’això, hereten el valor de **`this`** del context on s’han definit. Això les fa ideals per a gestionar aquest problema.
+
+**Exemple:**
 <div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nom</span><span class="o">=</span><span class="s2">&quot;Sense Nom&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">       </span><span class="p">}</span>
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
 </span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">            </span><span class="s1">&#39;click&#39;</span><span class="p">,</span>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">            </span><span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="c1">// Fixem `this` a l&#39;objecte App</span>
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">        </span><span class="p">);</span>
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">}</span>
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
-</span></code></pre></div></p>
-<p><strong><code>bind(this)</code></strong> assegura que <strong><code>this</code></strong> sempre apunta a l'objecte <code>App</code>, independentment d’on s’execute la funció.</p>
-<ul>
-<li><strong>3. Utilitzar una variable intermèdia (<code>self</code> o <code>that</code> generalment)</strong></li>
-</ul>
-<p>Aquesta tècnica és més antiga i consisteix a emmagatzemar el valor de <strong><code>this</code></strong> en una variable intermèdia (<code>self</code>, <code>that</code>, etc.) abans de definir el gestor d’esdeveniments.</p>
-<p><strong>Exemple:</strong>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Sense nom&quot; o el nom amb què s&#39;haja instanciat</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">}</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span></code></pre></div>
+
+Ací, la funció fletxa fa que **`this`** seguisca referint-se a l’objecte `App`, fins i tot dins del gestor d’esdeveniments.
+
+
+* **2. Utilitzar el mètode `bind()`**
+
+El mètode **`bind()`** permet fixar el valor de **`this`** en una funció, assegurant que no canvie dins del gestor d’esdeveniments.
+
+**Exemple:**
 <div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nom</span><span class="o">=</span><span class="s2">&quot;Sense Nom&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
 </span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">       </span><span class="p">}</span>
 </span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
 </span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"> </span><span class="c1">// Guardem el valor de `this` en `self`</span>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span>
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="p">});</span>
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="p">}</span>
-</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
-</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
-</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
-</span></code></pre></div></p>
-<p>Tot i que funcional, aquesta tècnica és menys recomanada en entorns moderns perquè les funcions fletxa són més netes i intuïtives.</p>
-<h4 id="creacio-desdeveniments-personalitzats">Creació d'esdeveniments personalitzats</h4>
-<p>Javascript ens permet crear events de forma personalitzada fent ús del constructor d'events personalitzats <code>CustomEvent</code>, així com llançar qualsevol tipus d'event amb el mètode <code>dispatchEvent</code> aplicat a qualsevol element HTML.</p>
-<p>Per tal de crear un event personalitzat farem:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s1">&#39;el_meu_event&#39;</span><span class="p">);</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">            </span><span class="s1">&#39;click&#39;</span><span class="p">,</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">            </span><span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="c1">// Fixem `this` a l&#39;objecte App</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="p">);</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="p">}</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 </span></code></pre></div>
-<p>I si a més, volem <strong>afegir informació a l'event</strong>, podem fer ús de <code>CustomEvent</code> i la propietat <code>detail</code>de la següent forma:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s1">&#39;el_meu_event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">hora</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+
+**`bind(this)`** assegura que **`this`** sempre apunta a l'objecte `App`, independentment d’on s’execute la funció.
+
+* **3. Utilitzar una variable intermèdia (`self` o `that` generalment)**
+
+Aquesta tècnica és més antiga i consisteix a emmagatzemar el valor de **`this`** en una variable intermèdia (`self`, `that`, etc.) abans de definir el gestor d’esdeveniments.
+
+**Exemple:**
+<div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nom</span><span class="o">=</span><span class="s2">&quot;Sense Nom&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">       </span><span class="p">}</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"> </span><span class="c1">// Guardem el valor de `this` en `self`</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#botó&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">nom</span><span class="p">);</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="p">}</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">();</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 </span></code></pre></div>
-<p>Aquest event el podem capturar com qualsevol altre, i associar-li un escoltador d'events amb una funció gestora de l'event:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;el_meu_event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Event personalitzat:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ev</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p">});</span>
+
+Tot i que funcional, aquesta tècnica és menys recomanada en entorns moderns perquè les funcions fletxa són més netes i intuïtives.
+
+
+### Creació d'esdeveniments personalitzats
+
+Javascript ens permet crear events de forma personalitzada fent ús del constructor d'events personalitzats `CustomEvent`, així com llançar qualsevol tipus d'event amb el mètode `dispatchEvent` aplicat a qualsevol element HTML.
+
+Per tal de crear un event personalitzat farem:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s1">&#39;el_meu_event&#39;</span><span class="p">);</span>
 </span></code></pre></div>
-<p>I si el que volem és <strong>disparar l'event</strong>, farem ús del mètode <code>dispatchEvent</code> dels elements HTML:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+
+I si a més, volem **afegir informació a l'event**, podem fer ús de `CustomEvent` i la propietat `detail`de la següent forma:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s1">&#39;el_meu_event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">hora</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
 </span></code></pre></div>
+
+Aquest event el podem capturar com qualsevol altre, i associar-li un escoltador d'events amb una funció gestora de l'event:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;el_meu_event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Event personalitzat:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ev</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="p">});</span>
+</span></code></pre></div>
+
+I si el que volem és **disparar l'event**, farem ús del mètode `dispatchEvent` dels elements HTML:
+
+<div class="language-js highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</span></code></pre></div>
+-->
 
 
 
