@@ -352,6 +352,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2-calculadora-per-teclat" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Calculadora per teclat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-calculadora-cobra-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. La calculadora cobra vida
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -408,6 +426,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2-calculadora-per-teclat" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Calculadora per teclat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-calculadora-cobra-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. La calculadora cobra vida
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -453,6 +489,73 @@ Aquesta calculadora sols farà operacions per a dos números.  </p>
 === "Simulació"
     <iframe src="../rsc/calc_enmascarada_xxyy1100.html" width="250" height="300"></iframe>
 -->
+
+<h3 id="2-calculadora-per-teclat">2. Calculadora per teclat</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Enunciat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Amplia la calculadora anterior per permetre també la interacció mitjançant el <strong>teclat</strong>, simulant clics sobre els botons. A més de funcionar amb el ratolí, la calculadora ha de respondre a les tecles del teclat com si l’usuari estiguera fent clic als botons.</p>
+<p><strong>Tasques a realitzar</strong></p>
+<p><strong>1. Detectar esdeveniments de teclat</strong><br />
+- Utilitza <code>addEventListener</code> sobre <code>document</code><br />
+- L’esdeveniment serà <code>"keydown"</code></p>
+<p><strong>2. Identificar la tecla premuda</strong><br />
+- Utilitza <code>event.key</code> per saber quina tecla s’ha polsat  </p>
+<p><strong>3. Relacionar tecla → botó</strong><br />
+- Has de decidir quin botó correspon a cada tecla:
+  - Números → botons numèrics<br />
+  - <code>+ - * /</code> → operacions<br />
+  - <code>Enter</code> → <code>=</code><br />
+  - <code>c</code> o <code>Escape</code> → <code>C</code>  </p>
+<p><strong>4. Simular el clic</strong><br />
+- Quan detectes una tecla, has de fer com si s’haguera fet clic al botó corresponent<br />
+- Pots utilitzar:<br />
+  - <code>.click()</code> sobre l'element DOM del botó o cridar la mateixa funció que uses en els clics</p>
+<p><strong>Exemple de codi quan es polsa la tecla numèrica "1"</strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">tecla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">tecla</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;b1&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">});</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="3-la-calculadora-cobra-vida">3. La calculadora cobra vida</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Enunciat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Canvia l’aspecte del botó quan es fa clic o es prem una tecla.</p>
+<p><strong>Tasques a realitzar</strong></p>
+<p><strong>1. Afegir estil per al botó premut</strong><br />
+Defineix una classe CSS que canvie l’aspecte del botó, per exemple:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">.</span><span class="nc">premut</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">0.95</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><strong>2. Crear una funció d’animació</strong><br />
+Implementa una funció que afegisca i elimine la classe:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">animarBoto</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">boto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="c1">//afig la classe &#39;premut&#39; al botó  --&gt; recorda com manipular el CSS amb classList</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">//esperem un xicotet temps amb la funció setTimeout() abans d&#39;eliminar l&#39;estil aplicat abans</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="c1">//elimina la classe &#39;premut&#39; al botó  --&gt; recorda com manipular el CSS amb classList</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">150</span><span class="p">);</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>3. Aplicar l’efecte als clics</strong><br />
+Modifica els esdeveniments click per incloure l’animació: cridant a la funció animarBoto() pasant-li l'ID corresponent.</p>
+</div>
+</div>
+</div>
 
 
 
