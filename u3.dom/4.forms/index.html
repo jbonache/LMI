@@ -1029,6 +1029,37 @@
 </span><span id="__span-14-94"><a id="__codelineno-14-94" name="__codelineno-14-94" href="#__codelineno-14-94"></a><span class="o">&lt;</span><span class="err">/body&gt;</span>
 </span><span id="__span-14-95"><a id="__codelineno-14-95" name="__codelineno-14-95" href="#__codelineno-14-95"></a><span class="o">&lt;</span><span class="err">/html&gt;</span>
 </span></code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title">Exercici pràctic: Generació dinàmica de contingut a partir d’un formulari</p>
+<p>En aquesta activitat hauràs de crear una pàgina web amb un formulari inspirat en els exemples proporcionats. L’objectiu principal és que, en fer clic sobre el botó <strong>“Enviar”</strong>, es genere dinàmicament una o diverses seccions <code>&lt;div&gt;</code> que mostren la informació introduïda per l’usuari.</p>
+<h4 id="funcionament-esperat">Funcionament esperat</h4>
+<ol>
+<li>L’usuari ompli els diferents camps del formulari (text, selecció, opcions, etc.).</li>
+<li>El formulari pot incloure alguna part dinàmica (per exemple, que aparega un camp extra segons una selecció).  </li>
+<li>
+<p>En fer click el botó <strong>Enviar</strong>:  </p>
+<ul>
+<li>S’ha d’evitar el comportament per defecte del formulari (no recarregar la pàgina amb <code>event.preventDefault()</code>).</li>
+<li>Es capturen totes les dades introduïdes.</li>
+<li>Es crea dinàmicament una nova secció <code>&lt;div&gt;</code> dins del document.</li>
+<li>Aquesta secció ha de contindre la informació del formulari de forma clara i estructurada.</li>
+</ul>
+<h4 id="generacio-de-les-seccions">Generació de les seccions</h4>
+<ul>
+<li>Les dades poden mostrar-se com:</li>
+<li>Paràgrafs (<code>&lt;p&gt;</code>)</li>
+<li>Llistes (<code>&lt;ul&gt;&lt;li&gt;</code>)</li>
+<li>O combinació d’ambdós</li>
+<li>Les seccions han d’afegir-se dins d’un contenidor principal (per exemple, un <code>&lt;div id="resultats"&gt;</code>).</li>
+</ul>
+<h4 id="exemple-de-comportament">Exemple de comportament</h4>
+<ul>
+<li>L’usuari ompli el formulari i fa clic en “Enviar”.</li>
+<li>Apareix una nova secció amb les seues dades.</li>
+</ul>
+</li>
+</ol>
+</div>
 
 
 
