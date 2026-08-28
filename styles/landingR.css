@@ -74,14 +74,13 @@
 }
 
 /* Tarjeta destacada */
-/*
+
 .container .card:first-child {
   grid-column: span 2;
   margin-bottom: 25px;
   padding-bottom: 10px;
-  border-bottom: 10px solid blue;
+  border-bottom: 10px solid rgb(54, 141, 32);
 }
-*/
 
 /* --- TARJETAS --- */
 .card {
@@ -94,6 +93,24 @@
 
 .card:hover {
   transform: scale(1.05);
+}
+
+.card1-header {
+  padding: 16px;
+  background-color: rgb(54, 141, 32);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.card2-header {
+  padding: 16px;
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 }
 
 .card-header {
