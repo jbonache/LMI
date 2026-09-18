@@ -1,0 +1,98 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+
+    background-image: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative; /* necessari per a títol absolut */
+    padding-top: 0;     /* el panell es mourà amb transform */
+}
+
+/* Títol absolut, independent del panell */
+.titol {
+    position: absolute; /* 🔹 treu del flux */
+    top: 50px;          /* 🔹 distància des del top del body */
+    color: coral; 
+    font-size: 70px; 
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Panell central */
+.panel {
+    width: 550px;
+    padding: 45px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+
+    /* 🔹 centrat i baixat dins la imatge de l'ordinador */
+    transform: translateY(265px);
+}
+
+
+/* Botons */
+.botons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estil base */
+.btn {
+    padding: 15px;
+    font-size: 17px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* Colors */
+.nova {
+    background: linear-gradient(45deg, #4CAF50, #2e7d32);
+}
+
+.pendents {
+    background: linear-gradient(45deg, #ff9800, #ef6c00);
+}
+
+.completades {
+    background: linear-gradient(45deg, #2196F3, #1565c0);
+}
+
+.eliminar {
+    background: linear-gradient(45deg, #f44336, #b71c1c);
+}
+
+/* Hover */
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    opacity: 0.95;
+}
+
+/* Click */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
