@@ -596,8 +596,8 @@
 <p>Cada llenguatge té la seva pròpia col·lecció de marques amb la seva classificació i significat. Existeixen tres tipus d'etiquetes:</p>
 <ul>
 <li><strong>Apertura</strong>: S'expressen entre els caràcters <code>&lt;</code> i <code>&gt;</code>, i indiquen l'inicia d'un <em>element</em>. Per exemple: <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>.</li>
-<li><strong>Tancament</strong>: S'expressen entre <code>&lt;/</code> i  <code>&gt;</code>, i indiquen el final d'un *element. Exemple: <code>&lt;/p&gt;</code>. En alguns llenguatges concrets, les marques de tancament no són requerides.</li>
-<li><strong>Buida</strong>: S'expressent entre <code>&lt;</code> i <code>/&gt;</code>, i no tenen continut. Exemple: <code>&lt;br/&gt;</code>.</li>
+<li><strong>Tancament</strong>: S'expressen entre <code>&lt;/</code> i  <code>&gt;</code>, i indiquen el final d'un <em>element</em>. Exemple: <code>&lt;/p&gt;</code>. En alguns llenguatges concrets, les marques de tancament no són requerides.</li>
+<li><strong>Buida</strong>: S'expressent entre <code>&lt;</code> i <code>/&gt;</code>, i no tenen contingut. Exemple: <code>&lt;br/&gt;</code>.</li>
 </ul>
 <p>Veiem un exemple en HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hola món, açò és un paràgraf<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span> que té un salt de línia al mig<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -724,6 +724,86 @@
 <summary>Consulta la resposta</summary>
 <p>Observa que després de tancar <code>&lt;/ul&gt;</code>, s'està tancant un <code>&lt;/p&gt;</code> que no s'ha obert.</p>
 </details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Minitest</p>
+<ol>
+<li>
+<p>Considera el fragment HTML: 
+<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Arròs<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Pollastre<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Bajoqueta<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></code></pre></div>
+Quina afirmació descriu correctament la relació entre elements i etiquetes?</p>
+<div class="language-text highlight"><pre><span></span><code>A. ul i cada li són elements, i les marques d’inici i final els delimiten  
+B. Només ul és un element perquè li només pot actuar com a etiqueta  
+C. ul és una etiqueta i cada li és un element complet  
+D. ul és contingut i li és una marca buida
+</code></pre></div>
+</li>
+<li>
+<p>Quines afirmacions són coherents amb les regles d’atributs explicades en el material?</p>
+<div class="language-text highlight"><pre><span></span><code>A. Els atributs de diverses parelles s’han de separar amb espais en blanc.
+B. Els atributs poden aparèixer en etiquetes d’apertura i en etiquetes buides.
+C. Els atributs poden aparèixer dins de les etiquetes de tancament.
+D. L’ordre dels atributs determina necessàriament el significat de l’element.
+</code></pre></div>
+</li>
+<li>
+<p>En el context explicat, una marca buida es caracteritza perquè no té contingut i s’expressa amb una sintaxi que inclou el tancament dins de la mateixa marca.</p>
+<div class="language-text highlight"><pre><span></span><code>Vertader
+Fals
+</code></pre></div>
+</li>
+<li>
+<p>Vols mostrar literalment en HTML el text «Per delimitar etiquetes farem ús de &lt; i &gt;». Quina representació evita que aquests caràcters siguen interpretats com a marques?</p>
+<div class="language-text highlight"><pre><span></span><code>A. &quot;&lt;&quot; i &quot;&gt;&quot;
+B. &lt; i &gt;
+C. &lt;&lt; i &gt;&gt;
+D. &amp;lt; i &amp;gt;
+</code></pre></div>
+</li>
+<li>
+<p>Quina afirmació explica millor per què les metadades d’una pàgina HTML poden ser importants per a la indexació?</p>
+<div class="language-text highlight"><pre><span></span><code>A. Perquè permeten eliminar totes les etiquetes d’estructura
+B. Perquè obliguen el navegador a convertir qualsevol text en una etiqueta
+C. Perquè proporcionen als cercadors informació sobre el contingut de la pàgina
+D. Perquè substitueixen tot el contingut visible de la pàgina
+</code></pre></div>
+</li>
+<li>
+<p>En HTML, segons l’explicació del material, les etiquetes s’interpreten igual en majúscules i minúscules, encara que es recomana utilitzar minúscules.</p>
+<div class="language-text highlight"><pre><span></span><code>Vertader
+Fals
+</code></pre></div>
+</li>
+<li>
+<p>En el codi següent, quin és l’error estructural destacat pel material? <code>&lt;p&gt;Text&lt;br/&gt;&lt;p&gt;Contingut&lt;/p&gt;&lt;/p&gt;</code></p>
+<div class="language-text highlight"><pre><span></span><code>A. br necessita sempre una etiqueta de tancament separada
+B. p no pot contenir cap altre element
+C. El problema és exclusivament l’ús de minúscules en les etiquetes
+D. Es tanca un p exterior que no correspon a cap obertura activa en aquell punt
+</code></pre></div>
+</li>
+<li>
+<p>Quines afirmacions sobre les referències a entitats estan d’acord amb el contingut estudiat?</p>
+<div class="language-text highlight"><pre><span></span><code>A. &amp;gt; representa el caràcter &lt;
+B. Comencen amb &amp; i acaben amb ;
+C. &amp; representa necessàriament el caràcter &gt;
+D. Poden representar caràcters que tenen un significat especial en el llenguatge de marques.
+</code></pre></div>
+</li>
+<li>
+<p>Quina diferència conceptual és més adequada entre una etiqueta i un element?</p>
+<div class="language-text highlight"><pre><span></span><code>A. Una etiqueta és una marca sintàctica, mentre que un element és una estructura completa que pot incloure contingut i marques.
+B. Una etiqueta és sempre un element buit, mentre que un element sempre té dues etiquetes visibles
+C. Una etiqueta sempre conté contingut, mentre que un element mai no en conté
+D. Etiqueta i element són dos noms diferents per al mateix concepte
+</code></pre></div>
+</li>
+</ol>
 </div>
 
 
