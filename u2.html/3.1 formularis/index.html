@@ -624,7 +624,7 @@
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Escriu el teu nom: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Missatge: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;missatge&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;60&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Missatge: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;missatge&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span> <span class="p">&gt;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </span></code></pre></div>
@@ -646,7 +646,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <p><strong>name</strong>: el nom del formulari. Serveix per a identificar-lo o per a referenciar-lo des de Javascript.</p>
 </li>
 <li>
-<p><strong>action</strong>: defineix l’acció que es realitza quan s’envia el formulari. Generalment ací s’especifica un script en PHP o en Javascript.</p>
+<p><strong>action</strong>: defineix l’acció que es realitza quan s’envia el formulari. Generalment ací s’especifica un script en PHP o en Javascript, o una url.</p>
 </li>
 <li>
 <p><strong>method</strong>: indica el mètode d’enviament de les dades. Pot tindre 2 valors:</p>
@@ -655,7 +655,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 </ul>
 <p><a class="glightbox" href="../img/3/params_get.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/3/params_get.jpg" width="300px" /></a></p>
 <ul>
-<li><strong>post</strong>: amb aquest mètode, les dades s’envien dins el propi cos de la petició HTTP, però no són visibles a la URL, per la qual cosa s’ha d’utilitzar quan s’envien dades sensibles, com contrasenyes. Pe fer ús de post, definirem el formulari com a <code>&lt;form name="formulari_basic" method="post"&gt;</code>.</li>
+<li><strong>post</strong>: amb aquest mètode, les dades s’envien dins el propi cos de la petició HTTP, però no són visibles a la URL, per la qual cosa s’ha d’utilitzar quan s’envien dades sensibles, com contrasenyes. Per fer ús de post, definirem el formulari com a <code>&lt;form name="formulari_basic" method="post"&gt;</code>.</li>
 </ul>
 </li>
 </ul>
@@ -665,13 +665,23 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 </span></code></pre></div>
 <p>L’atribut <strong>type</strong> indica el tipus d'entrada. <strong>id</strong> és un identificador únic, usat per Javascript i per CSS. <strong>name</strong> és el nom que s’envia junt amb les dades de l’input.</p>
 <p>És comú acompanyar els inputs amb etiquetes <code>&lt;label&gt;</code>. Aquest element és llegit pels lectors de pantalla. També ajuda els usuaris que tenen dificultats per fer clic a regions molt menudes (checkboxes o radio buttons), perquè quan l’usuari fa clic al text dins de l’element <code>&lt;label&gt;</code>, canvia el valor del <em>checkbox</em> o <em>radio button</em>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">HTML</label><label for="__tabbed_2_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nom&quot;</span><span class="p">&gt;</span>Nom:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span><span class="p">&gt;</span>
 </span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><label for="nom">Nom:</label>
+<input type="text" id="nom" name="nom"></p>
+</div>
+</div>
+</div>
 <p>L’atribut <strong>for</strong> de label identifica l’id de l’input al qual està associat.</p>
 <h3 id="tipus-d’inputs">Tipus d’inputs</h3>
-<p>Ele elements d'entrada a formuari poden contindre informació molt diversa (un nom, un telèfon, un correu...), pel que especificar el tipus d'entrada ajuda al sistema i a l'usuari a saber quin format ha d'utilitzar (alfanumèric, només numèric, etc.).</p>
+<p>Els elements d'entrada a formuari poden contindre informació molt diversa (un nom, un telèfon, un correu...), pel que especificar el tipus d'entrada ajuda al sistema i a l'usuari a saber quin format ha d'utilitzar (alfanumèric, només numèric, etc.).</p>
 <ul>
 <li><strong>text</strong>: Ja hem vist el tipus bàsic d’input, <strong>text</strong>, que defineix una entrada de text genèric d’una sola línia.</li>
 </ul>
@@ -712,7 +722,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">HTML</label><label for="__tabbed_2_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">HTML</label><label for="__tabbed_3_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;#&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
@@ -813,7 +823,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>password</strong>: El tipus <code>password</code> defineix un camp per introduir contrasenyes. En aquest input els caràcters introduïts apareixen com a punts o asteriscs:</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">HTML</label><label for="__tabbed_3_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">HTML</label><label for="__tabbed_4_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -836,7 +846,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>search</strong>: L'atribut <code>type="search"</code> d'HTML5 s'utilitza per crear un camp de cerca. És molt similar a un camp d'entrada de text regular (<code>type="text"</code>), però està optimitzat per facilitar la cerca dins d'un document o pàgina web.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">HTML</label><label for="__tabbed_4_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">HTML</label><label for="__tabbed_5_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -859,7 +869,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>radio</strong>: El tipus <strong>radio</strong> defineix una casella d’opció (<strong><em>radio button</em></strong>). Aquests inputs s’agrupen amb el mateix name per a definir un grup, de manera que només una de les caselles pot estar marcada en un moment determinat:</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">HTML</label><label for="__tabbed_5_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">HTML</label><label for="__tabbed_6_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -885,7 +895,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>Checkbox</strong>: El tipus <strong>checkbox</strong> defineix una casella de selecció múltiple. Diversos <em>checkboxes</em> d’un mateix grup poden estar seleccionats al mateix temps.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">HTML</label><label for="__tabbed_6_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">HTML</label><label for="__tabbed_7_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -925,7 +935,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>Button</strong>: El tipus <strong>button</strong> defineix un botó genèric. Al fer clic en ell, s’executarà l’acció especificada en l’atribut <strong>onclick</strong>:</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">HTML</label><label for="__tabbed_7_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">HTML</label><label for="__tabbed_8_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -946,13 +956,13 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Programació orientada a events</p>
-<p>Quan fem clic en un botó, es dispara un event de tipus <em>clic</em>. El que fem amb <code>onclic</code> és <em>capturar</em> aquest event i indicar quina funcionalitat realitzarem quan aquest es produisca. Aquesta funcionalitat s'indicarà amb el llenguatge de programació Javascript, que és qui dona dinamisme als documents web. La funció <code>alert</code>, per tant, és una funció de Javascript, que, en aquest cas, mostra un missatge emergent amb el text <em>Has fet clic al botó</em>.</p>
+<p>Quan fem clic en un botó, es dispara un event de tipus <em>clic</em>. El que fem amb <code>onclick</code> és <em>capturar</em> aquest event i indicar quina funcionalitat realitzarem quan aquest es produisca. Aquesta funcionalitat s'indicarà amb el llenguatge de programació Javascript, que és qui dona dinamisme als documents web. La funció <code>alert</code>, per tant, és una funció de Javascript, que, en aquest cas, mostra un missatge emergent amb el text <em>Has fet clic al botó</em>.</p>
 <p>Quan desenvolupem aplicaions gràfiques, serà habitual fer aquest tipus de programació <em>dirigida pe events</em>, on el codi no segueix un flux d'execució linial de principi a fi, sinò que segons els events que es produeixen al sistema (com puga ser la interacció de l'usuari), s'invoquen unes funcionalitats o altres.</p>
 </div>
 <ul>
 <li><strong>File</strong>: El tipus <strong>file</strong> defineix un botó de selecció de fitxers, i sol usar-se per pujar fitxers al servidor.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">HTML</label><label for="__tabbed_8_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">HTML</label><label for="__tabbed_9_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -974,7 +984,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>textarea</strong>: L’element <code>&lt;textarea&gt;</code> defineix una àrea de text, un camp de text de vàries línies.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">HTML</label><label for="__tabbed_9_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">HTML</label><label for="__tabbed_10_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -1004,7 +1014,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <li><strong>Select</strong>:  L’element <code>&lt;select&gt;</code> crea una llista desplegable. Cada element <code>&lt;option&gt;</code> defineix un dels elements de la llista. El primer és l’element que es tria per defecte.</li>
 </ul>
 <p>Si afegim l’atribut <strong>size</strong>, a més limitem la quantitat d’elements visibles. Això és útil per a llistes molt llargues.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:4"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">HTML</label><label for="__tabbed_10_2">Resultat</label><label for="__tabbed_10_3">HTML amb diferent size</label><label for="__tabbed_10_4">Resultat amb diferent size</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:4"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">HTML</label><label for="__tabbed_11_2">Resultat</label><label for="__tabbed_11_3">HTML amb diferent size</label><label for="__tabbed_11_4">Resultat amb diferent size</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -1058,7 +1068,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 <ul>
 <li><strong>Fieldset i legend</strong>: L’element <code>&lt;fieldset&gt;</code> s’usa per a agrupar elements d’un formulari. Sol anar acompanyat de l’element <code>&lt;legend&gt;</code> per a posar-li un títol o llegenda:</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">HTML</label><label for="__tabbed_11_2">Resultat</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">HTML</label><label for="__tabbed_12_2">Resultat</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;formulari_basic&quot;</span><span class="p">&gt;</span>
@@ -1139,7 +1149,7 @@ Missatge: <input name="missatge" type="text" size="60"> <br>
 </ul>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span> <span class="na">disabled</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Formulari d'exemple</label><label for="__tabbed_12_2">HTML + CSS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Formulari d'exemple</label><label for="__tabbed_13_2">HTML + CSS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><html>
