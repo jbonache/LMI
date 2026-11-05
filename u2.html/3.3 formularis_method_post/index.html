@@ -690,36 +690,7 @@ A diferència del mètode <code>GET</code>, amb <code>POST</code> <strong>les da
           const obj = {};
           dades.forEach((valor, clau) => obj[clau] = valor);
           // Guardem les dades al localStorage (simula l’enviament POST)
-          //localStorage.setItem('dadesFormulari', JSON.stringify(obj));
-          async function cifrar(texto) {
-          const encoder = new TextEncoder();
-          const clave = await crypto.subtle.generateKey(
-          {
-              name: "AES-GCM",
-              length: 256
-          },
-          true,
-          ["encrypt", "decrypt"]
-          );
-          const iv = crypto.getRandomValues(new Uint8Array(12));
-          const cifrado = await crypto.subtle.encrypt(
-              {
-                  name: "AES-GCM",
-                  iv: iv
-              },
-              clave,
-              encoder.encode(texto)
-          );
-          return {
-              datos: Array.from(new Uint8Array(cifrado)),
-              iv: Array.from(iv),
-              clave: await crypto.subtle.exportKey("raw", clave)
-            };
-          }
-          const resultado = await cifrar(obj.password);
-          obj.password = resultado;
           localStorage.setItem('dadesFormulari', JSON.stringify(obj));
-          document.getElementById('formulari').addEventListener('submit', async function(e) {
           // Anem a la pàgina de resultat
           //window.location.href = 'resultat_post.html';
           window.open('../rsc/resultat_post.html', '_blank');
