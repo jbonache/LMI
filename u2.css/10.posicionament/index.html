@@ -580,15 +580,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#103-posisionament-amb-flexbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      10.3 Posisionament amb Flexbox
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -702,15 +693,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#103-posisionament-amb-flexbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      10.3 Posisionament amb Flexbox
-    </span>
-  </a>
   
 </li>
       
@@ -857,14 +839,18 @@ S’ha d’especificar una posició i un valor amb top, bottom, left o right. </
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="p">}</span>
 </span></code></pre></div>
 <p><a class="glightbox" href="../img/z-index.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Z-index" src="../img/z-index.jpg" width="400px" /></a></p>
-<h2 id="103-posisionament-amb-flexbox">10.3 Posisionament amb Flexbox</h2>
-<p>El model de <strong>Caixes Flexibles (Flexbox)</strong> va ser dissenyat per a superar les dificultats del model de posicionament bàsic de CSS. Fa més fàcil crear un disseny flexible amb CSS.</p>
-<p>Una caixa flexbox sempre consta de:</p>
-<ul>
-<li>Un contenidor flex: l’element contenidor pare, que pot ser <code>&lt;div&gt;</code>, <code>&lt;nav&gt;</code>, etc.</li>
-<li>Elements flexibles: els elements dins del contenidor.</li>
-</ul>
-<p>Per a definir un contenidor flex, simplement li hem d’afegir la propietat <code>display: flex</code>:
+<!--
+
+# 10.3 Posisionament amb Flexbox
+
+El model de **Caixes Flexibles (Flexbox)** va ser dissenyat per a superar les dificultats del model de posicionament bàsic de CSS. Fa més fàcil crear un disseny flexible amb CSS.
+
+Una caixa flexbox sempre consta de:
+
+  * Un contenidor flex: l’element contenidor pare, que pot ser `<div>`, `<nav>`, etc.
+  * Elements flexibles: els elements dins del contenidor.
+
+Per a definir un contenidor flex, simplement li hem d’afegir la propietat `display: flex`:
 <div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
@@ -894,33 +880,42 @@ S’ha d’especificar una posició i un valor amb top, bottom, left o right. </
 </span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">      </span><span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;&lt;</span><span class="nt">a</span><span class="w"> </span><span class="nt">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="o">&gt;</span><span class="nt">Link</span><span class="w"> </span><span class="nt">4</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
 </span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">  </span><span class="o">&lt;/</span><span class="nt">ul</span><span class="o">&gt;</span>
 </span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="o">&lt;/</span><span class="nt">nav</span><span class="o">&gt;</span>
-</span></code></pre></div></p>
-<p><a class="glightbox" href="../img/menu_v1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="flexbox1" src="../img/menu_v1.png" /></a></p>
-<p>Podem indicar la direcció del contenidr amb la propietat flex-direction, la qual pot tindre un dels següents valors:</p>
-<ul>
-<li><code>row</code>: en fila, valor per defecte.</li>
-<li><code>column</code>: en columna</li>
-<li><code>row-reverse</code>: en fila en ordre invers.</li>
-<li><code>column-reverse</code>: en columna en ordre invers.</li>
-</ul>
-<p>Per exemple:
+</span></code></pre></div>
+
+![flexbox1](img/menu_v1.png)
+
+Podem indicar la direcció del contenidr amb la propietat flex-direction, la qual pot tindre un dels següents valors:
+
+  * `row`: en fila, valor per defecte.
+  * `column`: en columna
+  * `row-reverse`: en fila en ordre invers.
+  * `column-reverse`: en columna en ordre invers.
+
+Per exemple:
 <div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="err">...</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
-</span></code></pre></div></p>
-<p><a class="glightbox" href="../img/menu_column.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="flexbox2" src="../img/menu_column.png" /></a></p>
-<p><code>justify-content</code> alinea els elements <strong>horitzontalment</strong>. Els valors més importants són <code>center</code>, <code>flex-start</code> i <code>flex-end</code>.</p>
+</span></code></pre></div>
+
+![flexbox2](img/menu_column.png)
+
+`justify-content` alinea els elements **horitzontalment**. Els valors més importants són `center`, `flex-start` i `flex-end`.
+
 <div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-end</span><span class="p">;</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="err">...</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><a class="glightbox" href="../img/menu_flex_end.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="flexbox3" src="../img/menu_flex_end.png" /></a></p>
-<p><code>align-items</code> s’utilitza per alinear els elements <strong>verticalment</strong> quan no utilitzen tot l’espai disponible a l’eix vertical, per exemple, quan tenim un height definit en píxels al contenidor.</p>
-<p>Els valor més usats són <code>center</code>, <code>flex-start</code>, <code>flex-end</code>.</p>
+
+![flexbox3](img/menu_flex_end.png)
+
+`align-items` s’utilitza per alinear els elements **verticalment** quan no utilitzen tot l’espai disponible a l’eix vertical, per exemple, quan tenim un height definit en píxels al contenidor.
+
+Els valor més usats són `center`, `flex-start`, `flex-end`.
+
 <div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
@@ -928,8 +923,11 @@ S’ha d’especificar una posició i un valor amb top, bottom, left o right. </
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="err">...</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><a class="glightbox" href="../img/menu_items_center.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="flexbox4" src="../img/menu_items_center.png" /></a></p>
-<p>Amb <code>justify-content</code> i <code>align-items</code> podem centrar de forma molt fàcil un element en un contenidor:</p>
+
+![flexbox4](img/menu_items_center.png)
+
+Amb `justify-content` i `align-items` podem centrar de forma molt fàcil un element en un contenidor:
+
 <div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
@@ -937,48 +935,60 @@ S’ha d’especificar una posició i un valor amb top, bottom, left o right. </
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Podem usar la propietat <code>gap</code> per a definir la separació entre elements:</p>
+
+Podem usar la propietat `gap` per a definir la separació entre elements:
+
 <div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="err">...</span>
 </span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><a class="glightbox" href="../img/menu_gap.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="flexbox5" src="../img/menu_gap.png" /></a></p>
-<p>Quant als elements dins d’un contenidor flexbox, podem establir 3 propietats:</p>
-<ul>
-<li><code>flex-grow</code> especifica quant creix un element en relació amb la resta d’elements.</li>
-<li><code>flex-shrink</code> especifica quant es reduirà un element en relació amb la resta d’elements.</li>
-<li><code>flex-basis</code> especifica la longitud inicial d’un element flexible.</li>
-<li><code>flex</code> és una propietat abreviada per a les propietats <code>flex-grow</code>, <code>flex-shrink</code> i <code>flex-basis</code>.</li>
-</ul>
-<p><code>flex-grow</code> i <code>flex-shrink</code> s’indiquem amb nombres enters (ex. un element amb <code>flex-grow: 2</code> ocuparà el doble que la resta d’elements), mentres que <code>flex-basis</code> s’indica amb unitats de mesura, com píxels.</p>
-<p>Per exemple:
+
+![flexbox5](img/menu_gap.png)
+
+Quant als elements dins d’un contenidor flexbox, podem establir 3 propietats:
+
+  * `flex-grow` especifica quant creix un element en relació amb la resta d’elements.
+  * `flex-shrink` especifica quant es reduirà un element en relació amb la resta d’elements.
+  * `flex-basis` especifica la longitud inicial d’un element flexible.
+  * `flex` és una propietat abreviada per a les propietats `flex-grow`, `flex-shrink` i `flex-basis`.
+
+`flex-grow` i `flex-shrink` s’indiquem amb nombres enters (ex. un element amb `flex-grow: 2` ocuparà el doble que la resta d’elements), mentres que `flex-basis` s’indica amb unitats de mesura, com píxels.
+
+Per exemple:
 <div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">.</span><span class="nc">flexitem</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span><span class="w"> </span>
-</span></code></pre></div></p>
-<p>és el mateix que:</p>
-<p><div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span>
+</span></code></pre></div>
+
+és el mateix que:
+
+<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="k">flex-shrink</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="k">flex-basis</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span><span class="w"> </span>
 </span></code></pre></div>
-Si indiquem només una propietat amb <code>flex</code>, aquestà s’aplicarà a <code>flex-grow</code>, deixant les altres al seu valor per defecte:</p>
-<p><div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">.</span><span class="nc">flexitem</span><span class="w"> </span><span class="p">{</span>
+Si indiquem només una propietat amb `flex`, aquestà s’aplicarà a `flex-grow`, deixant les altres al seu valor per defecte:
+
+<div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">.</span><span class="nc">flexitem</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">}</span><span class="w"> </span>
 </span></code></pre></div>
-és el mateix que:</p>
+és el mateix que:
+
 <div class="language-css highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="k">flex-shrink</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">flex-basis</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span><span class="w"> </span>
 </span></code></pre></div>
-<h4 id="exemple-de-menu-amb-flexbox">Exemple de Menú amb Flexbox</h4>
-<p><code>flexbox</code> simplifica el procés de creació d’un menú:</p>
+
+### Exemple de Menú amb Flexbox
+
+`flexbox` simplifica el procés de creació d’un menú:
+
 <div class="language-css highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span><span class="w">        </span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">nav</span><span class="p">#</span><span class="nn">menu</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">      </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
@@ -1017,7 +1027,10 @@ Si indiquem només una propietat amb <code>flex</code>, aquestà s’aplicarà a
 </span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a><span class="w">  </span><span class="o">&lt;/</span><span class="nt">ul</span><span class="o">&gt;</span>
 </span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="o">&lt;/</span><span class="nt">nav</span><span class="o">&gt;</span>
 </span></code></pre></div>
-<p><a class="glightbox" href="../img/menu_flex_final.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="flexbox6" src="../img/menu_flex_final.png" /></a></p>
+
+![flexbox6](img/menu_flex_final.png)
+
+-->
 
 
 
