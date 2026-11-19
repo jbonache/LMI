@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicis position</title>
+  <style>
+    body { font-family: sans-serif; height: 2000px; margin: 0; padding: 20px; }
+
+    #tauler {
+      width: 400px;
+      height: 320px;
+      border: 3px solid #333;
+      background: #eee;
+      margin: 60px auto;
+    }
+
+    #barra{
+      text-align: center;
+      background: gold; 
+      padding: 10px;
+    }
+    
+    .caixa {
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .a { 
+        background: crimson; 
+      }
+      
+    .b { 
+        background: royalblue; 
+      }
+      
+    .c { 
+        background: seagreen; 
+        }
+        
+    .d { 
+        background: orange; 
+        }
+        
+    .e { 
+        background: purple; 
+        }
+
+     /*  REALITZA ELS SEGÜENTS REPTES 
+     
+                  REPTE 1: La caixa B es fa la valenta (relative): Desplaça la caixa B 40px cap a baix i 60px cap a la dreta. 
+              
+                  REPTE 2: Caixa D a la cantonada (absolute) del tauler: Col·loca la D a la cantonada inferior dreta del tauler. Per a que et quede dins del tauler
+                            has de nomenar a tauler com a ancestre,  posicionant-lo com a relative.
+
+              
+                  REPTE 3: La caixa E, l’espia (fixed): Fixa la E a la cantonada superior dreta de la finestra. Fes scroll i comprova que no es mou. 
+              
+           
+                  REPTE 4: Barra enganxosa (sticky): Fes que la barra es quede enganxada a dalt de tot en fer scroll.
+              
+                  REPTE 6: Nova caixa F: Fes que el tauler tinga una caixa nova F centrada al tauler amb absolute.
+    */
+
+  </style>
+</head>
+<body>
+
+  <div id="barra"> Menejant les caixes </div>
+
+  <div id="tauler">
+    <div class="caixa a">A</div>
+    <div class="caixa b">B</div>
+    <div class="caixa c">C</div>
+    <div class="caixa d">D</div>
+  </div>
+
+  <div class="caixa e">E</div>
+
+</body>
+</html>
